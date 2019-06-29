@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/spacing_smlarge"
+        android:layout_marginRight="@dimen/spacing_smlarge"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:orientation="horizontal">
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+            <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_large">
+
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/product_name"
+                        android:text="Praesent Vitae"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/grey_90"
+                        app:fontFamily="sans-serif-medium" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$14.32"
+                        android:id="@+id/product_price"
+                        android:textSize="15sp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        android:textColor="@color/light_green_500" />
+
+                <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                    <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/spacing_xlarge"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:tint="@color/grey_40"
+                            android:id="@+id/btn_qty_remove"
+                            app:srcCompat="@drawable/ic_remove" />
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/spacing_large"
+                            android:layout_marginRight="@dimen/spacing_large"
+                            android:gravity="center_vertical"
+                            android:id="@+id/product_quantity"
+                            android:text="01"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                            android:textColor="@color/grey_40"
+                            app:fontFamily="sans-serif-medium" />
+
+                    <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/spacing_xlarge"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:tint="@color/grey_40"
+                            android:id="@+id/btn_qty_add"
+                            app:srcCompat="@drawable/ic_add" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:id="@+id/product_image"
+                app:srcCompat="@drawable/img_plant_1" />
+
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+            <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:weightSum="1.5"-->
+            <!--android:layout_height="match_parent">-->
+
+
+        <!--<ImageView-->
+                <!--android:layout_weight="0"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:id="@+id/product_image"-->
+                <!--android:layout_width="105dp"-->
+                <!--android:layout_height="105dp"/>-->
+
+
+        <!--<LinearLayout-->
+                <!--android:layout_weight=".5"-->
+                <!--android:gravity="top"-->
+                <!--android:layout_marginRight="8dp"-->
+                <!--android:padding="8dp"-->
+                <!--android:orientation="vertical"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginEnd="8dp">-->
+
+
+            <!--<TextView-->
+                    <!--android:textSize="19sp"-->
+                    <!--android:textColor="@android:color/black"-->
+                    <!--android:id="@+id/product_name"-->
+                    <!--android:maxLines="1"-->
+                    <!--android:ellipsize="end"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"/>-->
+
+
+            <!--<TextView-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:id="@+id/product_price"-->
+                    <!--android:textColor="@android:color/holo_red_light"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"/>-->
+
+
+        <!--</LinearLayout>-->
+        <!--<LinearLayout android:layout_width="wrap_content"-->
+                      <!--android:layout_height="wrap_content"-->
+                      <!--android:layout_weight="0"-->
+                      <!--android:orientation="vertical">-->
+            <!--<Button-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:background="@drawable/round_background"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:text="+"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textColor="@color/white_transparency"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:padding="8dp"-->
+                    <!--android:layout_height="30dp"/>-->
+            <!--<TextView-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:padding="8dp"-->
+                    <!--android:textColor="@android:color/black"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:background="@drawable/round_background"-->
+                    <!--android:id="@+id/product_quantity"-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:layout_height="40dp"/>-->
+            <!--<Button-->
+                    <!--android:layout_width="40dp"-->
+                    <!--android:background="@drawable/round_background"-->
+                    <!--android:text="-"-->
+                    <!--android:textSize="14sp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textColor="@color/white_transparency"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:padding="8dp"-->
+                    <!--android:layout_height="30dp"/>-->
+
+        <!--</LinearLayout>-->
+
+
+    <!--</LinearLayout>-->
+</androidx.cardview.widget.CardView>

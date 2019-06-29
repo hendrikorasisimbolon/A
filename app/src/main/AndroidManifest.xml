@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+          package="com.example.ta">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity android:name=".ResultSearchAct">
+        </activity>
+        <activity android:name=".ItemAllAct">
+        </activity>
+        <activity android:name=".EditProfileAct">
+        </activity>
+        <activity
+                android:name=".ProfileAct"
+                android:label="@string/title_activity_profile"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".BlogDetailAct">
+        </activity>
+        <activity
+                android:name=".BlogAct"
+                android:label="@string/title_activity_blog"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".OrderAct">
+        </activity>
+        <activity
+                android:name=".MainActivity"
+                android:label="@string/title_activity_main"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+                android:name=".ProductDetailAct"
+                android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".ShoppingCartActivity">
+        </activity>
+        <activity android:name=".ProductAllAct">
+        </activity>
+        <activity android:name=".ItemsAct">
+        </activity>
+        <activity android:name=".ProductCatAct">
+        </activity>
+        <activity android:name=".ProfileDrawerSimple">
+        </activity>
+        <activity android:name=".RegisterAct">
+        </activity>
+        <activity android:name=".LoginAct">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
