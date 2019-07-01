@@ -9,6 +9,7 @@ import com.example.ta.Model.MItemDetail
 import com.example.ta.Model.MTotalCart
 import com.example.ta.Model.UserInfo
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class UserSessionManager
     (// Context
     internal var _context: Context
@@ -43,7 +44,9 @@ class UserSessionManager
         val KEY_EMAIL = "email"
         val KEY_PHONE = "phone"
         val KEY_PROVINSI ="provinsi"
+        val KEY_TAGPROVINSI = "tagprovinsi"
         val KEY_KOTA = "kota"
+        val KEY_TAGKOTA = "tagkota"
         val KEY_ADDRESS = "address"
         val KEY_UMUR = "umur"
         val KEY_LAHIR = "lahir"
@@ -62,7 +65,9 @@ class UserSessionManager
         editor.putString(KEY_EMAIL, userInfo.email)
         editor.putString(KEY_PHONE, userInfo.phone)
         editor.putString(KEY_PROVINSI, userInfo.nama_provinsi)
+        editor.putString(KEY_TAGPROVINSI, userInfo.id_provinsi)
         editor.putString(KEY_KOTA, userInfo.nama_kota)
+        editor.putString(KEY_TAGKOTA, userInfo.id_kota)
         editor.putString(KEY_ADDRESS,userInfo.address)
         editor.putString(KEY_UMUR,userInfo.umur)
         editor.putString(KEY_LAHIR,userInfo.lahir)
@@ -82,7 +87,9 @@ class UserSessionManager
                 pref.getString(KEY_EMAIL,null),
                 pref.getString(KEY_PHONE,null),
                 pref.getString(KEY_PROVINSI,null),
+                pref.getString(KEY_TAGPROVINSI,null),
                 pref.getString(KEY_KOTA, null),
+                pref.getString(KEY_TAGKOTA, null),
                 pref.getString(KEY_ADDRESS,null),
                 pref.getString(KEY_UMUR,null),
                 pref.getString(KEY_LAHIR, null),

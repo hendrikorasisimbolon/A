@@ -137,6 +137,7 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
             Log.e("Banyak Cart", response.getString("banyak"))
             total_cart = response.getInt("banyak")
             MTotalCart.total_harga = response.getInt("jumlah")
+            MTotalCart.total_berat = response.getInt("berat")
         }, Response.ErrorListener { error ->
             Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
         })

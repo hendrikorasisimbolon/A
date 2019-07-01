@@ -1,6 +1,7 @@
 package com.example.ta
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -37,13 +38,9 @@ class OrderAct : AppCompatActivity() {
     lateinit var session: UserSessionManager
     var list = ArrayList<MKeranjang>()
 
-    var kosong:Int = 0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order)
-
-
 
         session = UserSessionManager(applicationContext)
 
@@ -87,7 +84,12 @@ class OrderAct : AppCompatActivity() {
         rq.add(jar)
         get_total_cart()
 
-       
+        btn_checkout.setOnClickListener{
+            var i = Intent(this,CheckoutAct::class.java)
+            startActivity(i)
+        }
+
+        Log.e("Berat", MTotalCart.total_berat.toString())
     }
 
     override fun onStart() {
@@ -130,6 +132,7 @@ class OrderAct : AppCompatActivity() {
             Log.e("Banyak Cart", response.getString("banyak"))
             MTotalCart.total_cart = response.getInt("banyak")
             MTotalCart.total_harga = response.getInt("jumlah")
+            MTotalCart.total_berat = response.getInt("berat")
         }, Response.ErrorListener { error ->
             Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
         })

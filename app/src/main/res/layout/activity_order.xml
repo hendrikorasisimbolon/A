@@ -89,6 +89,7 @@
                 android:layout_height="1dp"
                 android:background="@color/grey_20" />
         <androidx.appcompat.widget.AppCompatButton android:layout_width="match_parent"
+                                                   android:id="@+id/btn_checkout"
                                                    android:layout_height="wrap_content"
                                                    android:layout_marginTop="@dimen/spacing_medium"
                                                    android:background="@drawable/btn_rounded_green"

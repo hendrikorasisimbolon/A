@@ -46,6 +46,7 @@ class ProductDetailAct : AppCompatActivity() {
         var rq:RequestQueue = Volley.newRequestQueue(this)
         var jor = JsonObjectRequest(Request.Method.GET,url,null,Response.Listener { response ->
             rt_barang.rating = response.getDouble("rating").toFloat()
+            txt_bnykrt.text = response.getString("banyak")
         }, Response.ErrorListener { error ->
             Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
         })

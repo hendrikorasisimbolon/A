@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,21 +17,30 @@ import com.example.ta.Adapter.SearchAdapter
 import com.example.ta.Model.MItemDetail
 import com.example.ta.ProductDetailAct
 import com.example.ta.R
+import com.example.ta.utils.Tools
+import kotlinx.android.synthetic.main.toolbar.*
 
 
 class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
 
 
     var tampung:ArrayList<MItemDetail> = ArrayList()
+    var dat = MItemDetail.data
     var adapter: SearchAdapter? = null
     private var searchView: SearchView? = null
     private var queryTextListener: SearchView.OnQueryTextListener? = null
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         var v = inflater.inflate(R.layout.fragment_search, container, false)
+        Log.e("banyakData1",dat.size.toString())
+        for(i in 0..dat.size-1){
+            Log.e("dataX", dat[i].judul_produk)
+        }
         setHasOptionsMenu(true)
         var r = v.findViewById(R.id.recycler) as RecyclerView
 //        tampung = MItemDetail.data
@@ -57,6 +67,7 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_search, menu)
+        Tools.changeMenuIconColor(menu, resources.getColor(R.color.indigo_500))
         val searchItem = menu.findItem(R.id.action_search)
         val searchManager = activity!!.getSystemService(Context.SEARCH_SERVICE) as SearchManager
 
@@ -69,17 +80,17 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
 
             queryTextListener = object : SearchView.OnQueryTextListener {
                 override fun onQueryTextChange(newText: String): Boolean {
-
-
-                    return true
+                    tampung.clear()
+                    return false
                 }
 
                 override fun onQueryTextSubmit(query: String): Boolean {
-                    val a =  MItemDetail.data
-                    for (data in a ) {
-                        val nama = data.judul_produk.toLowerCase()
+                    tampung.clear()
+                    for (i in 0..dat.size-1) {
+                        Log.e("dariCari", dat[i].judul_produk.toString())
+                        val nama = dat[i].judul_produk.toLowerCase()
                         if (nama.contains(query.toLowerCase())) {
-                            tampung.add(data)
+                            tampung.add(dat[i])
                         }
                     }
 //                    adapter?.setFilter(tampung)
@@ -87,6 +98,10 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
                 }
             }
             searchView!!.setOnQueryTextListener(queryTextListener)
+        }
+        else {
+            tampung = ArrayList()
+            adapter!!.notifyDataSetChanged()
         }
         super.onCreateOptionsMenu(menu, inflater)
     }

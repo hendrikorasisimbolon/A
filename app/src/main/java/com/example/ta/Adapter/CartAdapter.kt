@@ -1,7 +1,6 @@
 package com.example.ta.Adapter
 
 import android.content.Context
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,16 +15,17 @@ import com.android.volley.toolbox.Volley
 import com.example.ta.Fragment.DltFragment
 import com.example.ta.Fragment.F5Fragment
 import com.example.ta.Model.MCart
+import com.example.ta.Model.MItemDetail
 import com.example.ta.Model.MKeranjang
 import com.example.ta.Model.MTotalCart
 import com.example.ta.Model.Url_Volley.Companion.url_website
-import com.example.ta.OrderAct
 import com.example.ta.R
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_order.view.*
 import kotlinx.android.synthetic.main.cart_list_item.view.*
 import java.text.NumberFormat
 import java.util.*
+import kotlin.collections.ArrayList
+
 
 @Suppress("DEPRECATION")
 class CartAdapter (var context: Context, var cartItems: ArrayList<MKeranjang>) :
@@ -37,7 +37,6 @@ class CartAdapter (var context: Context, var cartItems: ArrayList<MKeranjang>) :
 }
 
     override fun getItemCount(): Int = cartItems.size
-
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as ViewHolder).bindItem(
@@ -51,7 +50,6 @@ class CartAdapter (var context: Context, var cartItems: ArrayList<MKeranjang>) :
 
     class ViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView)
     {
-
         fun bindItem(idP:String, judul:String,harga:Int, foto:String, foto_type:String, qty:Int)
         {
             var locale = Locale("in", "ID")
@@ -79,6 +77,14 @@ class CartAdapter (var context: Context, var cartItems: ArrayList<MKeranjang>) :
                 })
                 rq.add(sr)
                 MTotalCart.total_harga += harga.toString().toInt()
+
+                for( i in 0..MItemDetail.data.size-1)
+                {
+                    if (MItemDetail.data[i].id == idP.toInt())
+                    {
+                        MTotalCart.total_berat += MItemDetail.data[i].berat.toInt()
+                    }
+                }
 
                 var obj = F5Fragment() // fragment
                 var mana = (itemView.context as AppCompatActivity).fragmentManager
@@ -119,11 +125,19 @@ class CartAdapter (var context: Context, var cartItems: ArrayList<MKeranjang>) :
 
                     rq.add(sr)
                     MTotalCart.total_harga -= harga.toString().toInt()
+                    for( i in 0..MItemDetail.data.size-1)
+                    {
+                        if (MItemDetail.data[i].id == idP.toInt())
+                        {
+                            MTotalCart.total_berat -= MItemDetail.data[i].berat.toInt()
+                        }
+                    }
                     MCart.itemId=idP.toInt()
                     var obj = DltFragment() // fragment
                     var mana = (itemView.context as AppCompatActivity).fragmentManager
                     obj.show(mana,"Dlt")
                 }
+
             }
         }
     }

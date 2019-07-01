@@ -53,6 +53,13 @@ class MItemDetail {
     companion object{
         var data:ArrayList<MItemDetail> = ArrayList()
 
+        fun reffilData(a:ArrayList<MItemDetail>): ArrayList<MItemDetail> {
+            data.clear()
+            data = ArrayList()
+            data = a
+            return data
+        }
+
         fun getProducts(context: Context): ArrayList<MItemDetail> {
             var da:ArrayList<MItemDetail> = ArrayList()
             var url= Url_Volley.url_website +"/udemy/get_all_product.php"

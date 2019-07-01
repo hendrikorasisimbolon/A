@@ -110,6 +110,7 @@ class ProfileAct : AppCompatActivity() {
             Log.e("Banyak Cart", response.getString("banyak"))
             MTotalCart.total_cart = response.getInt("banyak")
             MTotalCart.total_harga = response.getInt("jumlah")
+            MTotalCart.total_berat = response.getInt("berat")
         }, com.android.volley.Response.ErrorListener { error ->
             Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
         })

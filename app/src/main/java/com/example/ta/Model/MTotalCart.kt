@@ -14,6 +14,7 @@ class MTotalCart{
     companion object{
         var total_cart:Int = 0
         var total_harga:Int = 0
+        var total_berat:Int = 0
     }
 }
 

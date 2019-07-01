@@ -71,9 +71,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_medium"
-                        android:text="Shop Adidas"
+                        android:text="Berat : "
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
                         android:textColor="@color/grey_10" />
+
 
                 <LinearLayout
                         android:layout_width="match_parent"
@@ -98,6 +99,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/spacing_medium"
                             android:layout_marginStart="@dimen/spacing_medium"
+                            android:id="@+id/txt_bnykrt"
                             android:text="381,380"
                             android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                             android:textColor="@color/grey_10" />

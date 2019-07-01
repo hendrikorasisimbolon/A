@@ -56,6 +56,7 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
         swipeRefreshLayout.isRefreshing = false
 
         swipeRefreshLayout.setOnRefreshListener {
+            list.clear()
             getProducts(list)
             getcart()
         }
@@ -65,7 +66,7 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
 //            2,
 //            StaggeredGridLayoutManager.VERTICAL
 //        )
-
+        list.clear()
         getProducts(list)
 
 //
@@ -140,7 +141,7 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
     private fun initToolbar() {
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
-        toolbar.getNavigationIcon()?.setColorFilter(resources.getColor(R.color.indigo_500), PorterDuff.Mode.SRC_ATOP)
+        toolbar.navigationIcon?.setColorFilter(resources.getColor(R.color.indigo_500), PorterDuff.Mode.SRC_ATOP)
         toolbar.setNavigationOnClickListener{
             var i = Intent(this,MainActivity::class.java)
             startActivity(i)
@@ -217,6 +218,7 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
             Log.e("Banyak Cart", response.getString("banyak"))
             MTotalCart.total_cart = response.getInt("banyak")
             MTotalCart.total_harga = response.getInt("jumlah")
+            MTotalCart.total_berat = response.getInt("berat")
         }, com.android.volley.Response.ErrorListener { error ->
             Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
         })

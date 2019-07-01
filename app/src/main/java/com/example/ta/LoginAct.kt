@@ -31,6 +31,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import java.text.NumberFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 
 public class LoginAct : AppCompatActivity() {
@@ -41,7 +42,6 @@ public class LoginAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         session = UserSessionManager(applicationContext)
-        MItemDetail.data = MItemDetail.getProducts(this)
 
 
         object : CountDownTimer(5000, 1000) {
@@ -89,7 +89,7 @@ public class LoginAct : AppCompatActivity() {
                                     val data = res.body()
                                     data?.map {
                                         session.createUserLoginSession(UserInfo(
-                                            it.id,it.name,it.username,passwdEditText.text.toString(),it.email,it.phone,it.nama_provinsi,it.nama_kota,it.address,it.umur,it.lahir,it.created_on
+                                            it.id,it.name,it.username,passwdEditText.text.toString(),it.email,it.phone,it.nama_provinsi,it.id_provinsi,it.nama_kota,it.id_kota,it.address,it.umur,it.lahir,it.created_on
                                         ))
                                         getcart(it.id.toString())
                                     }
@@ -102,6 +102,8 @@ public class LoginAct : AppCompatActivity() {
                         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(i)
+                        MItemDetail.data = ArrayList()
+                        MItemDetail.data = MItemDetail.getProducts(this)
                         finish()
                     }
 
@@ -109,6 +111,7 @@ public class LoginAct : AppCompatActivity() {
                     Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
                 })
                 rq.add(sr)
+
             }
 
         }
@@ -165,6 +168,7 @@ public class LoginAct : AppCompatActivity() {
             Log.e("Banyak Cart", response.getString("banyak"))
             MTotalCart.total_cart = response.getInt("banyak")
             MTotalCart.total_harga = response.getInt("jumlah")
+            MTotalCart.total_berat = response.getInt("berat")
         }, Response.ErrorListener { error ->
             Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
         })
