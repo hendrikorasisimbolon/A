@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -65,7 +66,9 @@ class CheckoutAct : AppCompatActivity() {
     companion object{
         var listEkspedisi : ArrayList<MService> = ArrayList()
         var eksp:String = ""
-        var service : Int = -1
+        var service:Int = -1
+        var harga_servicesblm : Int = 0
+        var hasil_service:String =""
     }
 
     @SuppressLint("SetTextI18n")
@@ -78,9 +81,6 @@ class CheckoutAct : AppCompatActivity() {
 
         user = session.userDetails
 
-
-
-        eksp = txt_ekspedisi.text.toString()
 
         var url = Url_Volley.url_website +"/udemy/get_cart.php?user_id="+user.id.toString()
         var rq: RequestQueue = Volley.newRequestQueue(this)
@@ -114,16 +114,15 @@ class CheckoutAct : AppCompatActivity() {
         txtalamat_cart.text =
             user.address + ", " + user.nama_kota + System.getProperty("line.separator") + user.nama_provinsi + System.getProperty("line.separator") + "(+62) "+ user.phone
 
-        txt_ekspedisi.setOnClickListener{ popUpExpedisi(txt_ekspedisi) }
-        if (txt_ekspedisi.tag == 1){
-            getCoast("278",user.id_kota,MTotalCart.total_berat.toString(),"pos")
+        getCoast("278",user.id_kota,MTotalCart.total_berat.toString(),"pos")
+        getCoast("278",user.id_kota,MTotalCart.total_berat.toString(),"tiki")
+        getCoast("278",user.id_kota,MTotalCart.total_berat.toString(),"jne")
+
+        btn_edit_prof.setOnClickListener {
+            var i = Intent(this,EditProfileAct::class.java)
+            startActivity(i)
         }
-        else if (txt_ekspedisi.tag == 2){
-            getCoast("278",user.id_kota,MTotalCart.total_berat.toString(),"tiki")
-        }
-        else if (txt_ekspedisi.tag == 3){
-            getCoast("278",user.id_kota,MTotalCart.total_berat.toString(),"jne")
-        }
+
         btn_service.setOnClickListener {
             var obj = ServiceFragment()
             var mann = this.fragmentManager
@@ -136,9 +135,7 @@ class CheckoutAct : AppCompatActivity() {
                                 "Harga Rp."+ listEkspedisi[service].tarif.toString()+ System.getProperty("line.separator")+ "Estimasi : "+
                                 listEkspedisi[service].estimasi+ " hari"
         }
-
-
-
+        listEkspedisi.clear()
     }
 
     override fun onStart() {
@@ -303,22 +300,11 @@ class CheckoutAct : AppCompatActivity() {
         )
         call.enqueue(object : Callback<ItemCost> {
             override fun onResponse(call: Call<ItemCost>, response: retrofit2.Response<ItemCost>) {
-
                 Log.v("wow", "json : " + Gson().toJson(response))
                 progressDialog?.dismiss()
-
                 if (response.isSuccessful) {
-
                     val statusCode = response.body()!!.rajaongkir!!.status!!.code
-
                     if (statusCode == 200) {
-                        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-                        val alertLayout = inflater.inflate(R.layout.custom_dialog_result, null)
-
-
-                        listEkspedisi = ArrayList()
-                        listEkspedisi.clear()
-
                         val a = response.body()!!.rajaongkir!!.results
                         if (a != null) {
                             for (i in 0..a.size-1){
