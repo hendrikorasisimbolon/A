@@ -125,7 +125,7 @@ class ProfileAct : AppCompatActivity() {
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
         toolbar.getNavigationIcon()?.setColorFilter(resources.getColor(R.color.indigo_500), PorterDuff.Mode.SRC_ATOP)
         toolbar.setNavigationOnClickListener{
-           onBackPressed()
+            startActivity(Intent(this,MainActivity::class.java))
         }
         toolbar.title = "Profile"
         setSupportActionBar(toolbar)

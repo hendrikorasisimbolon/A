@@ -64,7 +64,6 @@
                                 android:id="@+id/et_usrname"
                                 android:layout_height="match_parent"
                                 android:hint="Enter User Name"
-                                android:imeOptions="actionNext"
                                 android:textColorHint="@color/colorPrimary"/>
 
 
@@ -82,7 +81,7 @@
                                 android:id="@+id/et_name"
                                 android:layout_height="match_parent"
                                 android:hint="Enter Name"
-                                android:imeOptions="actionNext"
+
                                 android:textColorHint="@color/colorPrimary"/>
 
 
@@ -98,7 +97,7 @@
                                 android:id="@+id/et_email"
                                 android:layout_height="wrap_content"
                                 android:hint="Enter Email Address"
-                                android:imeOptions="actionNext"
+
                                 android:inputType="textEmailAddress"
                                 android:textColorHint="@color/colorPrimary" />
 
@@ -115,7 +114,7 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/et_oldpass"
                                 android:hint="Enter Old Password"
-                                android:imeOptions="actionNext"
+
                                 android:inputType="textPassword"
                                 android:textColorHint="@color/colorPrimary" />
 
@@ -131,7 +130,7 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/et_newpass"
                                 android:hint="Enter New Password"
-                                android:imeOptions="actionNext"
+
                                 android:inputType="textPassword"
                                 android:textColorHint="@color/colorPrimary" />
 
@@ -147,7 +146,7 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/et_phone"
                                 android:hint="Enter Phone"
-                                android:imeOptions="actionNext"
+
                                 android:inputType="phone"
                                 android:textColorHint="@color/colorPrimary" />
 
@@ -163,7 +162,7 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/et_address"
                                 android:hint="Enter Address"
-                                android:imeOptions="actionNext"
+
                                 android:inputType="text"
                                 android:textColorHint="@color/colorPrimary" />
 
@@ -180,7 +179,7 @@
                                 android:id="@+id/et_age"
                                 android:hint="Enter Date of Birth"
                                 android:onClick="clickDataPicker"
-                                android:imeOptions="actionNext"
+
                                 android:inputType="text"
                                 android:textColorHint="@color/colorPrimary" />
 
@@ -226,7 +225,7 @@
 
                     <Button
                             android:layout_width="200dp"
-                            android:text="Submit"
+                            android:text="Update"
                             android:layout_marginTop="30dp"
                             android:id="@+id/btn_save"
                             android:layout_marginBottom="20dp"

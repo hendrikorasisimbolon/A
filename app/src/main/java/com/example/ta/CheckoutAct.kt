@@ -15,7 +15,6 @@ import android.util.Log
 import android.view.*
 import android.widget.*
 import androidx.appcompat.widget.Toolbar
-import androidx.core.view.isInvisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -28,7 +27,8 @@ import com.example.ta.Adapter.CityAdapter
 import com.example.ta.Adapter.ExpedisiAdapter
 import com.example.ta.Api.ApiServiceRO
 import com.example.ta.Api.ApiUrl
-import com.example.ta.Fragment.ServiceFragment
+import com.example.ta.Fragment.DeliveryFragment
+import com.example.ta.Fragment.UpdateAddressFragment
 import com.example.ta.Model.*
 import com.example.ta.Model.cost.ItemCost
 import com.example.ta.Model.expedisi.ItemExpedisi
@@ -36,7 +36,6 @@ import com.example.ta.utils.Tools
 import com.example.ta.utils.UserSessionManager
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_checkout.*
-import kotlinx.android.synthetic.main.itemuntukcheckout.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Retrofit
@@ -119,12 +118,13 @@ class CheckoutAct : AppCompatActivity() {
         getCoast("278",user.id_kota,MTotalCart.total_berat.toString(),"jne")
 
         btn_edit_prof.setOnClickListener {
-            var i = Intent(this,EditProfileAct::class.java)
-            startActivity(i)
+            var obj = UpdateAddressFragment()
+            var mann = this.fragmentManager
+            obj.show(mann, "Srv")
         }
 
         btn_service.setOnClickListener {
-            var obj = ServiceFragment()
+            var obj = DeliveryFragment()
             var mann = this.fragmentManager
             obj.show(mann, "Srv")
         }
@@ -242,46 +242,6 @@ class CheckoutAct : AppCompatActivity() {
         }
     }
 
-    fun popUpExpedisi(etExpedisi: EditText) {
-
-        val inflater = getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-
-        val alertLayout = inflater.inflate(R.layout.custom_dialog_search, null)
-
-        alert = AlertDialog.Builder(this@CheckoutAct)
-        alert!!.setTitle("List Expedisi")
-        alert!!.setMessage("select your Expedisi")
-        alert!!.setView(alertLayout)
-        alert!!.setCancelable(true)
-
-        ad = alert!!.show()
-
-        searchList = alertLayout.findViewById(R.id.searchItem) as EditText
-        searchList!!.addTextChangedListener(MyTextWatcherCity(searchList!!))
-        searchList!!.filters = arrayOf<InputFilter>(InputFilter.AllCaps())
-
-        mListView = alertLayout.findViewById(R.id.listItem) as ListView
-
-        listItemExpedisi.clear()
-        adapter_expedisi = ExpedisiAdapter(this, listItemExpedisi)
-        mListView!!.isClickable = true
-
-        mListView!!.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
-            val o = mListView!!.getItemAtPosition(i)
-            val cn = o as ItemExpedisi
-
-            etExpedisi.error = null
-            etExpedisi.setText(cn.name)
-            etExpedisi.tag = cn.id
-
-            ad?.dismiss()
-
-        }
-
-        getExpedisi()
-
-    }
-
 
     fun getCoast(origin: String, destination: String, weight: String, courier: String) {
 
@@ -292,7 +252,7 @@ class CheckoutAct : AppCompatActivity() {
 
         val service = retrofit.create(ApiServiceRO::class.java)
         val call = service.getCost(
-            "28a1281c220ead530dfe7438d6e62146",
+            "4abd53cc25919616cfc9a21ae55168f1",
             origin,
             destination,
             weight,

@@ -73,23 +73,24 @@ class EditProfileAct : AppCompatActivity() {
 
         user = session.userDetails
 
-//        et_usrname.setText(user.username)
-//        et_name.setText(user.name)
-//        et_address.setText(user.address)
-//        et_email.setText(user.email)
-//        et_phone.setText(user.phone)
-//        et_age.setText(user.umur)
-//        etToProvince.setText(user.nama_provinsi)
-//        etToCity.setText(user.nama_kota)
-//        et_oldpass.setText(user.password)
-//        et_newpass.setText("xxx")
+        et_usrname.setText(user.username)
+        et_name.setText(user.name)
+        et_address.setText(user.address)
+        et_email.setText(user.email)
+        et_phone.setText(user.phone)
+        et_age.setText(user.lahir)
+        etToProvince.setText(user.nama_provinsi)
+        etToProvince.tag = user.id_provinsi
+        etToCity.setText(user.nama_kota)
+        etToCity.tag = user.id_kota
+        et_oldpass.setText(user.password)
 
-        etToProvince.setOnClickListener(View.OnClickListener { popUpProvince(etToProvince, etToCity) })
+        etToProvince.setOnClickListener({ popUpProvince(etToProvince, etToCity) })
 
         etToCity.setOnClickListener {
             try {
                 if (etToProvince.tag == "") {
-                    etToProvince.error = "Please chooise your to province"
+                    etToProvince.error = "Please chooise your province"
                 } else {
                     popUpCity(etToCity, etToProvince)
                 }
@@ -97,6 +98,86 @@ class EditProfileAct : AppCompatActivity() {
             } catch (e: NullPointerException) {
                 etToProvince.error = "Please chooise your to province"
             }
+        }
+
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        var lahir = year - yearU
+
+        btn_save.setOnClickListener{
+            var urll = url_website+"/udemy/update_user.php?id="+ user.id+
+                    "&name="+ et_name.text.toString() +"&username="+ et_usrname.text.toString() +"&email="+ et_email.text.toString()+
+                    "&password="+ et_newpass.text.toString() + "&phone="+ et_phone.text.toString() +"&address="+ et_address.text +
+                    "&lahir="+ et_age.text.toString() +"&provinsi="+ etToProvince.tag +"&kota="+ etToCity.tag
+            var rq: RequestQueue = Volley.newRequestQueue(this)
+            var sr = StringRequest(Request.Method.GET,urll,com.android.volley.Response.Listener { response ->
+                if(response == "sukses")
+                {
+                    if (user.password == et_oldpass.text.toString()) {
+                        var i = Intent(this, ProfileAct::class.java)
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or  Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                        startActivity(i)
+                        session.createUserLoginSession(
+                            UserInfo(
+                                user.id,
+                                et_usrname.text.toString(),
+                                et_name.text.toString(),
+                                et_newpass.text.toString(),
+                                et_email.text.toString(),
+                                et_phone.text.toString(),
+                                etToProvince.text.toString(),
+                                etToProvince.tag.toString(),
+                                etToCity.text.toString(),
+                                etToCity.tag.toString(),
+                                et_address.text.toString(),
+                                lahir.toString(),
+                                et_age.text.toString(),
+                                user.created_on
+                            )
+                        )
+                        Log.e("user",session.userDetails.password)
+
+                    }
+                    else{
+                        Toast.makeText(this,"Wrong Old Password!", Toast.LENGTH_LONG).show()
+                    }
+                }
+                else {
+                    var part: List<String> = response.split(" ")
+                    for (i in 0 .. part.size-1){
+                        if (part[i]=="-1")
+                        {
+                            RegisterAct.username_ = et_usrname.text.toString()
+                            Toast.makeText(this,"Username already used", Toast.LENGTH_LONG).show()
+                            et_usrname.validator()
+                                .addRule(UsernameValid())
+                                .addErrorCallback { et_usrname.error = it }
+                                .check()
+                        }
+                        if (part[i]=="-2"){
+                            RegisterAct.name_ = et_name.text.toString()
+                            Toast.makeText(this,"Name already used", Toast.LENGTH_LONG).show()
+                            et_name.validator()
+                                .addRule(NameValid())
+                                .addErrorCallback { et_name.error = it }
+                                .check()
+                        }
+                        if(part[i]=="-3"){
+                            RegisterAct.email_ = et_email.text.toString()
+                            Toast.makeText(this,"Email already used", Toast.LENGTH_LONG).show()
+                            et_email.validator()
+                                .addRule(EmailValid())
+                                .addErrorCallback { et_email.error =it }
+                                .check()
+                        }
+                    }
+                }
+            },com.android.volley.Response.ErrorListener { error ->
+                Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+                Log.e("wow", error.message)
+            })
+            rq.add(sr)
+            validasi()
         }
 
     }
@@ -118,13 +199,13 @@ class EditProfileAct : AppCompatActivity() {
 
         searchList = alertLayout.findViewById(R.id.searchItem) as EditText
         searchList!!.addTextChangedListener(MyTextWatcherProvince(searchList!!))
-        searchList!!.setFilters(arrayOf<InputFilter>(InputFilter.AllCaps()))
+        searchList!!.filters = arrayOf<InputFilter>(InputFilter.AllCaps())
 
         mListView = alertLayout.findViewById(R.id.listItem) as ListView
 
         ListProvince.clear()
         adapter_province = ProvinceAdapter(this@EditProfileAct, ListProvince)
-        mListView!!.setClickable(true)
+        mListView!!.isClickable = true
 
         mListView!!.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
             val o = mListView!!.getItemAtPosition(i)
@@ -144,85 +225,85 @@ class EditProfileAct : AppCompatActivity() {
         progressDialog!!.show()
 
         getProvince()
-        val calendar = Calendar.getInstance()
-        val year = calendar.get(Calendar.YEAR)
-        var lahir = year - yearU
-
-        btn_save.setOnClickListener{
-                var urll = url_website+"/udemy/update_user.php?id="+ user.id+
-                        "&name="+ et_name.text.toString() +"&username="+ et_usrname.text.toString() +"&email="+ et_email.text.toString()+
-                        "&password="+ et_newpass.text.toString() + "&phone="+ et_phone.text.toString() +"&address="+ et_address.text +
-                        "&lahir="+ et_age.text.toString() +"&provinsi="+ etProvince.tag +"&kota="+ etCity.tag
-                var rq: RequestQueue = Volley.newRequestQueue(this)
-                var sr = StringRequest(Request.Method.GET,urll,com.android.volley.Response.Listener { response ->
-                        if(response == "sukses")
-                        {
-                            if (user.password == et_oldpass.text.toString()) {
-                                var i = Intent(this, ProfileAct::class.java)
-                                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or  Intent.FLAG_ACTIVITY_NO_ANIMATION)
-                                startActivity(i)
-                                session.createUserLoginSession(
-                                    UserInfo(
-                                        user.id,
-                                        et_usrname.text.toString(),
-                                        et_name.text.toString(),
-                                        et_newpass.text.toString(),
-                                        et_email.text.toString(),
-                                        et_phone.text.toString(),
-                                        etProvince.text.toString(),
-                                        etProvince.tag.toString(),
-                                        etCity.text.toString(),
-                                        etCity.tag.toString(),
-                                        et_address.text.toString(),
-                                        lahir.toString(),
-                                        et_age.text.toString(),
-                                        user.created_on
-                                    )
-                                )
-                                Log.e("user",session.userDetails.password)
-
-                            }
-                            else{
-                                Toast.makeText(this,"Wrong Old Password!", Toast.LENGTH_LONG).show()
-                            }
-                        }
-                    else {
-                            var part: List<String> = response.split(" ")
-                            for (i in 0 .. part.size-1){
-                                if (part[i]=="-1")
-                                {
-                                    RegisterAct.username_ = et_usrname.text.toString()
-                                    Toast.makeText(this,"Username already used", Toast.LENGTH_LONG).show()
-                                    et_usrname.validator()
-                                        .addRule(UsernameValid())
-                                        .addErrorCallback { et_usrname.error = it }
-                                        .check()
-                                }
-                                if (part[i]=="-2"){
-                                    RegisterAct.name_ = et_name.text.toString()
-                                    Toast.makeText(this,"Name already used", Toast.LENGTH_LONG).show()
-                                    et_name.validator()
-                                        .addRule(NameValid())
-                                        .addErrorCallback { et_name.error = it }
-                                        .check()
-                                }
-                                if(part[i]=="-3"){
-                                    RegisterAct.email_ = et_email.text.toString()
-                                    Toast.makeText(this,"Email already used", Toast.LENGTH_LONG).show()
-                                    et_email.validator()
-                                        .addRule(EmailValid())
-                                        .addErrorCallback { et_email.error =it }
-                                        .check()
-                                }
-                            }
-                        }
-                },com.android.volley.Response.ErrorListener { error ->
-                    Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
-                    Log.e("wow", error.message)
-                })
-                rq.add(sr)
-                validasi()
-        }
+//        val calendar = Calendar.getInstance()
+//        val year = calendar.get(Calendar.YEAR)
+//        var lahir = year - yearU
+//
+//        btn_save.setOnClickListener{
+//                var urll = url_website+"/udemy/update_user.php?id="+ user.id+
+//                        "&name="+ et_name.text.toString() +"&username="+ et_usrname.text.toString() +"&email="+ et_email.text.toString()+
+//                        "&password="+ et_newpass.text.toString() + "&phone="+ et_phone.text.toString() +"&address="+ et_address.text +
+//                        "&lahir="+ et_age.text.toString() +"&provinsi="+ etProvince.tag +"&kota="+ etCity.tag
+//                var rq: RequestQueue = Volley.newRequestQueue(this)
+//                var sr = StringRequest(Request.Method.GET,urll,com.android.volley.Response.Listener { response ->
+//                        if(response == "sukses")
+//                        {
+//                            if (user.password == et_oldpass.text.toString()) {
+//                                var i = Intent(this, ProfileAct::class.java)
+//                                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or  Intent.FLAG_ACTIVITY_NO_ANIMATION)
+//                                startActivity(i)
+//                                session.createUserLoginSession(
+//                                    UserInfo(
+//                                        user.id,
+//                                        et_usrname.text.toString(),
+//                                        et_name.text.toString(),
+//                                        et_newpass.text.toString(),
+//                                        et_email.text.toString(),
+//                                        et_phone.text.toString(),
+//                                        etProvince.text.toString(),
+//                                        etProvince.tag.toString(),
+//                                        etCity.text.toString(),
+//                                        etCity.tag.toString(),
+//                                        et_address.text.toString(),
+//                                        lahir.toString(),
+//                                        et_age.text.toString(),
+//                                        user.created_on
+//                                    )
+//                                )
+//                                Log.e("user",session.userDetails.password)
+//
+//                            }
+//                            else{
+//                                Toast.makeText(this,"Wrong Old Password!", Toast.LENGTH_LONG).show()
+//                            }
+//                        }
+//                    else {
+//                            var part: List<String> = response.split(" ")
+//                            for (i in 0 .. part.size-1){
+//                                if (part[i]=="-1")
+//                                {
+//                                    RegisterAct.username_ = et_usrname.text.toString()
+//                                    Toast.makeText(this,"Username already used", Toast.LENGTH_LONG).show()
+//                                    et_usrname.validator()
+//                                        .addRule(UsernameValid())
+//                                        .addErrorCallback { et_usrname.error = it }
+//                                        .check()
+//                                }
+//                                if (part[i]=="-2"){
+//                                    RegisterAct.name_ = et_name.text.toString()
+//                                    Toast.makeText(this,"Name already used", Toast.LENGTH_LONG).show()
+//                                    et_name.validator()
+//                                        .addRule(NameValid())
+//                                        .addErrorCallback { et_name.error = it }
+//                                        .check()
+//                                }
+//                                if(part[i]=="-3"){
+//                                    RegisterAct.email_ = et_email.text.toString()
+//                                    Toast.makeText(this,"Email already used", Toast.LENGTH_LONG).show()
+//                                    et_email.validator()
+//                                        .addRule(EmailValid())
+//                                        .addErrorCallback { et_email.error =it }
+//                                        .check()
+//                                }
+//                            }
+//                        }
+//                },com.android.volley.Response.ErrorListener { error ->
+//                    Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+//                    Log.e("wow", error.message)
+//                })
+//                rq.add(sr)
+//                validasi()
+//        }
 
     }
     private inner class MyTextWatcherProvince(private val view: View) : TextWatcher {
@@ -237,7 +318,6 @@ class EditProfileAct : AppCompatActivity() {
             }
         }
     }
-
     private fun getProvince() {
 
         val retrofit = Retrofit.Builder()
@@ -266,7 +346,7 @@ class EditProfileAct : AppCompatActivity() {
                         )
 
                         ListProvince.add(itemProvince)
-                        mListView?.setAdapter(adapter_province)
+                        mListView?.adapter = adapter_province
                     }
 
                     adapter_province?.setList(ListProvince)
@@ -303,13 +383,13 @@ class EditProfileAct : AppCompatActivity() {
 
         searchList = alertLayout.findViewById(R.id.searchItem) as EditText
         searchList!!.addTextChangedListener(MyTextWatcherCity(searchList!!))
-        searchList!!.setFilters(arrayOf<InputFilter>(InputFilter.AllCaps()))
+        searchList!!.filters = arrayOf<InputFilter>(InputFilter.AllCaps())
 
         mListView = alertLayout.findViewById(R.id.listItem) as ListView
 
         ListCity.clear()
         adapter_city = CityAdapter(this@EditProfileAct, ListCity)
-        mListView!!.setClickable(true)
+        mListView!!.isClickable = true
 
         mListView!!.onItemClickListener = AdapterView.OnItemClickListener { adapterView, view, i, l ->
             val o = mListView!!.getItemAtPosition(i)
@@ -329,7 +409,6 @@ class EditProfileAct : AppCompatActivity() {
         getCity(etProvince.tag.toString())
 
     }
-
     private inner class MyTextWatcherCity(private val view: View) : TextWatcher {
 
         override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
@@ -343,7 +422,7 @@ class EditProfileAct : AppCompatActivity() {
         }
     }
 
-    public fun getCity(id_province: String) {
+    fun getCity(id_province: String) {
 
         val retrofit = Retrofit.Builder()
             .baseUrl(ApiUrl.URL_ROOT_HTTPS)
@@ -374,7 +453,7 @@ class EditProfileAct : AppCompatActivity() {
                         )
 
                         ListCity.add(itemProvince)
-                        mListView?.setAdapter(adapter_city)
+                        mListView?.adapter = adapter_city
                     }
 
                     adapter_city?.setList(ListCity)
@@ -396,13 +475,13 @@ class EditProfileAct : AppCompatActivity() {
     }
 
     private fun initToolbar() {
-        val toolbar = findViewById(R.id.toolbar) as Toolbar
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
-        toolbar.getNavigationIcon()?.setColorFilter(resources.getColor(R.color.indigo_500), PorterDuff.Mode.SRC_ATOP)
+        toolbar.navigationIcon?.setColorFilter(resources.getColor(R.color.indigo_500), PorterDuff.Mode.SRC_ATOP)
         toolbar.setNavigationOnClickListener {
             startActivity(Intent(this,ProfileAct::class.java))
         }
-        toolbar.title = ""
+        toolbar.title = "Edit Profile"
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         Tools.setSystemBarColor(this, R.color.white_transparency)
@@ -440,7 +519,7 @@ class EditProfileAct : AppCompatActivity() {
 
        et_usrname.validator()
            .nonEmpty()
-           .minLength(6)
+           .minLength(5)
            .addErrorCallback { et_usrname.error = it }
            .check()
 

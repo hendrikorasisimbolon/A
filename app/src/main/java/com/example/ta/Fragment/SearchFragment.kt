@@ -4,10 +4,10 @@ package com.example.ta.Fragment
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -42,14 +42,21 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
             Log.e("dataX", dat[i].judul_produk)
         }
         setHasOptionsMenu(true)
+        activity!!.setTitle("Search")
+        activity!!.toolbar.navigationIcon?.setColorFilter(resources.getColor(R.color.indigo_500), PorterDuff.Mode.SRC_ATOP)
+
         var r = v.findViewById(R.id.recycler) as RecyclerView
 //        tampung = MItemDetail.data
         var adp=SearchAdapter(activity!!,tampung,this)
         r.layoutManager= LinearLayoutManager(activity)
         r.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         r.adapter=adp
+//        activity!!.toolbar.setNavigationOnClickListener {
+//            activity!!.finish()
+//        }
         return v
     }
+
 
     override fun onNoteClick(position: Int) {
         var intent = Intent(activity, ProductDetailAct::class.java)
@@ -70,7 +77,7 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
         Tools.changeMenuIconColor(menu, resources.getColor(R.color.indigo_500))
         val searchItem = menu.findItem(R.id.action_search)
         val searchManager = activity!!.getSystemService(Context.SEARCH_SERVICE) as SearchManager
-
+        searchItem.expandActionView()
         if (searchItem != null) {
             searchView = searchItem!!.getActionView() as SearchView
             searchView!!.queryHint = "Cari"
@@ -94,15 +101,26 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
                         }
                     }
 //                    adapter?.setFilter(tampung)
+
+                    if (tampung.size == 0)
+                    {
+                        var nx = NotFoundFragment()
+                        activity!!.supportFragmentManager.beginTransaction()
+                            .replace(R.id.halaman, nx)
+                            .commit()
+                    }
+                    onStop()
                     return true
                 }
             }
             searchView!!.setOnQueryTextListener(queryTextListener)
+
         }
         else {
             tampung = ArrayList()
             adapter!!.notifyDataSetChanged()
         }
+
         super.onCreateOptionsMenu(menu, inflater)
     }
 

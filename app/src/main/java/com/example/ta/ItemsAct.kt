@@ -23,7 +23,7 @@ import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.ta.Adapter.ItemAdapter
-import com.example.ta.Fragment.ErrorFragment
+import com.example.ta.Fragment.NotFoundFragment
 import com.example.ta.Model.MCart
 import com.example.ta.Model.MItemDetail
 import com.example.ta.Model.MTotalCart
@@ -96,7 +96,7 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
         }
         else
         {
-            var frag = ErrorFragment()
+            var frag = NotFoundFragment()
             var FM: androidx.fragment.app.FragmentManager? = supportFragmentManager
             var FT: FragmentTransaction = FM!!.beginTransaction()
             FT.replace(R.id.halaman, frag)

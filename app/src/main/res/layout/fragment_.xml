@@ -6,7 +6,7 @@
               android:layout_gravity="center"
               android:background="@color/mdtp_white"
               android:padding="20dp"
-             tools:context=".Fragment.ServiceFragment">
+             tools:context=".Fragment.DeliveryFragment">
     <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
                                            android:layout_height="match_parent">
 

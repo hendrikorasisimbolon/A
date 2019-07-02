@@ -48,7 +48,8 @@ class ProductDetailAct : AppCompatActivity() {
             rt_barang.rating = response.getDouble("rating").toFloat()
             txt_bnykrt.text = response.getString("banyak")
         }, Response.ErrorListener { error ->
-            Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
+//            Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
+
         })
 
         rq.add(jor)

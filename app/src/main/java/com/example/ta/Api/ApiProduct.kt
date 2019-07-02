@@ -1,6 +1,7 @@
 package com.example.ta.Api
 
 import android.content.Context
+import com.example.ta.Model.Url_Volley.Companion.url_website
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -8,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
 public object ApiProduct{
-    val BASE_URL = "http://192.168.43.180/udemy/"
+    val BASE_URL = url_website+"/udemy/"
 
     private var retrofit:Retrofit?=null
 
