@@ -282,6 +282,7 @@
 
                     <com.balysv.materialripple.MaterialRippleLayout
                             style="@style/RippleStyleBlack"
+                            android:id="@+id/btn_rekomendasi"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 

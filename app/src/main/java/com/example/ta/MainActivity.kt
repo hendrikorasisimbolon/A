@@ -8,19 +8,15 @@ import com.smarteist.autoimageslider.SliderAnimations
 
 import android.annotation.SuppressLint
 import android.app.ProgressDialog
-import android.content.Context
 import android.content.Intent
 import android.graphics.PorterDuff
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.EditText
-import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -35,29 +31,18 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.example.ta.Adapter.CityAdapter
-import com.example.ta.Adapter.ExpedisiAdapter
-import com.example.ta.Api.ApiServiceRO
-import com.example.ta.Api.ApiUrl
 import com.example.ta.Model.*
 import com.example.ta.Model.MTotalCart.Companion.total_cart
 import com.example.ta.Model.Url_Volley.Companion.url_website
-import com.example.ta.Model.cost.ItemCost
-import com.example.ta.Model.expedisi.ItemExpedisi
 import com.example.ta.utils.Tools
 import com.example.ta.utils.UserSessionManager
 import com.google.android.material.navigation.NavigationView
-import com.google.gson.Gson
 import com.synnapps.carouselview.ViewListener
 import kotlinx.android.synthetic.main.action_bar_notifitcation_icon.*
 import kotlinx.android.synthetic.main.activity_dashboard_grid_fab.toolbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_order.*
 import kotlinx.android.synthetic.main.image_slider_layout_item.view.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -87,7 +72,8 @@ class MainActivity : AppCompatActivity() {
         getcart()
         initToolbar()
         initNavigationMenu()
-
+        MRatingBarang.list = MRatingBarang.getAllRating(this)
+        MRatingBarang.daftarRating = MRatingBarang.getAlgo(this)
 //        if (session.checkLogin())
 //           finish()
 
@@ -149,6 +135,10 @@ class MainActivity : AppCompatActivity() {
         }
         btn_all.setOnClickListener{
             var i = Intent(this,ProductAllAct::class.java)
+            startActivity(i)
+        }
+        btn_rekomendasi.setOnClickListener {
+            var i = Intent(this,RekomendasiAct::class.java)
             startActivity(i)
         }
 

@@ -21,7 +21,6 @@ class MItemDetail {
     var foto:String
     var foto_type:String
 
-
     constructor(
         id: Int,
         judul_produk: String,

@@ -50,7 +50,6 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
         initToolbar()
 
 
-
         swipeRefreshLayout.setColorSchemeColors(ContextCompat.getColor(this, R.color.colorPrimary))
 
         swipeRefreshLayout.isRefreshing = false
@@ -59,6 +58,7 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
             list.clear()
             getProducts(list)
             getcart()
+            swipeRefreshLayout.isRefreshing = false
         }
 
         // assign a layout manager to the recycler view
@@ -146,7 +146,7 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
             var i = Intent(this,MainActivity::class.java)
             startActivity(i)
         }
-        toolbar.title = "Profile"
+        toolbar.title = "Rekomendasi Pilihan"
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         Tools.setSystemBarColor(this, R.color.white_transparency)
@@ -204,6 +204,7 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
         getcart()
         super.onResume()
     }
+
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         getcart()
         super.onCreate(savedInstanceState, persistentState)
