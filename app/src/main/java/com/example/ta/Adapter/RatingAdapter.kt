@@ -38,6 +38,7 @@ public class RatingAdapter(var context:Context, var list:ArrayList<MRatingBarang
             list[p1].foto,
             list[p1].foto_type,
             list[p1].rating,
+            p1,
             this.monlistener
         )
 
@@ -51,14 +52,16 @@ public class RatingAdapter(var context:Context, var list:ArrayList<MRatingBarang
     class ItemHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView), View.OnClickListener {
         lateinit var monlistener: OnNoteListener
 
-        fun bind(id: Int, j: String, h: Double, dk: String, f: String, ft: String, r:Double ,monlistener: OnNoteListener)
+        fun bind(id: Int, j: String, h: Double, dk: String, f: String, ft: String, r:Double, ps:Int, monlistener: OnNoteListener)
         {
+
             this.monlistener = monlistener
             var locale = Locale("in", "ID")
             var formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(locale)
 
             itemView.product_name.text = j
             itemView.rt_barangRek.rating = r.toFloat()
+            itemView.urutan.text = (ps+1).toString()
 
 //            itemView.item_deskripsi.text = dk
             itemView.product_price.text = formatRupiah.format(h)

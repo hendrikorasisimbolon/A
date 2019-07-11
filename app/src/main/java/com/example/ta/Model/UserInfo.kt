@@ -25,8 +25,8 @@ import java.util.*
 
 data class UserInfo(
     val id: Int,
-    val username:String,
     val name:String,
+    val username:String,
     val password:String,
     val email:String,
     val phone:String,

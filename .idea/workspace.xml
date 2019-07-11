@@ -201,50 +201,10 @@
       <change beforePath="$PROJECT_DIR$/A/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/caches/build_file_checksums.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_multidex_multidex_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_multidex_multidex_2_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_multidex_multidex_instrumentation_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_multidex_multidex_instrumentation_2_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_esotericsoftware_kryo_4_0_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_esotericsoftware_kryo_4_0_1_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_esotericsoftware_minlog_1_3_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_esotericsoftware_minlog_1_3_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_esotericsoftware_reflectasm_1_11_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_esotericsoftware_reflectasm_1_11_3_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_github_bumptech_glide_glide_3_7_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_github_bumptech_glide_glide_3_7_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_github_pchmn_MaterialChipsInput_1_0_8_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_github_pchmn_MaterialChipsInput_1_0_8_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_google_android_gms_play_services_base_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_google_android_gms_play_services_base_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_google_android_gms_play_services_places_15_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_google_android_gms_play_services_places_15_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_google_code_gson_gson_2_7_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_google_code_gson_gson_2_7_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_hootsuite_android_nachos_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_hootsuite_android_nachos_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_jakewharton_butterknife_8_5_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_jakewharton_butterknife_8_5_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_squareup_okio_okio_1_14_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_squareup_okio_okio_1_14_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_squareup_retrofit2_converter_gson_2_3_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_squareup_retrofit2_converter_gson_2_3_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_squareup_retrofit2_converter_scalars_2_3_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_squareup_retrofit2_converter_scalars_2_3_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_4_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_4_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__io_reactivex_rxjava2_rxkotlin_2_2_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__io_reactivex_rxjava2_rxkotlin_2_2_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_jetbrains_annotations_13_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_jetbrains_annotations_13_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_3_31_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_3_31_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_31_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_31_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_31_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_31_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_31_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_31_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_ow2_asm_asm_5_0_4_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_ow2_asm_asm_5_0_4_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_reactivestreams_reactive_streams_1_0_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/libraries/Gradle__org_reactivestreams_reactive_streams_1_0_2_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/A/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Model/MItemDetail.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Model/MItemDetail.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Model/Url_Volley.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Model/Url_Volley.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/ProductAllAct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/ProductAllAct.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/res/layout/product_row_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/res/layout/product_row_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/A/A.iml" beforeDir="false" afterPath="$PROJECT_DIR$/A/A.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -278,7 +238,56 @@
     <favorites_list name="a" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/RekomendasiAct.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1802">
+              <caret line="136" column="53" selection-start-line="136" selection-start-column="53" selection-end-line="136" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/MainActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/LoginAct.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-340">
+              <caret line="97" selection-start-line="97" selection-end-line="97" />
+              <folding>
+                <element signature="e#2972#4487#1" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/utils/UserSessionManager.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-284">
+              <caret line="98" column="8" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/RatingAdapter.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -293,7 +302,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>total_Cart</find>
       <find>onNoteClick</find>
       <find>annotationProcessor</find>
       <find>arc</find>
@@ -323,6 +331,7 @@
       <find>f5</find>
       <find>android:imeOptions=&quot;actionNext&quot;</find>
       <find>MAlgo</find>
+      <find>.getJSONObject(x)</find>
     </findStrings>
     <replaceStrings>
       <replace>itemsSearchList</replace>
@@ -338,7 +347,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_error.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Fragment/ErrorFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/ProductCatAct.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_result_search.xml" />
@@ -352,9 +360,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MTotalCart.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/CheckoutAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/itemuntukcheckout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/UserInfo.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/utils/UserSessionManager.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/LoginAct.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MService.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/item_ekpedisi.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/expedisi/ItemExpedisi.kt" />
@@ -377,18 +382,22 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Fragment/SearchFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/EditProfileAct.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/Url_Volley.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MItemDetail.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_rekomendasi.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MAlgo.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MRatingBarang.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/product_row_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/ProductAllAct.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/RekomendasiAct.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/RatingAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/UserInfo.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/Url_Volley.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/utils/UserSessionManager.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MCart.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/MainActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/product_algo.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/RatingAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/LoginAct.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/RekomendasiAct.kt" />
       </list>
     </option>
   </component>
@@ -401,7 +410,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages ProjectPane="false" />
+      <flattenPackages ProjectPane="true" />
       <hideEmptyPackages ProjectPane="true" />
       <sortByType ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
@@ -413,6 +422,41 @@
             <path>
               <item name="a" type="b2602c69:ProjectViewProjectNode" />
               <item name="a" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="a" type="b2602c69:ProjectViewProjectNode" />
+              <item name="a" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="a" type="b2602c69:ProjectViewProjectNode" />
+              <item name="a" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="a" type="b2602c69:ProjectViewProjectNode" />
+              <item name="a" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="a" type="b2602c69:ProjectViewProjectNode" />
+              <item name="a" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="a" type="b2602c69:ProjectViewProjectNode" />
+              <item name="a" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ta" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -561,8 +605,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4975728" visible="true" weight="0.21028744" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4975728" visible="true" weight="0.21028744" />
       <window_info id="Structure" order="1" side_tool="true" />
       <window_info id="Captures" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="3" sideWeight="0.50242716" side_tool="true" weight="0.20726173" />
@@ -574,13 +619,13 @@
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.3289689" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4977307" weight="0.26350245" />
-      <window_info anchor="bottom" id="Logcat" order="3" sideWeight="0.4977307" weight="0.30114567" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.3289689" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3289689" />
+      <window_info anchor="bottom" id="Logcat" order="4" sideWeight="0.4977307" weight="0.44353518" />
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.3289689" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50226927" side_tool="true" weight="0.22258593" />
       <window_info anchor="bottom" id="Build" order="8" sideWeight="0.4977307" visible="true" weight="0.33387887" />
-      <window_info anchor="bottom" id="Android Profiler" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Android Profiler" order="9" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
@@ -617,22 +662,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_ekpedisi.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_qty.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MService.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_checkout.xml" />
-    <entry file="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4c8b8782bf3a67de15a981ce3b42b047/res/values/values.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22236">
-          <caret line="1308" column="17" selection-start-line="1308" selection-start-column="17" selection-end-line="1308" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ServiceAdapter.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/ApiServiceProduct.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/ApiServiceRO.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_edit_profile.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Fragment/DeliveryFragment.kt" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.0.2/e38e7c85994112b70d4548176128c72b8477c110/appcompat-1.0.2-sources.jar!/androidx/appcompat/app/AppCompatActivity.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -646,7 +675,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Fragment/UpdateAddressFragment.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/CheckoutAct.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/ApiProduct.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Fragment/QtyFragment.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Fragment/F5Fragment.kt" />
@@ -671,24 +699,146 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/Url_Volley.kt" />
-    <entry file="file://$PROJECT_DIR$/app/build.gradle" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MItemDetail.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/MainActivity.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ShoppingCart.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/ProductDetailAct.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_product_detail.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_row.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MRatingBarang.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/ProductAllAct.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/CartAdapter.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/cart_list_item.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ItemAdapter.kt" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/ResultSearchAct.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MAlgo.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/RatingAdapter.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/product_algo.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/product_row_item.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/RekomendasiAct.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_order.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/OrderAct.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/UserRepository.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/UserService.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MAlgo.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/CheckoutAct.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1239">
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MCart.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="e#30#390#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/Url_Volley.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/RegisterAct.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="45" column="6" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MRatingBarang.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="90" column="21" selection-start-line="59" selection-start-column="11" selection-end-line="90" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/utils/UserSessionManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-284">
+          <caret line="98" column="8" selection-start-line="98" selection-start-column="8" selection-end-line="98" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="82" column="24" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/product_algo.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="85" column="50" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/RatingAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/UserInfo.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/LoginAct.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+          <folding>
+            <element signature="e#2972#4487#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_cart_setting_search.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/RekomendasiAct.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1802">
+          <caret line="136" column="53" selection-start-line="136" selection-start-column="53" selection-end-line="136" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

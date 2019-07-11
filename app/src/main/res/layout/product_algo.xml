@@ -14,6 +14,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content"
+                  android:textSize="25sp"
+                  android:padding="10dp"
+                  android:id="@+id/urutan"
+                  android:text="1"
+                  android:layout_height="wrap_content"/>
 
         <ImageView
                 android:layout_width="120dp"
@@ -74,16 +80,20 @@
                             android:numStars="5"
                             android:rating="0"
                             android:stepSize="1"
-                            android:layout_marginRight="90dp"
+                            android:layout_weight="0"
                             android:theme="@style/Yellow.Small.AppCompatRatingBar.White" />
+                    <View android:layout_width="0dp"
+                          android:layout_weight="0.7"
+                          android:layout_height="0dp"/>
                     <ImageButton
                             android:id="@+id/addToCart"
                             android:paddingHorizontal="16dp"
                             android:tint="@android:color/white"
+                            android:layout_weight="0.7"
                             android:paddingVertical="4dp"
                             app:srcCompat="@drawable/ic_add_shopping"
                             android:background="#FF1744"
-                            android:layout_width="wrap_content"
+                            android:layout_width="10dp"
                             android:layout_height="wrap_content"
                             card_view:targetApi="o"/>
 

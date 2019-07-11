@@ -74,11 +74,13 @@ class MainActivity : AppCompatActivity() {
         initNavigationMenu()
         MRatingBarang.list = MRatingBarang.getAllRating(this)
         MRatingBarang.daftarRating = MRatingBarang.getAlgo(this)
-//        if (session.checkLogin())
-//           finish()
+
 
         session = UserSessionManager(applicationContext)
         user = session.userDetails
+
+
+        session.checkLogin()
 //        getcart()
 
 //        var url = url_website +"/udemy/get_total_cart.php?user_id="+MCart.user_id

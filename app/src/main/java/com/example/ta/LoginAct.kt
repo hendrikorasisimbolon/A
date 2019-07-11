@@ -1,6 +1,7 @@
 package com.example.ta
 
 import android.animation.Animator
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,18 +14,16 @@ import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.ta.Model.MCart
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.afterAnimationView
 import kotlinx.android.synthetic.main.activity_login.rootView
 import com.example.ta.Api.UserRepository
-import com.example.ta.Model.MItemDetail
-import com.example.ta.Model.MTotalCart
+import com.example.ta.Model.*
 import com.example.ta.Model.Url_Volley.Companion.url_website
-import com.example.ta.Model.UserInfo
 import com.example.ta.utils.UserSessionManager
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import retrofit2.Call
@@ -64,7 +63,6 @@ public class LoginAct : AppCompatActivity() {
             passwdEditText.validator()
                 .nonEmpty()
                 .minLength(6)
-//            .atleastOneUpperCase()
                 .addErrorCallback { passwdEditText.error = it }
                 .check()
 
@@ -72,45 +70,48 @@ public class LoginAct : AppCompatActivity() {
             {
                 var url = url_website + "/udemy/login.php?username=" + usrnameEditText.text.toString() + "&password=" + passwdEditText.text.toString()
                 var rq: RequestQueue = Volley.newRequestQueue(this)
-                var sr= StringRequest(Request.Method.GET,url, Response.Listener { response ->
-                    if (response.equals("0")){
-                        Toast.makeText(this,"Username and password is wrong", Toast.LENGTH_LONG).show()
+                var sr= JsonArrayRequest(Request.Method.GET,url, null, Response.Listener { response ->
+                    if (response.length()>0){
+                        for(x in 0..response.length()-1)
+                        {
+                            Log.e("MAS",response.getJSONObject(x).getString("name"))
+                            MCart.user_id =  response.getJSONObject(x).getInt("id").toString()
+                            session.createUserLoginSession(
+                                UserInfo(
+                                    response.getJSONObject(x).getInt("id"),
+                                    response.getJSONObject(x).getString("name"),
+                                    response.getJSONObject(x).getString("username"),
+                                    response.getJSONObject(x).getString("password"),
+                                    response.getJSONObject(x).getString("email"),
+                                    response.getJSONObject(x).getString("phone"),
+                                    response.getJSONObject(x).getString(("nama_provinsi")),
+                                    response.getJSONObject(x).getString("id_provinsi"),
+                                    response.getJSONObject(x).getString("nama_kota"),
+                                    response.getJSONObject(x).getString("id_kota"),
+                                    response.getJSONObject(x).getString("address"),
+                                    response.getJSONObject(x).getString("umur"),
+                                    response.getJSONObject(x).getString("lahir"),
+                                    response.getJSONObject(x).getInt("created_on"))
+                            )
+                        }
                     }
-                    else {
-                        MCart.user_id = response.toString()
-                        val userService = UserRepository.create()
-                        userService.getUser(response.toString()).enqueue(object: Callback<List<UserInfo>> {
-                            override fun onFailure(call: Call<List<UserInfo>>, t: Throwable) {
 
-                            }
-
-                            override fun onResponse(call: Call<List<UserInfo>>, res: retrofit2.Response<List<UserInfo>>) {
-                                if(res.isSuccessful) {
-                                    val data = res.body()
-                                    data?.map {
-                                        session.createUserLoginSession(UserInfo(
-                                            it.id,it.name,it.username,passwdEditText.text.toString(),it.email,it.phone,it.nama_provinsi,it.id_provinsi,it.nama_kota,it.id_kota,it.address,it.umur,it.lahir,it.created_on
-                                        ))
-                                        getcart(it.id.toString())
-                                    }
-                                }
-                            }
-
-                        })
-                        var i = Intent(this, MainActivity::class.java)
-//                    i.putExtra("id",response.toString())
-                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                        startActivity(i)
-                        MItemDetail.data = ArrayList()
-                        MItemDetail.data = MItemDetail.getProducts(this)
-                        finish()
-                    }
+                    getcart(MCart.user_id)
+                    var i = Intent(this, MainActivity::class.java)
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(i)
+                    MItemDetail.data = ArrayList()
+                    MItemDetail.data = MItemDetail.getProducts(this)
+                    finish()
 
                 }, Response.ErrorListener { error ->
-                    Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+//                    Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,"Username and password is wrong", Toast.LENGTH_LONG).show()
                 })
                 rq.add(sr)
+
+
 
             }
 
@@ -121,8 +122,8 @@ public class LoginAct : AppCompatActivity() {
         }
 
         Log.e("ID LOGIN", MCart.user_id)
-        if (session.checkLogin())
-            finish()
+//        if (session.checkLogin())
+//            finish()
 
     }
     private fun startAnimation() {
@@ -155,6 +156,8 @@ public class LoginAct : AppCompatActivity() {
     override fun onBackPressed() {
         // Simply Do noting!
     }
+
+
 
     fun getcart(cart:String)
     {

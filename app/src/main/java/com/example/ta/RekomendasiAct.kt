@@ -84,9 +84,19 @@ class RekomendasiAct : AppCompatActivity(),RatingAdapter.OnNoteListener {
         }
         li.addAll(asw.distinct())
         val so: List<MRatingBarang> = li.sortedWith(compareByDescending{it.rating})
-
         li.clear()
-        li.addAll(so)
+        if (so.count()>10)
+        {
+            for(i in 0..10)
+            {
+                li.add(so[i])
+            }
+        }
+        else
+        {
+            li.addAll(so)
+        }
+
         var adp= RatingAdapter(this, li,this)
         rt_rating.layoutManager= LinearLayoutManager(this) as RecyclerView.LayoutManager?
         rt_rating.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
@@ -116,7 +126,7 @@ class RekomendasiAct : AppCompatActivity(),RatingAdapter.OnNoteListener {
             var i = Intent(this,MainActivity::class.java)
             startActivity(i)
         }
-        toolbar.title = "Profile"
+        toolbar.title = "Rekomendasi"
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         Tools.setSystemBarColor(this, R.color.white_transparency)
@@ -124,7 +134,7 @@ class RekomendasiAct : AppCompatActivity(),RatingAdapter.OnNoteListener {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_cart_setting_search, menu)
+        menuInflater.inflate(R.menu.menu_cart_setting, menu)
         Tools.changeMenuIconColor(menu, resources.getColor(R.color.indigo_500))
         Tools.changeOverflowMenuIconColor(toolbar, resources.getColor(R.color.indigo_500))
         val menuItem: MenuItem = menu.findItem(R.id.aksi_cart)
