@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context=".KonfirmasiPesananAct">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarSize"
+            android:background="@color/transparent"
+            android:theme="@style/ThemeOverlay.AppCompat.Light" tools:ignore="MissingConstraints">
+
+        <include layout="@layout/toolbar"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout android:layout_width="wrap_content"
+                  android:layout_marginTop="30dp"
+                  android:layout_gravity="center"
+                  android:orientation="vertical"
+                  android:layout_height="wrap_content">
+        <ImageView android:layout_width="150dp"
+                   app:srcCompat="@drawable/ic_done"
+                   android:background="@drawable/bulat_abu"
+                   android:layout_height="150dp"/>
+
+    </LinearLayout>
+    <TextView android:layout_width="300dp"
+              android:textSize="24sp"
+              android:textAlignment="center"
+              android:layout_marginTop="@dimen/spacing_large"
+              android:layout_gravity="center"
+              android:text="Pesanan Anda sedang kami proses"
+              android:layout_height="wrap_content"/>
+
+    <Button android:layout_width="wrap_content"
+            android:text="Riwayat Pesanan"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:textColor="@color/white_transparency"
+            android:background="@drawable/btn_purple_a400"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"/>
+
+</LinearLayout>
