@@ -27,7 +27,7 @@ import com.example.ta.Model.MCart
 import com.example.ta.Model.MRatingBarang
 import com.example.ta.Model.MTotalCart
 import com.example.ta.Model.Url_Volley
-import com.example.ta.utils.Tools
+import com.example.ta.utilss.Tools
 import kotlinx.android.synthetic.main.action_bar_notifitcation_icon.*
 import kotlinx.android.synthetic.main.activity_rekomendasi.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -62,11 +62,10 @@ class RekomendasiAct : AppCompatActivity(),RatingAdapter.OnNoteListener {
 
 
     fun getProducts(li: ArrayList<MRatingBarang> ) {
+        MRatingBarang.daftarRating = MRatingBarang.getAlgo(this)
         var wqe = MRatingBarang.daftarRating.sortedBy { it.rating }
         var wqa = MRatingBarang.list
         var asw  = MRatingBarang.list
-
-
         for (i in 0..wqa.count()-1)
         {
             for(j in 0..wqe.count()-1)

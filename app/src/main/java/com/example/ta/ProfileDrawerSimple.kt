@@ -3,7 +3,6 @@ package com.example.ta
 import android.os.Bundle
 import com.google.android.material.navigation.NavigationView
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -12,8 +11,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import com.example.ta.utils.Tools
-import kotlinx.android.synthetic.main.activity_profile_drawer_simple.*
+import com.example.ta.utilss.Tools
 
 public class ProfileDrawerSimple : AppCompatActivity() {
     private var actionBar: ActionBar? = null

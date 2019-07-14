@@ -67,18 +67,42 @@ class RegisterAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        etToProvince.setOnClickListener(View.OnClickListener { popUpProvince(etToProvince, etToCity) })
+        etToProvince.setOnFocusChangeListener { v, hasFocus ->
+            if(hasFocus){
+                (View.OnClickListener { popUpProvince(etToProvince, etToCity) })
+            }
+        }
 
-        etToCity.setOnClickListener {
-            try {
-                if (etToProvince.tag == "") {
+        etToCity.setOnFocusChangeListener { v, hasFocus ->
+            if(hasFocus){
+                try {
+                    if (etToProvince.tag == "") {
+                        etToProvince.error = "Please chooice your to province"
+                    } else {
+                        popUpCity(etToCity, etToProvince)
+                    }
+
+                } catch (e: NullPointerException) {
                     etToProvince.error = "Please chooice your to province"
-                } else {
-                    popUpCity(etToCity, etToProvince)
                 }
+            }
 
-            } catch (e: NullPointerException) {
-                etToProvince.error = "Please chooice your to province"
+        }
+        umurEditText.setOnFocusChangeListener { v, hasFocus ->
+            if(hasFocus)
+            {
+                val c = Calendar.getInstance()
+                val year = c.get(Calendar.YEAR)
+                val month = c.get(Calendar.MONTH)
+                val day = c.get(Calendar.DAY_OF_MONTH)
+
+                val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                    // Display Selected date in Toast
+                    Toast.makeText(this, """$dayOfMonth - ${monthOfYear + 1} - $year""", Toast.LENGTH_LONG).show()
+                    lahir = year.toString()+"/"+ (monthOfYear+1).toString()+"/"+(dayOfMonth).toString()
+                    umurEditText.setText(lahir)
+                }, year, month, day)
+                dpd.show()
             }
         }
 
@@ -364,21 +388,10 @@ class RegisterAct : AppCompatActivity() {
         })
 
     }
-
-    fun clickDataPicker(view: View) {
-        val c = Calendar.getInstance()
-        val year = c.get(Calendar.YEAR)
-        val month = c.get(Calendar.MONTH)
-        val day = c.get(Calendar.DAY_OF_MONTH)
-
-        val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-            // Display Selected date in Toast
-            Toast.makeText(this, """$dayOfMonth - ${monthOfYear + 1} - $year""", Toast.LENGTH_LONG).show()
-            lahir = year.toString()+"/"+ (monthOfYear+1).toString()+"/"+(dayOfMonth).toString()
-            umurEditText.setText(lahir)
-        }, year, month, day)
-        dpd.show()
-    }
+//
+//    fun clickDataPicker(view: View) {
+//
+//    }
 
     private fun validasi()
     {

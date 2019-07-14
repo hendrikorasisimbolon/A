@@ -24,8 +24,8 @@ import com.example.ta.Model.MKeranjang
 import com.example.ta.Model.MTotalCart
 import com.example.ta.Model.Url_Volley.Companion.url_website
 import com.example.ta.Model.UserInfo
-import com.example.ta.utils.Tools
-import com.example.ta.utils.UserSessionManager
+import com.example.ta.utilss.Tools
+import com.example.ta.utilss.UserSessionManager
 import kotlinx.android.synthetic.main.activity_order.*
 import java.text.NumberFormat
 import java.util.*
@@ -160,6 +160,7 @@ class OrderAct : AppCompatActivity() {
         } else {
             Toast.makeText(applicationContext, item.title, Toast.LENGTH_SHORT).show()
         }
+
         return super.onOptionsItemSelected(item)
     }
 

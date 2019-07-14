@@ -1,11 +1,13 @@
 package com.example.ta
 
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -16,6 +18,7 @@ import com.example.ta.Adapter.OnItemClickListener
 import com.example.ta.Adapter.addOnItemClickListener
 import com.example.ta.Model.MBlog
 import com.example.ta.Model.Url_Volley.Companion.url_website
+import com.example.ta.utilss.Tools
 
 import kotlinx.android.synthetic.main.activity_blog.*
 import kotlinx.android.synthetic.main.activity_dashboard_grid_fab.*
@@ -28,7 +31,7 @@ class BlogAct : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_blog)
-        setSupportActionBar(toolbar)
+        initToolbar()
 
         var url = url_website + "/udemy/get_blog.php"
         var rq: RequestQueue = Volley.newRequestQueue(this)
@@ -76,6 +79,20 @@ class BlogAct : AppCompatActivity() {
         })
 
 
+    }
+
+    private fun initToolbar() {
+        val toolbar = findViewById(R.id.toolbar) as Toolbar
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
+        toolbar.navigationIcon?.setColorFilter(resources.getColor(R.color.indigo_500), PorterDuff.Mode.SRC_ATOP)
+        toolbar.setNavigationOnClickListener{
+            onBackPressed()
+        }
+        toolbar.title = "Blog"
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        Tools.setSystemBarColor(this, R.color.white_transparency)
+        Tools.setSystemBarLight(this)
     }
 
 }

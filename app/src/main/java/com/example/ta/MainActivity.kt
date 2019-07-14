@@ -34,8 +34,8 @@ import com.android.volley.toolbox.Volley
 import com.example.ta.Model.*
 import com.example.ta.Model.MTotalCart.Companion.total_cart
 import com.example.ta.Model.Url_Volley.Companion.url_website
-import com.example.ta.utils.Tools
-import com.example.ta.utils.UserSessionManager
+import com.example.ta.utilss.Tools
+import com.example.ta.utilss.UserSessionManager
 import com.google.android.material.navigation.NavigationView
 import com.synnapps.carouselview.ViewListener
 import kotlinx.android.synthetic.main.action_bar_notifitcation_icon.*

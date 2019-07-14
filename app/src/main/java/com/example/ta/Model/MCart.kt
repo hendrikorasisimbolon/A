@@ -13,6 +13,7 @@ class MCart
     companion object {
         var user_id:String = ""
         var itemId:Int = 0
+        var password:String=""
         var judul:String=""
         var harga:Int =0
         var qty:Int = 0

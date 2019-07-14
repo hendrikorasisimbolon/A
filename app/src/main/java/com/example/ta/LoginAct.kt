@@ -1,7 +1,6 @@
 package com.example.ta
 
 import android.animation.Animator
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,18 +15,14 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.afterAnimationView
 import kotlinx.android.synthetic.main.activity_login.rootView
-import com.example.ta.Api.UserRepository
 import com.example.ta.Model.*
 import com.example.ta.Model.Url_Volley.Companion.url_website
-import com.example.ta.utils.UserSessionManager
+import com.example.ta.utilss.UserSessionManager
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
-import retrofit2.Call
-import retrofit2.Callback
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -91,12 +86,15 @@ public class LoginAct : AppCompatActivity() {
                                     response.getJSONObject(x).getString("address"),
                                     response.getJSONObject(x).getString("umur"),
                                     response.getJSONObject(x).getString("lahir"),
+                                    response.getJSONObject(x).getString("photo"),
+                                    response.getJSONObject(x).getString("photo_type"),
                                     response.getJSONObject(x).getInt("created_on"))
                             )
                         }
                     }
 
                     getcart(MCart.user_id)
+                    MCart.password = passwdEditText.text.toString()
                     var i = Intent(this, MainActivity::class.java)
                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -106,6 +104,7 @@ public class LoginAct : AppCompatActivity() {
                     finish()
 
                 }, Response.ErrorListener { error ->
+                    Log.e("ErrorBawaan",error.message)
 //                    Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
                     Toast.makeText(this,"Username and password is wrong", Toast.LENGTH_LONG).show()
                 })
@@ -122,8 +121,7 @@ public class LoginAct : AppCompatActivity() {
         }
 
         Log.e("ID LOGIN", MCart.user_id)
-//        if (session.checkLogin())
-//            finish()
+//        session.checkLogin()
 
     }
     private fun startAnimation() {

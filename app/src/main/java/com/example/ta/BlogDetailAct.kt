@@ -2,13 +2,7 @@ package com.example.ta
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.text.HtmlCompat
-import androidx.appcompat.widget.Toolbar
-import android.text.Html
-import android.text.Spanned
-import android.view.View
 import com.example.ta.Model.Url_Volley.Companion.url_website
-import com.example.ta.utils.Tools
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_blog_detail.*
 import kotlinx.android.synthetic.main.activity_blog_detail.view.*

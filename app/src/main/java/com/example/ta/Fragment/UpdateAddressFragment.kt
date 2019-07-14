@@ -3,7 +3,6 @@ package com.example.ta.Fragment
 
 import android.app.DialogFragment
 import android.app.ProgressDialog
-import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -30,7 +29,7 @@ import com.example.ta.Model.kota.ItemCity
 import com.example.ta.Model.provinsi.ItemProvince
 import com.example.ta.Model.provinsi.Result
 import com.example.ta.R
-import com.example.ta.utils.UserSessionManager
+import com.example.ta.utilss.UserSessionManager
 import com.google.android.material.textfield.TextInputEditText
 import com.google.gson.Gson
 import retrofit2.Call
@@ -106,6 +105,8 @@ class UpdateAddressFragment : DialogFragment() {
                             address.text.toString(),
                             user.umur,
                             user.lahir,
+                            user.photo,
+                            user.photo_type,
                             user.created_on
                         )
                     )

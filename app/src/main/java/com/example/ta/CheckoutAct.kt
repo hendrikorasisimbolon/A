@@ -3,13 +3,11 @@ package com.example.ta
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.ProgressDialog
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.text.Editable
-import android.text.InputFilter
 import android.text.TextWatcher
 import android.util.Log
 import android.view.*
@@ -32,8 +30,8 @@ import com.example.ta.Fragment.UpdateAddressFragment
 import com.example.ta.Model.*
 import com.example.ta.Model.cost.ItemCost
 import com.example.ta.Model.expedisi.ItemExpedisi
-import com.example.ta.utils.Tools
-import com.example.ta.utils.UserSessionManager
+import com.example.ta.utilss.Tools
+import com.example.ta.utilss.UserSessionManager
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_checkout.*
 import retrofit2.Call
@@ -59,7 +57,9 @@ class CheckoutAct : AppCompatActivity() {
     private var progressDialog: ProgressDialog? = null
     private var mListView: ListView? = null
     private var adapter_city: CityAdapter? = null
-    private var searchList: EditText? = null
+    var serv:String = ""
+    var kurir:String = ""
+    var ongkir:String = ""
 
 
     companion object{
@@ -134,6 +134,9 @@ class CheckoutAct : AppCompatActivity() {
             hasil_service.text = listEkspedisi[service].kode+ " "+ listEkspedisi[service].service + System.getProperty("line.separator")+
                                 "Harga Rp."+ listEkspedisi[service].tarif.toString()+ System.getProperty("line.separator")+ "Estimasi : "+
                                 listEkspedisi[service].estimasi+ " hari"
+            serv = listEkspedisi[service].service
+            ongkir = listEkspedisi[service].tarif.toString()
+            kurir  = listEkspedisi[service].kode
         }
         listEkspedisi.clear()
     }
@@ -205,7 +208,26 @@ class CheckoutAct : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             finish()
-        } else {
+        }
+        if(item.itemId == R.id.action_done){
+            if (list.count()>0 && serv!="" && kurir!="" && ongkir !=""){
+                var intent = Intent(this, KonfirmasiPesananAct::class.java)
+                intent.putExtra("service", serv)
+                intent.putExtra("kurir", kurir)
+                intent.putExtra("ongkir", ongkir)
+
+                startActivity(intent)
+            }
+            else if(serv=="" && kurir=="" && ongkir==""){
+                Toast.makeText(this,"Pilih Shipping!", Toast.LENGTH_LONG).show()
+            }
+            else
+            {
+                Toast.makeText(this,"Keranjang Anda kosong", Toast.LENGTH_LONG).show()
+            }
+
+        }
+        else {
             Toast.makeText(applicationContext, item.title, Toast.LENGTH_SHORT).show()
         }
         return super.onOptionsItemSelected(item)

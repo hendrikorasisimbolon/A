@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".EditProfileAct">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -178,8 +179,6 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/et_age"
                                 android:hint="Enter Date of Birth"
-                                android:onClick="clickDataPicker"
-
                                 android:inputType="text"
                                 android:textColorHint="@color/colorPrimary" />
 
@@ -239,28 +238,34 @@
 
             <LinearLayout
                     android:layout_width="match_parent"
-                    android:paddingTop="@dimen/actionBarSize"
+                    android:paddingTop="10dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/spacing_mlarge"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                 <com.mikhaellopez.circularimageview.CircularImageView
                         android:id="@+id/image"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_gravity="center"
-                        app:srcCompat="@drawable/ic_person_grey"
+                        app:srcCompat="@drawable/add_profile_avatar"
                         app:civ_border="true"
                         app:civ_shadow="true"
                         app:civ_shadow_radius="0"
-                        app:civ_border_color="@color/purple_500"
+                        app:civ_border_color="@color/blue_300"
                         app:civ_border_width="2dp"/>
 
+                <Button android:layout_width="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_small"
+                        android:padding="10dp"
+                        android:id="@+id/btnUpload"
+                        android:background="@drawable/btn_rect_primary"
+                        android:textColor="@color/mdtp_white"
+                        android:text="Upload Photo"
+                        android:layout_height="40dp"/>
             </LinearLayout>
-
 
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

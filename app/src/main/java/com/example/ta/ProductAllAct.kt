@@ -27,7 +27,7 @@ import com.example.ta.Model.MCart
 import com.example.ta.Model.MItemDetail
 import com.example.ta.Model.MTotalCart
 import com.example.ta.Model.Url_Volley.Companion.url_website
-import com.example.ta.utils.Tools
+import com.example.ta.utilss.Tools
 import kotlinx.android.synthetic.main.action_bar_notifitcation_icon.*
 import kotlinx.android.synthetic.main.activity_items.swipeRefreshLayout
 import kotlinx.android.synthetic.main.activity_product_all.*

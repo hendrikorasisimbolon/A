@@ -1,22 +1,16 @@
 package com.example.ta.Model
 
-import android.R
 import android.content.Context
 import android.util.Log
-import android.view.View
-import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
-import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.ta.Model.MTotalCart.Companion.total_cart
 
-import com.example.ta.utils.UserSessionManager
 import io.paperdb.Paper
-import kotlinx.android.synthetic.main.activity_order.*
 
 class ShoppingCart {
 

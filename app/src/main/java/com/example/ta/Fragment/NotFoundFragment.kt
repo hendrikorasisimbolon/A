@@ -4,7 +4,6 @@ package com.example.ta.Fragment
 import android.app.SearchManager
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.appcompat.widget.SearchView
@@ -12,7 +11,7 @@ import com.example.ta.Adapter.SearchAdapter
 import com.example.ta.Model.MItemDetail
 
 import com.example.ta.R
-import com.example.ta.utils.Tools
+import com.example.ta.utilss.Tools
 
 class NotFoundFragment : Fragment() {
 

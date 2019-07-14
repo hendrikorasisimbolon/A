@@ -1,9 +1,12 @@
 package com.example.ta
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.android.volley.Request
@@ -14,8 +17,9 @@ import com.android.volley.toolbox.Volley
 import com.example.ta.Fragment.QtyFragment
 import com.example.ta.Model.MCart
 import com.example.ta.Model.Url_Volley.Companion.url_website
-import com.example.ta.utils.Tools
-import com.example.ta.utils.ViewAnimation
+import com.example.ta.utilss.Tools
+import com.example.ta.utilss.ViewAnimation
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_product_detail.*
@@ -28,6 +32,7 @@ class ProductDetailAct : AppCompatActivity() {
     var id : Int = 0
 
 
+    @RequiresApi(Build.VERSION_CODES.N)
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +53,7 @@ class ProductDetailAct : AppCompatActivity() {
             rt_barang.rating = response.getDouble("rating").toFloat()
             txt_bnykrt.text = response.getString("banyak")
         }, Response.ErrorListener { error ->
-//            Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
+            Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
 
         })
 
@@ -63,7 +68,7 @@ class ProductDetailAct : AppCompatActivity() {
         txt_judul_produk.text = judul
         price.text = formatRupiah.format(harga)
         text_kat.text = "Berat : "+ "%.0f".format(berat) + "gram"
-        text_des.text = deskripsi
+        text_des.text = Html.fromHtml(deskripsi, Html.FROM_HTML_MODE_COMPACT)
 
         initToolbar()
         initComponent()

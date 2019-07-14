@@ -120,7 +120,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:hint="YYYY/mm/dd"
-                        android:onClick="clickDataPicker"
                         android:inputType="numberDecimal"
                         android:textColor="@color/colorTextView"
                         android:textColorHint="@color/colorAccent"

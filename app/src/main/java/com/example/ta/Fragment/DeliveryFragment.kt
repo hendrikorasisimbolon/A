@@ -12,8 +12,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewGroup.LayoutParams.FILL_PARENT
-import android.view.Window
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ta.Adapter.ServiceAdapter
@@ -21,7 +19,7 @@ import com.example.ta.CheckoutAct
 import com.example.ta.Model.MTotalCart
 import com.example.ta.Model.UserInfo
 import com.example.ta.R
-import com.example.ta.utils.UserSessionManager
+import com.example.ta.utilss.UserSessionManager
 import kotlinx.android.synthetic.main.item_ekpedisi.*
 
 

@@ -1,11 +1,16 @@
 package com.example.ta.Adapter
 
+import android.annotation.TargetApi
 import android.content.Context
+import android.os.Build
+import android.text.Html
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import com.example.ta.Model.MBlog
+import com.example.ta.Model.Url_Volley
 import com.example.ta.R
 import com.squareup.picasso.Picasso
 
@@ -45,11 +50,13 @@ public class BlogAdapter(var context: Context, var list:ArrayList<MBlog>) :
 //        lateinit var monlistener: OnNoteListener
 
 //        fun bind(id:Int, j:String, i:String, c: String, m:String, f:String, ft:String,monlistener: OnNoteListener) {
-        fun bind(id:Int, j:String, i:String, c: String, m:String, f:String, ft:String) {
+@TargetApi(Build.VERSION_CODES.N)
+@RequiresApi(Build.VERSION_CODES.N)
+fun bind(id:Int, j:String, i:String, c: String, m:String, f:String, ft:String) {
 //            this.monlistener = monlistener
             itemView.name.text = j
-            itemView.description.text = i
-            Picasso.with(itemView.context).load("http://192.168.43.180/ecommerce/assets/images/blog/"+f+ft)
+            itemView.description.text = Html.fromHtml(i,Html.FROM_HTML_MODE_COMPACT)
+            Picasso.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/blog/"+f+ft)
                 .into(itemView.image)
         }
 

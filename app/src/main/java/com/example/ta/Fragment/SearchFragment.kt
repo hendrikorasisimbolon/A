@@ -17,7 +17,7 @@ import com.example.ta.Adapter.SearchAdapter
 import com.example.ta.Model.MItemDetail
 import com.example.ta.ProductDetailAct
 import com.example.ta.R
-import com.example.ta.utils.Tools
+import com.example.ta.utilss.Tools
 import kotlinx.android.synthetic.main.toolbar.*
 
 

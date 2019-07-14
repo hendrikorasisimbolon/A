@@ -4,7 +4,6 @@ import android.content.Intent
 import android.graphics.PorterDuff
 import android.os.Bundle
 import android.os.Handler
-import android.os.PersistableBundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -17,20 +16,22 @@ import androidx.core.view.MenuItemCompat
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.ta.Fragment.F5Fragment
 import com.example.ta.Model.MCart
 import com.example.ta.Model.MTotalCart
 import com.example.ta.Model.MTotalCart.Companion.total_cart
+import com.example.ta.Model.Url_Volley
 import com.example.ta.Model.Url_Volley.Companion.url_website
 import com.example.ta.Model.UserInfo
-import com.example.ta.utils.Tools
-import com.example.ta.utils.UserSessionManager
+import com.example.ta.utilss.Tools
+import com.example.ta.utilss.UserSessionManager
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.action_bar_notifitcation_icon.*
 import kotlinx.android.synthetic.main.activity_order.*
 import kotlinx.android.synthetic.main.activity_profile.*
-import kotlinx.android.synthetic.main.toolbar.*
 import kotlinx.android.synthetic.main.toolbar.toolbar
 import java.text.NumberFormat
 import java.util.*
@@ -50,37 +51,56 @@ class ProfileAct : AppCompatActivity() {
         setContentView(R.layout.activity_profile)
         session = UserSessionManager(applicationContext)
         initToolbar()
+        getDetailUser()
+        refres.isRefreshing = false
 
-        user = session.userDetails
-        name_title.text = user.name.capitalize()
-        nama_user.text = user.name.capitalize()
-        email_user.text = user.email
-        phone_user.text = "+62" + user.phone
-        location_user.text = user.nama_kota + ", " +user.nama_provinsi
-//        var date = Date(user.created_on.toLong()*1000L)
-//        var df = SimpleDateFormat("yyyy-MM-dd HH:mm:ss z")
-//        created_user.text = df.format(date)
-        txt_lahir.text = user.lahir
-        txt_age.text = user.umur
-
-        address_user.text = user.address
+        refres.setOnRefreshListener {
+            getImg()
+            var obj = F5Fragment() // fragment
+            var mana = (this).fragmentManager
+            obj.show(mana,"Rfs")
+            refres.isRefreshing = false
+        }
 
         edit_user.setOnClickListener{
             var i = Intent(this,EditProfileAct::class.java)
             startActivity(i)
         }
 
-//        var url = url_website+"/udemy/get_total_cart.php?user_id="+ MCart.user_id
-//        var rq: RequestQueue = Volley.newRequestQueue(this)
-//        var jor = JsonObjectRequest(Request.Method.GET,url,null, Response.Listener { response ->
-//            //            cart_size.text = response.getInt("banyak").toString()
-//            Log.e("Banyak Cart", response.getString("banyak"))
-//            total_cart = response.getInt("banyak")
-//        }, Response.ErrorListener { error ->
-//            Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
-//        })
-//        rq.add(jor)
+        if(user.photo!="null")
+        {
+            getImg()
+        }
 
+    }
+
+    fun getImg() {
+        var url = Url_Volley.url_website + "/udemy/get_images.php?id=" + user.id.toString()
+        var rq: RequestQueue = Volley.newRequestQueue(this)
+        var jar = JsonArrayRequest(Request.Method.GET, url, null, Response.Listener { response ->
+            Log.e("inifoto",response.getJSONObject(0).getString("photo"))
+            Picasso.with(this).load( url_website+"/ecommerce/assets/images/user/"+response.getJSONObject(0).getString("photo")+response.getJSONObject(0).getString("photo_type"))
+                .into(this.img_cir)
+
+        }, Response.ErrorListener { error ->
+            Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
+            Log.e("inifoto",error.message)
+
+        })
+        rq.add(jar)
+    }
+
+    fun getDetailUser()
+    {
+        user = session.userDetails
+        name_title.text = user.name.capitalize()
+        nama_user.text = user.name.capitalize()
+        email_user.text = user.email
+        phone_user.text = "+62" + user.phone
+        location_user.text = user.nama_kota + ", " +user.nama_provinsi
+        txt_lahir.text = user.lahir
+        txt_age.text = user.umur
+        address_user.text = user.address
     }
 
     override fun onStart() {

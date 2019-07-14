@@ -1,5 +1,6 @@
 package com.example.ta.Model
 
+import android.provider.ContactsContract
 import java.util.*
 
 //class UserInfo {
@@ -37,4 +38,6 @@ data class UserInfo(
     val address:String,
     val umur:String,
     val lahir: String,
+    val photo: String,
+    val photo_type:String,
     val created_on:Int)
