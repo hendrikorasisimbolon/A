@@ -32,6 +32,7 @@ import kotlinx.android.synthetic.main.action_bar_notifitcation_icon.*
 import kotlinx.android.synthetic.main.activity_rekomendasi.*
 import kotlinx.android.synthetic.main.toolbar.*
 
+@Suppress("DEPRECATION")
 class RekomendasiAct : AppCompatActivity(),RatingAdapter.OnNoteListener {
 
     var li = ArrayList<MRatingBarang>()
@@ -50,30 +51,34 @@ class RekomendasiAct : AppCompatActivity(),RatingAdapter.OnNoteListener {
         swipeRefreshLayout.isRefreshing = false
 
         swipeRefreshLayout.setOnRefreshListener {
-            li.clear()
-            getProducts(li)
+//            getProducts(li)
+//            MRatingBarang.daftarRating = MRatingBarang.getAlgo(applicationContext)
             getcart()
             swipeRefreshLayout.isRefreshing = false
         }
-        li.clear()
         getProducts(li)
+
 
     }
 
 
     fun getProducts(li: ArrayList<MRatingBarang> ) {
-        MRatingBarang.daftarRating = MRatingBarang.getAlgo(this)
-        var wqe = MRatingBarang.daftarRating.sortedBy { it.rating }
+        li.clear()
+        var wqe = MRatingBarang.daftarRating
         var wqa = MRatingBarang.list
         var asw  = MRatingBarang.list
+        Log.e("bnyk", wqe.count().toString())
         for (i in 0..wqa.count()-1)
         {
             for(j in 0..wqe.count()-1)
             {
+                Log.e("masuk", "masukk coy")
                 if(wqe[j].item==wqa[i].id)
                 {
                     wqa[i].rating = wqe[j].rating
+                    wqa[i].algo = "(A)"
                     li.add(wqa[i])
+
                 }
             }
         }
@@ -97,7 +102,7 @@ class RekomendasiAct : AppCompatActivity(),RatingAdapter.OnNoteListener {
         }
 
         var adp= RatingAdapter(this, li,this)
-        rt_rating.layoutManager= LinearLayoutManager(this) as RecyclerView.LayoutManager?
+        rt_rating.layoutManager= LinearLayoutManager(this)
         rt_rating.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
         rt_rating.adapter=adp
 

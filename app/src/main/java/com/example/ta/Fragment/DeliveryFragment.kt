@@ -12,6 +12,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ta.Adapter.ServiceAdapter
@@ -56,7 +57,9 @@ class DeliveryFragment : DialogFragment(), ServiceAdapter.OnNoteListener {
     }
 
     override fun onNoteClick(position: Int) {
+        rd_eksp.isVisible
         rd_eksp.isChecked
+
         CheckoutAct.service = position
         CheckoutAct.hasil_service = CheckoutAct.listEkspedisi[position].kode+ " "+ CheckoutAct.listEkspedisi[position].service + System.getProperty("line.separator")+
                 "Harga Rp."+ CheckoutAct.listEkspedisi[position].tarif.toString()+ System.getProperty("line.separator")+ "Estimasi : "+

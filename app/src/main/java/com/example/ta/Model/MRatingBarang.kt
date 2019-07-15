@@ -23,6 +23,7 @@ class MRatingBarang {
     var foto: String
     var foto_type: String
     var rating: Double
+    var algo:String
     constructor(
         id: Int,
         judul_produk: String,
@@ -36,7 +37,8 @@ class MRatingBarang {
         diskon: Double,
         subkat_id: Double,
         kat_id: Double,
-        rating:Double
+        rating:Double,
+        algo:String
     ) {
         this.id = id
         this.judul_produk = judul_produk
@@ -51,6 +53,7 @@ class MRatingBarang {
         this.subkat_id = subkat_id
         this.kat_id = kat_id
         this.rating = rating
+        this.algo = algo
     }
     companion object{
         var list:ArrayList<MRatingBarang> = ArrayList()
@@ -79,7 +82,7 @@ class MRatingBarang {
                             response.getJSONObject(x).getDouble("diskon"),
                             response.getJSONObject(x).getDouble("subkat_id"),
                             response.getJSONObject(x).getDouble("kat_id"),
-                            response.getJSONObject(x).getDouble("rating"))
+                            response.getJSONObject(x).getDouble("rating"), "")
                     )
                 }
 
@@ -98,6 +101,7 @@ class MRatingBarang {
             var jar1 = JsonArrayRequest(Request.Method.GET,url1,null, Response.Listener { response ->
                 for (x in 0..response.length()-1)
                 {
+//                    Log.e("Algoritma", response.getJSONObject(x).getDouble("ratingp").toString())
                     li.add(
                        MAlgo(response.getJSONObject(x).getString("user"),
                            response.getJSONObject(x).getDouble("ratingp"),

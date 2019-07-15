@@ -24,6 +24,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.ta.Adapter.ItemAdapter
 import com.example.ta.Fragment.NotFoundFragment
+import com.example.ta.KategoriAct.Companion.catName
 import com.example.ta.Model.MCart
 import com.example.ta.Model.MItemDetail
 import com.example.ta.Model.MTotalCart
@@ -44,13 +45,25 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_items)
         initToolbar()
-
+        refreshI.isRefreshing = false
+        refreshI.setOnRefreshListener {
+            getcart()
+            getitem()
+            refreshI.isRefreshing = false
+        }
+        getitem()
 //        var cat:String=intent.getStringExtra("cat")
 //        var url= url_website+"/udemy/get_subkat.php?subkat_id="+cat  /// intent get ekstra nya rusak
 
-        if (ProductCatAct.cat != "0")
+
+
+    }
+
+    fun getitem()
+    {
+        if (KategoriAct.cat != "0")
         {
-            var url= url_website+"/udemy/get_subkat.php?subkat_id="+ProductCatAct.cat
+            var url= url_website+"/udemy/get_subkat.php?subkat_id="+KategoriAct.cat
 
             var rq: RequestQueue = Volley.newRequestQueue(this)
 
@@ -88,34 +101,15 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
             })
             rq.add(jar)
 
-            item_rv.layoutManager = StaggeredGridLayoutManager(
-                2,
-                StaggeredGridLayoutManager.VERTICAL
-            )
-
         }
         else
         {
             var frag = NotFoundFragment()
             var FM: androidx.fragment.app.FragmentManager? = supportFragmentManager
             var FT: FragmentTransaction = FM!!.beginTransaction()
-            FT.replace(R.id.halaman, frag)
+            FT.replace(R.id.item_rv, frag)
             FT.commit()
         }
-
-
-
-//        var url1 = url_website+"/udemy/get_total_cart.php?user_id="+ MCart.user_id
-//        var rq1: RequestQueue = Volley.newRequestQueue(this)
-//        var jor = JsonObjectRequest(Request.Method.GET,url1,null, Response.Listener { response ->
-//            //            cart_size.text = response.getInt("banyak").toString()
-//            Log.e("Banyak Cart", response.getString("banyak"))
-//            MTotalCart.total_cart = response.getInt("banyak")
-//        }, Response.ErrorListener { error ->
-//            Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
-//        })
-//        rq1.add(jor)
-
     }
 
     override fun onResume() {
@@ -167,7 +161,7 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
             var i = Intent(this,MainActivity::class.java)
             startActivity(i)
         }
-        toolbar.title = "Profile"
+        toolbar.title = catName
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         Tools.setSystemBarColor(this, R.color.white_transparency)
@@ -198,6 +192,11 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
         if (item.itemId == R.id.aksi_cart)
         {
             var i = Intent(this, OrderAct::class.java)
+            startActivity(i)
+        }
+        if (item.itemId == R.id.action_search)
+        {
+            var i = Intent(this, ResultSearchAct::class.java)
             startActivity(i)
         }
 

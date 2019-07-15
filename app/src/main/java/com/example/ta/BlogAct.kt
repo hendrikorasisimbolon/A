@@ -82,17 +82,16 @@ class BlogAct : AppCompatActivity() {
     }
 
     private fun initToolbar() {
-        val toolbar = findViewById(R.id.toolbar) as Toolbar
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
-        toolbar.navigationIcon?.setColorFilter(resources.getColor(R.color.indigo_500), PorterDuff.Mode.SRC_ATOP)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.title="Artikel"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        Tools.setSystemBarColor(this, R.color.grey_10)
+        Tools.setSystemBarLight(this)
         toolbar.setNavigationOnClickListener{
             onBackPressed()
+
         }
-        toolbar.title = "Blog"
-        setSupportActionBar(toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        Tools.setSystemBarColor(this, R.color.white_transparency)
-        Tools.setSystemBarLight(this)
     }
 
 }

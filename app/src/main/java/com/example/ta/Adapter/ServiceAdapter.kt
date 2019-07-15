@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ta.Model.MService
 import com.example.ta.R
@@ -50,7 +51,7 @@ class ServiceAdapter(var context: Context, var list:ArrayList<MService>, var mon
 
         override fun onClick(v: View?) {
             monlistener.onNoteClick(adapterPosition)
-            itemView.rd_eksp.isChecked
+
         }
 
     }

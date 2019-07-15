@@ -34,11 +34,12 @@ public class RatingAdapter(var context:Context, var list:ArrayList<MRatingBarang
             list[p1].id,
             list[p1].judul_produk,
             list[p1].harga_normal,
-            list[p1].deksripsi,
+            list[p1].rating,
             list[p1].foto,
             list[p1].foto_type,
             list[p1].rating,
             p1,
+            list[p1].algo,
             this.monlistener
         )
 
@@ -52,7 +53,7 @@ public class RatingAdapter(var context:Context, var list:ArrayList<MRatingBarang
     class ItemHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView), View.OnClickListener {
         lateinit var monlistener: OnNoteListener
 
-        fun bind(id: Int, j: String, h: Double, dk: String, f: String, ft: String, r:Double, ps:Int, monlistener: OnNoteListener)
+        fun bind(id: Int, j: String, h: Double, rt: Double, f: String, ft: String, r:Double, ps:Int, al:String, monlistener: OnNoteListener)
         {
 
             this.monlistener = monlistener
@@ -62,6 +63,8 @@ public class RatingAdapter(var context:Context, var list:ArrayList<MRatingBarang
             itemView.product_name.text = j
             itemView.rt_barangRek.rating = r.toFloat()
             itemView.urutan.text = (ps+1).toString()
+            itemView.rating.text = String.format("%.2f",rt)
+            itemView.algo.text = al
 
 //            itemView.item_deskripsi.text = dk
             itemView.product_price.text = formatRupiah.format(h)

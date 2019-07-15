@@ -51,7 +51,7 @@ class ProductDetailAct : AppCompatActivity() {
         var rq:RequestQueue = Volley.newRequestQueue(this)
         var jor = JsonObjectRequest(Request.Method.GET,url,null,Response.Listener { response ->
             rt_barang.rating = response.getDouble("rating").toFloat()
-            txt_bnykrt.text = response.getString("banyak")
+            txt_bnykrt.text = response.getString("banyak") +" (" + response.getDouble("rating").toString() +")"
         }, Response.ErrorListener { error ->
             Toast.makeText(this,error.message,Toast.LENGTH_LONG).show()
 
@@ -67,7 +67,7 @@ class ProductDetailAct : AppCompatActivity() {
             .into(image.image)
         txt_judul_produk.text = judul
         price.text = formatRupiah.format(harga)
-        text_kat.text = "Berat : "+ "%.0f".format(berat) + "gram"
+        text_kat.text = "Berat : "+ "%.0f".format(berat) + " gram"
         text_des.text = Html.fromHtml(deskripsi, Html.FROM_HTML_MODE_COMPACT)
 
         initToolbar()

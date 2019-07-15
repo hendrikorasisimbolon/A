@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".KategoriAct">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:theme="@style/ThemeOverlay.AppCompat.Light" tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbark"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_scrollFlags="scroll|enterAlways"/>
+        <View android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:background="@color/grey_10"/>
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                style="@style/CustomTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_gravity="left"
+                app:tabTextColor="@color/colorPrimary"
+                app:tabSelectedTextColor="@color/mdtp_white"
+                app:tabIconTint="@color/blue_grey_700"
+                app:tabIconTintMode="screen"
+                app:tabBackground="@color/blue_A400"
+                app:tabRippleColor="@color/blue_grey_700"
+                app:tabGravity="fill"
+                app:tabMode="fixed"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+
+</LinearLayout>

@@ -98,6 +98,7 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
                         val nama = dat[i].judul_produk.toLowerCase()
                         if (nama.contains(query.toLowerCase())) {
                             tampung.add(dat[i])
+                            tampung.shuffle()
                         }
                     }
 //                    adapter?.setFilter(tampung)

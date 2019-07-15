@@ -19,6 +19,7 @@ import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.ta.Adapter.CartAdapter
+import com.example.ta.Adapter.CheckoutAdapter
 import com.example.ta.Model.MCart
 import com.example.ta.Model.MKeranjang
 import com.example.ta.Model.MTotalCart
@@ -74,7 +75,7 @@ class OrderAct : AppCompatActivity() {
 //                kosong += temp
             }
 
-            var adp=CartAdapter(this,list)
+            var adp= CheckoutAdapter(this,list)
             cart_rv.layoutManager= LinearLayoutManager(this)
             cart_rv.adapter=adp
 

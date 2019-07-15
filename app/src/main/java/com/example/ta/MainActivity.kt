@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        KategoriAct.getCat(this)
         getcart()
         initToolbar()
         initNavigationMenu()
@@ -127,7 +128,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_kategori.setOnClickListener{
-            var i = Intent(this,ProductCatAct::class.java)
+            var i = Intent(this,KategoriAct::class.java)
             startActivity(i)
         }
 
@@ -207,7 +208,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(i)
             }
             if (item.itemId == R.id.nav_kategori){
-                var i = Intent(this,ProductCatAct::class.java)
+                var i = Intent(this,KategoriAct::class.java)
                 startActivity(i)
             }
             if (item.itemId == R.id.nav_blog)
