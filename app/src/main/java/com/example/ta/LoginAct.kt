@@ -5,6 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import androidx.core.content.ContextCompat
 import android.view.View
@@ -16,6 +18,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.ta.Fragment.ForgotPassFragment
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.afterAnimationView
 import kotlinx.android.synthetic.main.activity_login.rootView
@@ -76,7 +79,8 @@ public class LoginAct : AppCompatActivity() {
                                     response.getJSONObject(x).getInt("id"),
                                     response.getJSONObject(x).getString("name"),
                                     response.getJSONObject(x).getString("username"),
-                                    response.getJSONObject(x).getString("password"),
+//                                    response.getJSONObject(x).getString("password"),
+                                    passwdEditText.text.toString(),
                                     response.getJSONObject(x).getString("email"),
                                     response.getJSONObject(x).getString("phone"),
                                     response.getJSONObject(x).getString(("nama_provinsi")),
@@ -118,6 +122,20 @@ public class LoginAct : AppCompatActivity() {
         signUP.setOnClickListener{
             var i = Intent(this,RegisterAct::class.java)
             startActivity(i)
+        }
+        et_forget.setOnClickListener {
+            var obj = ForgotPassFragment()
+            var mann = this.fragmentManager
+            obj.show(mann, "Fgt")
+        }
+        ckpassword.setOnCheckedChangeListener { compoundButton, b ->
+            if(ckpassword.isChecked)
+            {
+                passwdEditText.transformationMethod=HideReturnsTransformationMethod.getInstance()
+            }
+            else{
+                passwdEditText.transformationMethod=PasswordTransformationMethod.getInstance()
+            }
         }
 
         Log.e("ID LOGIN", MCart.user_id)

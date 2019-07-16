@@ -117,6 +117,8 @@ dependencies {
 
     implementation "com.wajahatkarim3.easyvalidation:easyvalidation-core:1.0.1"//VALIDASI EDIT TEXT
     implementation 'net.gotev:uploadservice:2.1'
+
+    implementation 'com.paypal.sdk:paypal-android-sdk:2.16.0' // paypal
     // upload images chooser
 //    implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.0'
 //    implementation 'com.github.jkwiecien:EasyImage:1.3.1'

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="400dp"
+              android:layout_height="wrap_content"
+              android:padding="20dp"
+              android:orientation="vertical"
+             tools:context=".Fragment.ForgotPassFragment">
+    <TextView
+            android:text="Forgot Password"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:id="@+id/email_et"
+                android:layout_height="wrap_content"
+                android:hint="Enter E-mail"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:textColorHint="@color/colorPrimary"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+            android:layout_width="100dp"
+            android:text="Forget"
+            android:layout_marginTop="30dp"
+            android:id="@+id/btn_forget"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white_transparency"
+            android:layout_gravity="center"
+            android:background="@drawable/button_drawable"
+            android:layout_height="wrap_content"/>
+
+
+
+</LinearLayout>

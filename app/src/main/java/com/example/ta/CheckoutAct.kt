@@ -1,6 +1,7 @@
 package com.example.ta
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.content.Intent
@@ -33,11 +34,16 @@ import com.example.ta.Model.expedisi.ItemExpedisi
 import com.example.ta.utilss.Tools
 import com.example.ta.utilss.UserSessionManager
 import com.google.gson.Gson
+import com.paypal.android.sdk.payments.PayPalConfiguration
+import com.paypal.android.sdk.payments.PayPalPayment
+import com.paypal.android.sdk.payments.PayPalService
+import com.paypal.android.sdk.payments.PaymentActivity
 import kotlinx.android.synthetic.main.activity_checkout.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.math.BigDecimal
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -60,6 +66,8 @@ class CheckoutAct : AppCompatActivity() {
     var serv:String = ""
     var kurir:String = ""
     var ongkir:String = ""
+    var config:PayPalConfiguration?=null
+    var amount:Double = 0.0
 
 
     companion object{
@@ -129,6 +137,20 @@ class CheckoutAct : AppCompatActivity() {
             obj.show(mann, "Srv")
         }
 
+
+        //config paypal
+        config = PayPalConfiguration()
+            .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
+            .clientId(Url_Volley.client_paypal)
+
+        var i = Intent(this,PayPalService::class.java)
+        i.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,config)
+        startService(i)
+
+        btn_paypal.setOnClickListener{
+
+        }
+
         if (service > 0)
         {
             hasil_service.text = listEkspedisi[service].kode+ " "+ listEkspedisi[service].service + System.getProperty("line.separator")+
@@ -139,6 +161,27 @@ class CheckoutAct : AppCompatActivity() {
             kurir  = listEkspedisi[service].kode
         }
         listEkspedisi.clear()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode==123){
+            if(resultCode==Activity.RESULT_OK)
+            {
+                afterCheckout()
+                var intent = Intent(this, KonfirmasiPesananAct::class.java)
+                intent.putExtra("service", serv)
+                intent.putExtra("kurir", kurir)
+                intent.putExtra("ongkir", ongkir)
+
+                startActivity(intent)
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        stopService(Intent(this, PayPalService::class.java))
+        super.onDestroy()
     }
 
     override fun onStart() {
@@ -169,6 +212,37 @@ class CheckoutAct : AppCompatActivity() {
         }
         handler.postDelayed(runnable, 300000)
         super.onResume()
+    }
+
+    fun afterCheckout(){
+        var url = Url_Volley.url_website +"/udemy/after_checkout.php?user_id="+user.id.toString()
+        var rq: RequestQueue = Volley.newRequestQueue(this)
+
+
+        var jar= JsonArrayRequest(Request.Method.GET,url,null, Response.Listener { response ->
+
+            //            UserInfo.jumlahCart = response.length()
+            for (x in 0..response.length() - 1) {
+                list.add(
+                    MKeranjang(
+                        response.getJSONObject(x).getString("produk_id"),
+                        response.getJSONObject(x).getString("judul_produk"),
+                        response.getJSONObject(x).getInt("harga_diskon"),
+                        response.getJSONObject(x).getInt("total_qty"),
+                        response.getJSONObject(x).getString("foto"),
+                        response.getJSONObject(x).getString("foto_type")
+                    )
+                )
+            }
+
+            var adp = CheckoutAdapter(this, list)
+            rv_cart.layoutManager = LinearLayoutManager(this)
+            rv_cart.adapter = adp
+
+        }, Response.ErrorListener { error ->
+            Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+        })
+        rq.add(jar)
     }
 
     @SuppressLint("SetTextI18n")
@@ -211,12 +285,12 @@ class CheckoutAct : AppCompatActivity() {
         }
         if(item.itemId == R.id.action_done){
             if (list.count()>0 && serv!="" && kurir!="" && ongkir !=""){
-                var intent = Intent(this, KonfirmasiPesananAct::class.java)
-                intent.putExtra("service", serv)
-                intent.putExtra("kurir", kurir)
-                intent.putExtra("ongkir", ongkir)
-
-                startActivity(intent)
+                amount = MTotalCart.total_harga.toDouble() / 14000
+                var payment = PayPalPayment(BigDecimal.valueOf(amount),"USD","Fashion Store App",PayPalPayment.PAYMENT_INTENT_SALE)
+                var intent = Intent(this, PaymentActivity::class.java)
+                intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,config)
+                intent.putExtra(PaymentActivity.EXTRA_PAYMENT,payment)
+                startActivityForResult(intent,123)
             }
             else if(serv=="" && kurir=="" && ongkir==""){
                 Toast.makeText(this,"Pilih Shipping!", Toast.LENGTH_LONG).show()

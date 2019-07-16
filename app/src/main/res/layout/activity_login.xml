@@ -91,10 +91,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:padding="5dp">
+                <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/ckpassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:text="Show Password"/>
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end|center_vertical"
+                        android:id="@+id/et_forget"
                         android:text="@string/forget_password"
                         android:textColor="@color/colorTextView"
                         android:textSize="14sp"

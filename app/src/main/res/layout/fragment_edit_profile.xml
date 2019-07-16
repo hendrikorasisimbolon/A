@@ -7,6 +7,13 @@
               android:orientation="vertical"
               tools:context=".Fragment.UpdateAddressFragment">
 
+    <TextView
+            android:text="Edit Address"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
     <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

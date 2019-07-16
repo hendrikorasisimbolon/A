@@ -67,23 +67,23 @@ class RegisterAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        etToProvince.setOnFocusChangeListener { v, hasFocus ->
+        etProvince.setOnFocusChangeListener { v, hasFocus ->
             if(hasFocus){
-                (View.OnClickListener { popUpProvince(etToProvince, etToCity) })
+                  popUpProvince(etProvince, etToCity)
             }
         }
 
         etToCity.setOnFocusChangeListener { v, hasFocus ->
             if(hasFocus){
                 try {
-                    if (etToProvince.tag == "") {
-                        etToProvince.error = "Please chooice your to province"
+                    if (etProvince.tag == "") {
+                        etProvince.error = "Please chooice your to province"
                     } else {
-                        popUpCity(etToCity, etToProvince)
+                        popUpCity(etToCity, etProvince)
                     }
 
                 } catch (e: NullPointerException) {
-                    etToProvince.error = "Please chooice your to province"
+                    etProvince.error = "Please chooice your to province"
                 }
             }
 
@@ -112,11 +112,11 @@ class RegisterAct : AppCompatActivity() {
         }
         btn_signUp.setOnClickListener{
             if(!nameEditText.text.isNullOrBlank() && !usernameEditText.text.isNullOrBlank() && !emailEditText.text.isNullOrBlank() &&
-                !passwordEditText.text.isNullOrBlank() && !confrpasswordEditText.text.isNullOrBlank() && !phoneEditText.text.isNullOrBlank() && !addressEditText.text.isNullOrBlank() && !umurEditText.text.isNullOrBlank() && !etToCity.text.isNullOrBlank() && !etToProvince.text.isNullOrBlank())
+                !passwordEditText.text.isNullOrBlank() && !confrpasswordEditText.text.isNullOrBlank() && !phoneEditText.text.isNullOrBlank() && !addressEditText.text.isNullOrBlank() && !umurEditText.text.isNullOrBlank() && !etToCity.text.isNullOrBlank() && !etProvince.text.isNullOrBlank())
             {
                 if(passwordEditText.text.toString().equals(confrpasswordEditText.text.toString()))
                 {
-                    var url = url_website + "/udemy/register.php?name=" + nameEditText.text.toString() +"&username=" + usernameEditText.text.toString() + "&email=" + emailEditText.text.toString() + "&password=" + passwordEditText.text.toString() + "&phone=" + phoneEditText.text.toString() + "&address=" + addressEditText.text.toString() + "&age=0" +"&lahir=" + umurEditText.text.toString() + "&provinsi=" + etToProvince.tag + "&kota=" + etToCity.tag
+                    var url = url_website + "/udemy/register.php?name=" + nameEditText.text.toString() +"&username=" + usernameEditText.text.toString() + "&email=" + emailEditText.text.toString() + "&password=" + passwordEditText.text.toString() + "&phone=" + phoneEditText.text.toString() + "&address=" + addressEditText.text.toString() + "&age=0" +"&lahir=" + umurEditText.text.toString() + "&provinsi=" + etProvince.tag + "&kota=" + etToCity.tag
                     var rq:RequestQueue = Volley.newRequestQueue(this)
                     var sr=StringRequest(Request.Method.GET,url,com.android.volley.Response.Listener { response ->
                         if (response.equals("0")){
@@ -218,7 +218,6 @@ class RegisterAct : AppCompatActivity() {
         getProvince()
 
     }
-
     private inner class MyTextWatcherProvince(private val view: View) : TextWatcher {
 
         override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
@@ -231,7 +230,6 @@ class RegisterAct : AppCompatActivity() {
             }
         }
     }
-
     private fun getProvince() {
 
         val retrofit = Retrofit.Builder()
@@ -280,6 +278,7 @@ class RegisterAct : AppCompatActivity() {
         })
 
     }
+
 
     fun popUpCity(etCity: EditText, etProvince: EditText) {
 
@@ -448,10 +447,10 @@ class RegisterAct : AppCompatActivity() {
             .addErrorCallback { etToCity.error = it }
             .check()
 
-        etToProvince.validator()
+        etProvince.validator()
             .nonEmpty()
             .noNumbers()
-            .addErrorCallback { etToProvince.error = it }
+            .addErrorCallback { etProvince.error = it }
             .check()
     }
 

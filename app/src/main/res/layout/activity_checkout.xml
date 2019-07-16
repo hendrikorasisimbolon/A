@@ -239,58 +239,25 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/spacing_large"
+                            android:id="@+id/btn_paypal"
                             android:gravity="center_vertical"
                             android:orientation="horizontal">
 
                         <ImageView
-                                android:layout_width="@dimen/spacing_mxlarge"
-                                android:layout_height="@dimen/spacing_mxlarge"
-                                android:src="@drawable/ic_master_card" />
-
+                                android:id="@+id/iconIv"
+                                app:srcCompat="@drawable/checkmark"
+                                android:layout_gravity="end"
+                                android:layout_weight="0"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"/>
                         <View
                                 android:layout_width="@dimen/spacing_middle"
                                 android:layout_height="0dp" />
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Master Card"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                android:textColor="@color/grey_90" />
-
-                        <View
-                                android:layout_width="@dimen/spacing_middle"
-                                android:layout_height="0dp" />
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="5543 **** **** ****"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                android:textColor="@color/grey_60" />
-
-                    </LinearLayout>
-
-                    <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/grey_5" />
-
-                    <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/spacing_large"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
 
                         <ImageView
                                 android:layout_width="@dimen/spacing_mxlarge"
                                 android:layout_height="@dimen/spacing_mxlarge"
                                 android:src="@drawable/ic_paypal" />
-
-                        <View
-                                android:layout_width="@dimen/spacing_middle"
-                                android:layout_height="0dp" />
 
                         <TextView
                                 android:layout_width="wrap_content"
@@ -306,9 +273,10 @@
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Login required"
+                                android:text="(Default)"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                 android:textColor="@color/grey_60" />
+
 
                     </LinearLayout>
 
