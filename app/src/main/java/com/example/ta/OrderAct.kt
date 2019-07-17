@@ -65,7 +65,8 @@ class OrderAct : AppCompatActivity() {
                         response.getJSONObject(x).getInt("harga_diskon"),
                         response.getJSONObject(x).getInt("total_qty"),
                         response.getJSONObject(x).getString("foto"),
-                        response.getJSONObject(x).getString("foto_type")
+                        response.getJSONObject(x).getString("foto_type"),
+                        ""
                     )
                 )
 ////                MTotalCart.total_harga += (response.getJSONObject(x).getInt("harga_diskon") * response.getJSONObject(x).getInt("total_qty"))
@@ -75,11 +76,12 @@ class OrderAct : AppCompatActivity() {
 //                kosong += temp
             }
 
-            var adp= CheckoutAdapter(this,list)
+            var adp= CartAdapter(this,list)
             cart_rv.layoutManager= LinearLayoutManager(this)
             cart_rv.adapter=adp
 
         }, Response.ErrorListener { error ->
+            Log.e("ErrorCart", error.message.toString())
             Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
         })
         rq.add(jar)

@@ -3,12 +3,13 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="100dp">
-
+              android:layout_height="170dp">
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/spacing_large"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
                 android:clickable="true"
                 android:orientation="horizontal">
 
@@ -151,7 +152,27 @@
             </LinearLayout>
 
         </LinearLayout>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+            <EditText android:layout_width="match_parent"
+                      android:id="@+id/catatan"
+                      android:layout_marginLeft="20dp"
+                      android:layout_marginRight="20dp"
+                      android:hint="Note for sellers..."
+                      android:layout_height="50dp"/>
+
+            <com.wafflecopter.charcounttextview.CharCountTextView
+                    app:maxCharacters="150"
+                    app:exceededTextColor="#ff0000"
+                    android:layout_height="20dp"
+                    android:id="@+id/hitung"
+                    android:layout_marginRight="25dp"
+                    android:layout_gravity="end"
+                    android:layout_width="wrap_content"/>
+        </LinearLayout>
         <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"

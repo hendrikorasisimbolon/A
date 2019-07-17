@@ -83,6 +83,7 @@ class CartAdapter (var context: Context, var cartItems: ArrayList<MKeranjang>) :
                     if (MItemDetail.data[i].id == idP.toInt())
                     {
                         MTotalCart.total_berat += MItemDetail.data[i].berat.toInt()
+//                        itemView.berat_procuctcart.text = "Berat : " + MItemDetail.data[i].berat + " gram / satuan"
                     }
                 }
 
@@ -91,7 +92,7 @@ class CartAdapter (var context: Context, var cartItems: ArrayList<MKeranjang>) :
                 obj.show(mana,"Rfs")
             }
 
-            itemView.btn_qty_remove.setOnClickListener{
+            itemView.btn_qty_remove.setOnClickListener {
                 var t:Int = itemView.product_quantity.text.toString().toInt()
                 t--
                 itemView.product_quantity.text = t.toString()
@@ -137,7 +138,31 @@ class CartAdapter (var context: Context, var cartItems: ArrayList<MKeranjang>) :
                     var mana = (itemView.context as AppCompatActivity).fragmentManager
                     obj.show(mana,"Dlt")
                 }
+            }
 
+            itemView.btn_deletecart.setOnClickListener{
+                var url = url_website+"/udemy/insert_cart.php?user_id="+ MCart.user_id +"&id_produk="+ idP +
+                        "&total_qty=-1"
+                var rq: RequestQueue = Volley.newRequestQueue(itemView.context)
+                var sr = StringRequest(Request.Method.GET,url, Response.Listener { response ->
+
+                }, Response.ErrorListener { error ->
+                    Toast.makeText(itemView.context, error.message, Toast.LENGTH_LONG).show()
+                })
+
+                rq.add(sr)
+                MTotalCart.total_harga -= harga.toString().toInt()
+                for( i in 0..MItemDetail.data.size-1)
+                {
+                    if (MItemDetail.data[i].id == idP.toInt())
+                    {
+                        MTotalCart.total_berat -= MItemDetail.data[i].berat.toInt()
+                    }
+                }
+                MCart.itemId=idP.toInt()
+                var obj = DltFragment() // fragment
+                var mana = (itemView.context as AppCompatActivity).fragmentManager
+                obj.show(mana,"Dlt")
             }
         }
     }

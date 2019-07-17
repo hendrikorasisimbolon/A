@@ -102,6 +102,18 @@
                 android:id="@+id/product_image"
                 app:srcCompat="@drawable/img_plant_1" />
 
+        <Button
+                android:layout_marginLeft="2dp"
+                android:id="@+id/btn_deletecart"
+                android:layout_gravity="end"
+                android:layout_width="20dp"
+                android:text="X"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/mdtp_white"
+                android:background="@drawable/shape_rounded_red"
+                android:layout_height="match_parent"/>
+
     </LinearLayout>
 
     <!--<LinearLayout-->

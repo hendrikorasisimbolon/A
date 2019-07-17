@@ -3,6 +3,7 @@ package com.example.ta
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.android.volley.Request
@@ -29,9 +30,10 @@ class KonfirmasiPesananAct : AppCompatActivity() {
         var url1 = Url_Volley.url_website +"/udemy/konfir.php?user_id="+MCart.user_id+"&kurir="+kurir+"&service="+serv+"&ongkir="+ongkir
         var rq1: RequestQueue = Volley.newRequestQueue(this)
         var jor = StringRequest(Request.Method.GET,url1, Response.Listener { response ->
-
+            Toast.makeText(this,response.toString(), Toast.LENGTH_LONG).show()
         }, Response.ErrorListener { error ->
             Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+            Log.e("errorKOnfrimasi", error.message)
         })
         rq1.add(jor)
     }

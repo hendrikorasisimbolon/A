@@ -39,6 +39,7 @@ import com.paypal.android.sdk.payments.PayPalPayment
 import com.paypal.android.sdk.payments.PayPalService
 import com.paypal.android.sdk.payments.PaymentActivity
 import kotlinx.android.synthetic.main.activity_checkout.*
+import kotlinx.android.synthetic.main.itemuntukcheckout.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Retrofit
@@ -88,7 +89,7 @@ class CheckoutAct : AppCompatActivity() {
 
         user = session.userDetails
 
-
+        Log.e("val",user.id.toString())
         var url = Url_Volley.url_website +"/udemy/get_cart.php?user_id="+user.id.toString()
         var rq: RequestQueue = Volley.newRequestQueue(this)
 
@@ -104,7 +105,7 @@ class CheckoutAct : AppCompatActivity() {
                         response.getJSONObject(x).getInt("harga_diskon"),
                         response.getJSONObject(x).getInt("total_qty"),
                         response.getJSONObject(x).getString("foto"),
-                        response.getJSONObject(x).getString("foto_type")
+                        response.getJSONObject(x).getString("foto_type"),""
                     )
                 )
             }
@@ -215,34 +216,20 @@ class CheckoutAct : AppCompatActivity() {
     }
 
     fun afterCheckout(){
-        var url = Url_Volley.url_website +"/udemy/after_checkout.php?user_id="+user.id.toString()
-        var rq: RequestQueue = Volley.newRequestQueue(this)
+        var tem = CheckoutAdapter.catat
+        for (i in 0..tem.count()-1)
+        {
+            var url = Url_Volley.url_website +"/udemy/after_checkout.php?user_id="+user.id.toString()+"&catatan="+tem[i].catatan+"&produk_id="+tem[i].idP
+            var rq: RequestQueue = Volley.newRequestQueue(this)
 
 
-        var jar= JsonArrayRequest(Request.Method.GET,url,null, Response.Listener { response ->
+            var jar= JsonArrayRequest(Request.Method.GET,url,null, Response.Listener { response ->
 
-            //            UserInfo.jumlahCart = response.length()
-            for (x in 0..response.length() - 1) {
-                list.add(
-                    MKeranjang(
-                        response.getJSONObject(x).getString("produk_id"),
-                        response.getJSONObject(x).getString("judul_produk"),
-                        response.getJSONObject(x).getInt("harga_diskon"),
-                        response.getJSONObject(x).getInt("total_qty"),
-                        response.getJSONObject(x).getString("foto"),
-                        response.getJSONObject(x).getString("foto_type")
-                    )
-                )
-            }
-
-            var adp = CheckoutAdapter(this, list)
-            rv_cart.layoutManager = LinearLayoutManager(this)
-            rv_cart.adapter = adp
-
-        }, Response.ErrorListener { error ->
-            Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
-        })
-        rq.add(jar)
+            }, Response.ErrorListener { error ->
+                Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+            })
+            rq.add(jar)
+        }
     }
 
     @SuppressLint("SetTextI18n")

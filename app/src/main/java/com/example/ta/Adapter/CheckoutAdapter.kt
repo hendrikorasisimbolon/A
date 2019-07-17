@@ -1,11 +1,18 @@
 package com.example.ta.Adapter
 
 import android.annotation.SuppressLint
+import android.annotation.TargetApi
 import android.content.Context
+import android.graphics.Color
+import android.os.Build
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
@@ -16,21 +23,26 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ta.Fragment.DltFragment
 import com.example.ta.Fragment.F5Fragment
-import com.example.ta.Model.MCart
-import com.example.ta.Model.MItemDetail
-import com.example.ta.Model.MKeranjang
-import com.example.ta.Model.MTotalCart
+import com.example.ta.Model.*
 import com.example.ta.Model.Url_Volley.Companion.url_website
 import com.example.ta.R
 import com.squareup.picasso.Picasso
+import com.wafflecopter.charcounttextview.CharCountTextView
 import kotlinx.android.synthetic.main.itemuntukcheckout.view.*
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
+
 class CheckoutAdapter (var context: Context, var cartItems:ArrayList<MKeranjang>)
     : RecyclerView.Adapter<ViewHolder>()
 {
+    companion object{
+        var catat:ArrayList<MKeranjang> = ArrayList()
+    }
+
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val layout = LayoutInflater.from(context).inflate(R.layout.itemuntukcheckout, parent, false)
         return CheckoutHolder(layout)
@@ -50,9 +62,12 @@ class CheckoutAdapter (var context: Context, var cartItems:ArrayList<MKeranjang>
 
     class CheckoutHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     {
-        @SuppressLint("SetTextI18n")
+        @TargetApi(Build.VERSION_CODES.P)
+        @RequiresApi(Build.VERSION_CODES.P)
+        @SuppressLint("SetTextI18n", "NewApi")
         fun bindItem(idP:String, judul:String, harga:Int, foto:String, foto_type:String, qty:Int)
         {
+            var listner:CharCountTextView.CharCountChangedListener ?= null
             var locale = Locale("in", "ID")
             var formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(locale)
             Picasso.with(itemView.context)
@@ -61,6 +76,13 @@ class CheckoutAdapter (var context: Context, var cartItems:ArrayList<MKeranjang>
             itemView.judul_produkcart.text = judul
             itemView.txt_harga_cart.text = formatRupiah.format(harga)
             itemView.product_quantity.text = qty.toString()
+            itemView.hitung.setEditText(itemView.catatan)
+            itemView.hitung.setCharCountChangedListener { countRemaining, hasExceededLimit ->
+                if(hasExceededLimit){
+                    itemView.catatan.selectAll()
+                    itemView.drawingCacheBackgroundColor = Color.RED
+                }
+            }
 
 
             itemView.btn_qty_add.setOnClickListener{
@@ -164,8 +186,7 @@ class CheckoutAdapter (var context: Context, var cartItems:ArrayList<MKeranjang>
                 var mana = (itemView.context as AppCompatActivity).fragmentManager
                 obj.show(mana,"Dlt")
             }
-
-
+            catat.add(MKeranjang(idP,judul,harga,qty,foto,foto_type,itemView.catatan.text.toString()))
 
 
         }
