@@ -42,5 +42,6 @@
     <string name="title_activity_blog">BlogAct</string>
     <string name="title_activity_profile">ProfileAct</string>
     <string name="read_file">This app needs access to your file storage so that it can read photos.</string>
+    <string name="order_history"><u>Order History</u></string>
 
 </resources>

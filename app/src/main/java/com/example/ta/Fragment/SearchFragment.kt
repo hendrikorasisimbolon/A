@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.appcompat.widget.SearchView
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -29,7 +30,7 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
     var adapter: SearchAdapter? = null
     private var searchView: SearchView? = null
     private var queryTextListener: SearchView.OnQueryTextListener? = null
-
+    var toolbar: Toolbar?= null
 
 
     override fun onCreateView(
@@ -42,6 +43,7 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
             Log.e("dataX", dat[i].judul_produk)
         }
         setHasOptionsMenu(true)
+        toolbar = activity!!.toolbar
         activity!!.setTitle("Search")
         activity!!.toolbar.navigationIcon?.setColorFilter(resources.getColor(R.color.indigo_500), PorterDuff.Mode.SRC_ATOP)
 
@@ -51,6 +53,7 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
         r.layoutManager= LinearLayoutManager(activity)
         r.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         r.adapter=adp
+        adp.notifyDataSetChanged()
 //        activity!!.toolbar.setNavigationOnClickListener {
 //            activity!!.finish()
 //        }
@@ -86,23 +89,23 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
             searchView!!.setSearchableInfo(searchManager.getSearchableInfo(activity!!.componentName))
 
             queryTextListener = object : SearchView.OnQueryTextListener {
+
                 override fun onQueryTextChange(newText: String): Boolean {
                     tampung.clear()
-                    return false
-                }
-
-                override fun onQueryTextSubmit(query: String): Boolean {
-                    tampung.clear()
+//                    onStart()
                     for (i in 0..dat.size-1) {
                         Log.e("dariCari", dat[i].judul_produk.toString())
                         val nama = dat[i].judul_produk.toLowerCase()
-                        if (nama.contains(query.toLowerCase())) {
+                        if (nama.contains(newText.toLowerCase())) {
                             tampung.add(dat[i])
-                            tampung.shuffle()
                         }
                     }
-//                    adapter?.setFilter(tampung)
+                    return false
+                }
 
+
+                override fun onQueryTextSubmit(query: String): Boolean {
+//                    tampung.clear()
                     if (tampung.size == 0)
                     {
                         var nx = NotFoundFragment()
@@ -110,12 +113,27 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
                             .replace(R.id.halaman, nx)
                             .commit()
                     }
+//                    for (i in 0..dat.size-1) {
+//                        Log.e("dariCari", dat[i].judul_produk.toString())
+//                        val nama = dat[i].judul_produk.toLowerCase()
+//                        if (nama.contains(query.toLowerCase())) {
+//                            tampung.add(dat[i])
+//                        }
+//                    }
+////                    adapter?.setFilter(tampung)
+//                    tampung.shuffle()
+//                    if (tampung.size == 0)
+//                    {
+//                        var nx = NotFoundFragment()
+//                        activity!!.supportFragmentManager.beginTransaction()
+//                            .replace(R.id.halaman, nx)
+//                            .commit()
+//                    }
                     onStop()
                     return true
                 }
             }
             searchView!!.setOnQueryTextListener(queryTextListener)
-
         }
         else {
             tampung = ArrayList()

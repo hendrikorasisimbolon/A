@@ -2,6 +2,9 @@ package com.example.ta.Adapter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Context
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +13,7 @@ import android.widget.Filterable
 import com.example.ta.Fragment.QtyFragment
 import com.example.ta.Model.MCart
 import com.example.ta.Model.MItemDetail
+import com.haozhang.lib.SlantedTextView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.product_row_item.view.*
 import java.text.NumberFormat
@@ -35,10 +39,12 @@ public class ItemAdapter (var context:Context, var list:ArrayList<MItemDetail>, 
         (p0 as ItemHolder).bind(
             list[p1].id,
             list[p1].judul_produk,
-            list[p1].harga_normal,
+            list[p1].harga_diskon,
             list[p1].deksripsi,
             list[p1].foto,
             list[p1].foto_type,
+            list[p1].diskon,
+            list[p1].harga_normal,
             this.monlistener
         )
 
@@ -52,15 +58,35 @@ public class ItemAdapter (var context:Context, var list:ArrayList<MItemDetail>, 
     public class ItemHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView), View.OnClickListener {
         lateinit var monlistener: OnNoteListener
 
-        fun bind(id: Int, j: String, h: Double, dk: String, f: String, ft: String,monlistener: OnNoteListener)
+        fun bind(id: Int, j: String, h: Double, dk: String, f: String, ft: String,ds:Double, hn:Double, monlistener: OnNoteListener)
         {
             this.monlistener = monlistener
             var locale = Locale("in", "ID")
             var formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(locale)
+            val nf = NumberFormat.getNumberInstance()
+            nf.maximumFractionDigits = 0
 
             itemView.product_name.text = j
 //            itemView.item_deskripsi.text = dk
-            itemView.product_price.text = formatRupiah.format(h)
+//            itemView.product_price.text = formatRupiah.format(h)
+
+            if(ds>0){
+                itemView.product_price_diskon.text = formatRupiah.format(hn)
+                itemView.product_price_diskon.paintFlags = STRIKE_THRU_TEXT_FLAG
+                itemView.product_price.text = formatRupiah.format(h)
+                itemView.stvDiscount.setText("Disc."+nf.format(ds)+" %")
+                    .setTextColor(Color.WHITE)
+                    .setSlantedLength(70)
+                    .setMode(SlantedTextView.MODE_LEFT)
+            }
+            else
+            {
+                itemView.product_price.text = formatRupiah.format(hn)
+                itemView.product_price_diskon.visibility = View.INVISIBLE
+                itemView.stvDiscount.visibility = View.INVISIBLE
+            }
+
+
             Picasso.with(itemView.context).load("http://192.168.43.180/ecommerce/assets/images/produk/" + f + ft)
                 .into(itemView.product_image)
 

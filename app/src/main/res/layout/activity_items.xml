@@ -28,11 +28,17 @@
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
-                <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/item_rv"
+                <LinearLayout
+                        android:id="@+id/halaman"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/item_rv"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"/>
+                </LinearLayout>
+
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

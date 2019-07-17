@@ -48,6 +48,7 @@ class NotFoundFragment : Fragment() {
                     activity!!.supportFragmentManager.beginTransaction()
                         .replace(R.id.halaman, nx)
                         .commit()
+                    adapter!!.notifyDataSetChanged()
                     return false
                 }
 

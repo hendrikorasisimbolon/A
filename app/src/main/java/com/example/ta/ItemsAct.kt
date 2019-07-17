@@ -107,7 +107,7 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
             var frag = NotFoundFragment()
             var FM: androidx.fragment.app.FragmentManager? = supportFragmentManager
             var FT: FragmentTransaction = FM!!.beginTransaction()
-            FT.replace(R.id.item_rv, frag)
+            FT.replace(R.id.halaman, frag)
             FT.commit()
         }
     }

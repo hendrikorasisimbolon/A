@@ -8,8 +8,66 @@
         android:orientation="vertical"
         tools:context=".RiwayatAct">
 
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarSize"
+            android:background="@color/transparent"
+            android:theme="@style/ThemeOverlay.AppCompat.Light">
 
+        <include layout="@layout/toolbar" />
+        <View   android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_10" />
 
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+            android:background="@drawable/bg_round"
+            android:layout_width="match_parent"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:layout_height="200dp" android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
+                                                     android:text="@string/order_history"
+                                                     android:layout_marginTop="20dp"
+                                                     android:textAlignment="center"
+                                                     android:textSize="25sp"
+                                                     android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatTextView android:layout_width="match_parent"
+                                                     android:layout_marginTop="10dp"
+                                                     android:textAlignment="center"
+                                                     android:textSize="16sp"
+                                                     android:text="The amount you have bought : "
+                                                     android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatEditText android:layout_width="match_parent"
+                                                     android:text="Rp. sekian"
+                                                     android:id="@+id/totalKeluar"
+                                                     android:textAlignment="center"
+                                                     android:textSize="26sp"
+                                                     android:textStyle="bold"
+                                                     android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_marginTop="0dp"
+                  android:layout_marginRight="20dp"
+                  android:layout_marginLeft="20dp"
+                  android:layout_height="match_parent" android:orientation="vertical">
+        <TextView android:layout_width="match_parent"
+                  android:text="Transaction history : "
+                  android:textSize="18sp"
+                  android:layout_marginBottom="10dp"
+                  android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
+                                                   android:id="@+id/rc_history"
+                                                   android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
 
 
 

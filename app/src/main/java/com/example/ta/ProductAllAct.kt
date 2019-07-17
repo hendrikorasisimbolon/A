@@ -145,7 +145,7 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
             var i = Intent(this,MainActivity::class.java)
             startActivity(i)
         }
-        toolbar.title = "Rekomendasi Pilihan"
+        toolbar.title = "All Product"
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         Tools.setSystemBarColor(this, R.color.white_transparency)
