@@ -35,15 +35,15 @@
               android:textAlignment="center"
               android:layout_marginTop="@dimen/spacing_large"
               android:layout_gravity="center"
-              android:text="Pesanan Anda sedang kami proses"
+              android:text="We will process your order"
               android:layout_height="wrap_content"/>
 
     <Button android:layout_width="wrap_content"
-            android:text="Riwayat Pesanan"
+            android:text="Order History"
             android:layout_marginTop="10dp"
             android:padding="10dp"
-            android:textColor="@color/white_transparency"
-            android:background="@drawable/btn_purple_a400"
+            android:textColor="@color/mdtp_white"
+            android:background="@drawable/round_success"
             android:layout_gravity="center"
             android:layout_height="wrap_content"/>
 

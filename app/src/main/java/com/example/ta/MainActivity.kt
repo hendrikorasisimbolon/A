@@ -220,6 +220,10 @@ class MainActivity : AppCompatActivity() {
             {
                 session.logoutUser()
             }
+            if(item.itemId == R.id.nav_riwayat){
+                var i = Intent(this,RiwayatAct::class.java)
+                startActivity(i)
+            }
             drawer.closeDrawers()
             true
         }
@@ -261,6 +265,7 @@ class MainActivity : AppCompatActivity() {
             var i = Intent(this, ResultSearchAct::class.java)
             startActivity(i)
         }
+
 
         return super.onOptionsItemSelected(item)
     }

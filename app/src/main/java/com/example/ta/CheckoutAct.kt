@@ -20,6 +20,7 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ta.Adapter.CheckoutAdapter
 import com.example.ta.Adapter.CityAdapter
@@ -221,9 +222,7 @@ class CheckoutAct : AppCompatActivity() {
         {
             var url = Url_Volley.url_website +"/udemy/after_checkout.php?user_id="+user.id.toString()+"&catatan="+tem[i].catatan+"&produk_id="+tem[i].idP
             var rq: RequestQueue = Volley.newRequestQueue(this)
-
-
-            var jar= JsonArrayRequest(Request.Method.GET,url,null, Response.Listener { response ->
+            var jar= StringRequest(Request.Method.GET,url,Response.Listener { response ->
 
             }, Response.ErrorListener { error ->
                 Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()

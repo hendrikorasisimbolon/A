@@ -16,6 +16,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".PembayaranAct">
+        </activity>
+        <activity android:name=".RiwayatDetailAact">
+        </activity>
         <activity android:name=".KategoriAct">
         </activity>
         <activity android:name=".KonfirmasiPesananAct">

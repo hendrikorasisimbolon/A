@@ -46,7 +46,8 @@ class QtyFragment : DialogFragment() {
                 if (response == "1")
                 {
 //                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah ditambahkan ke cart anda", Snackbar.LENGTH_LONG).show()
-                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah diupdate di cart anda", Snackbar.LENGTH_LONG).show()
+//                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah diupdate di cart anda", Snackbar.LENGTH_LONG).show()
+//                    pake toast
                     total_cart++
                 }
                 else

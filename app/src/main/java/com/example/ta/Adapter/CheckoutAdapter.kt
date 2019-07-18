@@ -50,6 +50,8 @@ class CheckoutAdapter (var context: Context, var cartItems:ArrayList<MKeranjang>
 
     override fun getItemCount(): Int = cartItems.size
 
+    @TargetApi(Build.VERSION_CODES.P)
+    @RequiresApi(Build.VERSION_CODES.P)
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as CheckoutHolder).bindItem(
             cartItems[position].idP,

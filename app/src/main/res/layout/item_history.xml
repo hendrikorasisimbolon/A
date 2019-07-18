@@ -3,17 +3,19 @@
               android:orientation="horizontal"
               android:background="@color/grey_200"
               android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+              android:layout_marginBottom="10dp"
+              android:layout_height="100dp">
     <LinearLayout android:layout_width="7dp"
                   android:layout_weight="0"
+                  android:id="@+id/ly_stat"
                   android:background="@color/red_A200"
-                  android:layout_height="match_parent">
+                  android:layout_height="match_parent" android:orientation="horizontal">
     </LinearLayout>
     <LinearLayout android:layout_width="70dp"
                   android:layout_height="70dp"
                   android:background="@drawable/bg_halround"
                   android:layout_marginLeft="10dp"
-                  android:layout_marginBottom="20dp"
+                  android:layout_marginBottom="10dp"
                   android:layout_marginRight="10dp"
                   android:gravity="center"
                   android:layout_marginTop="20dp"
@@ -34,21 +36,62 @@
                   android:layout_height="wrap_content"/>
         <TextView android:layout_width="match_parent"
                   android:text="2019"
+                  android:id="@+id/txt_year"
                   android:layout_margin="0dp"
                   android:textAlignment="center"
                   android:layout_height="wrap_content"/>
 
     </LinearLayout>
     <LinearLayout
-            android:layout_weight="1"
+            android:layout_weight="0.8"
             android:orientation="vertical"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatTextView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+        <TextView android:layout_width="match_parent"
+                  android:id="@+id/txt_idtrans"
+                  android:text="ID Transaksi"
+                  android:maxLines="1"
+                  android:ellipsize="end"
+                  android:layout_height="wrap_content"/>
+        <TextView android:layout_width="match_parent"
+                  android:text="Pengiriman"
+                  android:maxLines="1"
+                  android:ellipsize="end"
+                  android:textSize="16sp"
+                  android:id="@+id/txt_kiriman"
+                  android:layout_height="wrap_content"/>
+        <TextView android:layout_width="match_parent"
+                  android:text="Nomor Resi"
+                  android:id="@+id/txt_resi"
+                  android:textStyle="bold"
+                  android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_weight="1"
+                  android:orientation="vertical"
+                  android:gravity="center"
+                  android:layout_marginTop="20dp"
+                  android:layout_marginRight="10dp"
+                  android:layout_height="wrap_content">
+                <TextView android:layout_width="match_parent"
+                          android:padding="5dp"
+                          android:layout_gravity="center"
+                          android:id="@+id/txt_status"
+                          android:gravity="center"
+                          android:background="@drawable/round_success"
+                          android:textColor="@color/mdtp_transparent_black"
+                          android:text="Has been sent"
+                          android:layout_height="30dp"/>
+                <TextView android:layout_width="match_parent"
+                          android:layout_marginTop="10dp"
+                          android:layout_gravity="center"
+                          android:id="@+id/txt_jumlah"
+                          android:textAlignment="center"
+                          android:textColor="@color/red_A700"
+                          android:textSize="14sp"
+                          android:text="Rp. Sekian"
+                          android:layout_height="wrap_content"/>
     </LinearLayout>
 
 </LinearLayout>
