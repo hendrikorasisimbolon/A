@@ -117,6 +117,8 @@ class RekomendasiAct : AppCompatActivity(),RatingAdapter.OnNoteListener {
         intent.putExtra("foto_type", li.get(position).foto_type.toString())
         intent.putExtra("berat", li.get(position).berat.toString())
         intent.putExtra("deskripsi",li.get(position).deksripsi.toString())
+        intent.putExtra("discount",li.get(position).diskon.toString())
+        intent.putExtra("harga_normal",li.get(position).harga_normal.toString())
 
         startActivity(intent)
 

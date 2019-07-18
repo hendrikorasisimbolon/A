@@ -141,17 +141,14 @@ class CheckoutAct : AppCompatActivity() {
 
 
         //config paypal
-        config = PayPalConfiguration()
-            .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
-            .clientId(Url_Volley.client_paypal)
+//        config = PayPalConfiguration()
+//            .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
+//            .clientId(Url_Volley.client_paypal)
+//
+//        var i = Intent(this,PayPalService::class.java)
+//        i.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,config)
+//        startService(i)
 
-        var i = Intent(this,PayPalService::class.java)
-        i.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,config)
-        startService(i)
-
-        btn_paypal.setOnClickListener{
-
-        }
 
         if (service > 0)
         {
@@ -167,22 +164,22 @@ class CheckoutAct : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode==123){
-            if(resultCode==Activity.RESULT_OK)
-            {
-                afterCheckout()
-                var intent = Intent(this, KonfirmasiPesananAct::class.java)
-                intent.putExtra("service", serv)
-                intent.putExtra("kurir", kurir)
-                intent.putExtra("ongkir", ongkir)
-
-                startActivity(intent)
-            }
-        }
+//        if(requestCode==123){
+//            if(resultCode==Activity.RESULT_OK)
+//            {
+//                afterCheckout()
+//                var intent = Intent(this, KonfirmasiPesananAct::class.java)
+//                intent.putExtra("service", serv)
+//                intent.putExtra("kurir", kurir)
+//                intent.putExtra("ongkir", ongkir)
+//
+//                startActivity(intent)
+//            }
+//        }
     }
 
     override fun onDestroy() {
-        stopService(Intent(this, PayPalService::class.java))
+//        stopService(Intent(this, PayPalService::class.java))
         super.onDestroy()
     }
 
@@ -254,7 +251,7 @@ class CheckoutAct : AppCompatActivity() {
     private fun initToolbar() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-        supportActionBar?.title = "Keranjang Belanja"
+        supportActionBar?.title = "Checkout"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         Tools.setSystemBarColor(this, R.color.grey_10)
         Tools.setSystemBarLight(this)
@@ -271,12 +268,19 @@ class CheckoutAct : AppCompatActivity() {
         }
         if(item.itemId == R.id.action_done){
             if (list.count()>0 && serv!="" && kurir!="" && ongkir !=""){
-                amount = MTotalCart.total_harga.toDouble() / 14000
-                var payment = PayPalPayment(BigDecimal.valueOf(amount),"USD","Fashion Store App",PayPalPayment.PAYMENT_INTENT_SALE)
-                var intent = Intent(this, PaymentActivity::class.java)
-                intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,config)
-                intent.putExtra(PaymentActivity.EXTRA_PAYMENT,payment)
-                startActivityForResult(intent,123)
+//                amount = MTotalCart.total_harga.toDouble() / 14000
+//                var payment = PayPalPayment(BigDecimal.valueOf(amount),"USD","Fashion Store App",PayPalPayment.PAYMENT_INTENT_SALE)
+//                var intent = Intent(this, PaymentActivity::class.java)
+//                intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,config)
+//                intent.putExtra(PaymentActivity.EXTRA_PAYMENT,payment)
+//                startActivityForResult(intent,123)
+                afterCheckout()
+                var intent = Intent(this, PembayaranAct::class.java)
+                intent.putExtra("service", serv)
+                intent.putExtra("kurir", kurir)
+                intent.putExtra("ongkir", ongkir)
+
+                startActivity(intent)
             }
             else if(serv=="" && kurir=="" && ongkir==""){
                 Toast.makeText(this,"Pilih Shipping!", Toast.LENGTH_LONG).show()

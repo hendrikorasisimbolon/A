@@ -1,6 +1,8 @@
 package com.example.ta
 
 import android.annotation.SuppressLint
+import android.graphics.Color
+import android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
@@ -21,6 +23,7 @@ import com.example.ta.utilss.Tools
 import com.example.ta.utilss.ViewAnimation
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.haozhang.lib.SlantedTextView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_product_detail.*
 import kotlinx.android.synthetic.main.activity_product_detail.view.*
@@ -46,6 +49,8 @@ class ProductDetailAct : AppCompatActivity() {
         var foto_type = intent.getStringExtra("foto_type").toString()
         var berat =intent.getStringExtra("berat").toString().toDouble()
         var deskripsi = intent.getStringExtra("deskripsi").toString()
+        var discount = intent.getStringExtra("discount").toString().toDouble()
+        var harga_normal = intent.getStringExtra("harga_normal").toDouble()
 
         var url = url_website+"/udemy/get_rating.php?produk_id="+id_produk
         var rq:RequestQueue = Volley.newRequestQueue(this)
@@ -69,6 +74,22 @@ class ProductDetailAct : AppCompatActivity() {
         price.text = formatRupiah.format(harga)
         text_kat.text = "Berat : "+ "%.0f".format(berat) + " gram"
         text_des.text = Html.fromHtml(deskripsi, Html.FROM_HTML_MODE_COMPACT)
+
+        val nf = NumberFormat.getNumberInstance()
+        nf.maximumFractionDigits = 0
+
+        if(discount>0){
+            pricesb.text = formatRupiah.format(harga_normal)
+            pricesb.paintFlags = STRIKE_THRU_TEXT_FLAG
+            stvDiscountD.setText("Disc."+nf.format(discount)+" %")
+                .setTextColor(Color.WHITE)
+                .setSlantedLength(70).mode = SlantedTextView.MODE_RIGHT
+        }
+        else
+        {
+            pricesb.visibility = View.INVISIBLE
+            stvDiscountD.visibility = View.INVISIBLE
+        }
 
         initToolbar()
         initComponent()

@@ -29,6 +29,20 @@
                     app:srcCompat="@drawable/image_shop_10"
                     app:layout_collapseMode="parallax" />
 
+            <com.haozhang.lib.SlantedTextView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="end"
+                    android:id="@+id/stvDiscountD"
+                    android:gravity="end"
+                    app:slantedBackgroundColor="@color/red_A200"
+                    app:slantedLength="50dp"
+                    app:slantedMode="right"
+                    app:slantedText="IOS"
+                    app:slantedTextColor="@color/white_transparency"
+                    app:slantedTextSize="14sp"
+                    android:layout_marginEnd="-3dp" android:layout_marginTop="-6dp"/>
+
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -115,6 +129,15 @@
                             android:layout_height="wrap_content"
                             android:text="$ 80.00"
                             android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                            android:textColor="@android:color/white"
+                            android:textStyle="bold" />
+                    <TextView
+                            android:id="@+id/pricesb"
+                            android:layout_marginLeft="5dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 80.00"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
                             android:textColor="@android:color/white"
                             android:textStyle="bold" />
 

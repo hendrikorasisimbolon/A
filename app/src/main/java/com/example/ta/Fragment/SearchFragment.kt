@@ -70,6 +70,8 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
         intent.putExtra("foto_type", tampung.get(position).foto_type)
         intent.putExtra("berat", tampung.get(position).berat.toString())
         intent.putExtra("deskripsi", tampung.get(position).deksripsi)
+        intent.putExtra("discount",tampung.get(position).diskon.toString())
+        intent.putExtra("harga_normal",tampung.get(position).harga_normal.toString())
 
         startActivity(intent)
     }

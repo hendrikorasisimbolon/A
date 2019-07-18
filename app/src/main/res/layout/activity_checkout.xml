@@ -18,61 +18,286 @@
         <include layout="@layout/toolbar"/>
 
     </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.core.widget.NestedScrollView
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_height="match_parent">
         <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                >
-            <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:layout_marginLeft="@dimen/spacing_large"
-                    android:layout_marginRight="@dimen/spacing_large"
-                    android:gravity="center_vertical"
-                    android:text="Cart"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/grey_40"
-                    android:textStyle="bold" />
+                android:orientation="vertical">
 
             <androidx.core.widget.NestedScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="300dp">
-                <androidx.cardview.widget.CardView
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scrollbars="none"
+                    android:scrollingCache="true">
+                <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/spacing_middle"
-                        android:layout_marginRight="@dimen/spacing_middle"
-                        app:cardBackgroundColor="@android:color/white"
-                        app:cardCornerRadius="2dp"
-                        app:cardElevation="2dp">
-                    <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/rv_cart"
+                        android:orientation="vertical" >
+
+                    <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="?attr/actionBarSize"
+                                android:layout_marginLeft="@dimen/spacing_large"
+                                android:layout_marginRight="@dimen/spacing_large"
 
-                    </androidx.recyclerview.widget.RecyclerView>
+                                android:gravity="center_vertical"
+                                android:text="Shipping details"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/grey_40"
+                                android:textStyle="bold" />
 
-                </androidx.cardview.widget.CardView>
+                        <LinearLayout android:layout_width="match_parent"
+                                      android:orientation="vertical"
+                                      android:layout_height="wrap_content">
+                            <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/spacing_large"
+                                    android:orientation="vertical">
+
+                                <LinearLayout android:layout_width="match_parent"
+                                              android:orientation="horizontal"
+                                              android:layout_height="wrap_content">
+                                    <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight=".1"
+                                            android:text="Ship to : "
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                            android:textColor="@color/grey_90" />
+                                    <Button
+                                            android:layout_weight="0"
+                                            android:text="Edit"
+                                            android:textColor="@color/colorAccentDark"
+                                            android:background="@color/transparent"
+                                            android:layout_width="60dp"
+                                            android:layout_height="wrap_content" android:textIsSelectable="false"
+                                            android:id="@+id/btn_edit_prof"/>
+                                </LinearLayout>
+                                <TextView
+                                        android:id="@+id/txtalamat_cart"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/spacing_middle"
+                                        android:text="United State, County 455 Rd, \nMineola, TX, 75773\n(903) 569-3465"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                        android:textColor="@color/grey_40" />
+
+                            </LinearLayout>
+                            <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="1dp"
+                                    android:background="@color/grey_5" />
+                            <LinearLayout android:layout_width="match_parent"
+                                          android:orientation="vertical"
+                                          android:layout_height="wrap_content">
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="15dp"
+                                        android:text="Delivert Options : "
+                                        android:layout_marginLeft="@dimen/spacing_large"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                        android:textColor="@color/grey_90" />
+                                <LinearLayout
+                                        android:layout_margin="@dimen/spacing_large"
+                                        android:gravity="center_vertical"
+                                        android:id="@+id/servic_layout"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+                                    <TextView
+                                            android:id="@+id/hasil_service"
+                                            android:textSize="14sp"
+                                            android:text="None"
+                                            android:padding="10dp"
+                                            android:layout_width="match_parent"
+                                            android:background="@color/grey_20"
+                                            android:layout_height="wrap_content"/>
+
+                                </LinearLayout>
+                                <Button
+                                        android:text="Delivery Options :"
+                                        android:id="@+id/btn_service"
+                                        android:padding="10dp"
+                                        android:background="@color/cyan_A700"
+                                        android:layout_margin="@dimen/spacing_large"
+                                        android:layout_gravity="end"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="40dp"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/actionBarSize"
+                            android:layout_marginLeft="@dimen/spacing_large"
+                            android:layout_marginRight="@dimen/spacing_large"
+                            android:gravity="center_vertical"
+                            android:text="Cart"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                            android:textColor="@color/grey_40"
+                            android:textStyle="bold" />
+                    <androidx.core.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp">
+                        <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp"
+                                android:layout_marginLeft="@dimen/spacing_middle"
+                                android:layout_marginRight="@dimen/spacing_middle"
+                                app:cardBackgroundColor="@android:color/white"
+                                app:cardCornerRadius="2dp"
+                                app:cardElevation="2dp">
+                            <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rv_cart"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                            </androidx.recyclerview.widget.RecyclerView>
+
+                        </androidx.cardview.widget.CardView>
+                    </androidx.core.widget.NestedScrollView>
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/spacing_mlarge" />
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/spacing_xxlarge"
+                            android:background="@android:color/white"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingLeft="@dimen/spacing_middle"
+                            android:paddingRight="@dimen/spacing_middle">
+
+
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/spacing_middle"
+                            android:layout_marginRight="@dimen/spacing_middle"
+                            app:cardBackgroundColor="@android:color/white"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="2dp">
+
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="?attr/actionBarSize"
+                            android:layout_marginLeft="@dimen/spacing_large"
+                            android:layout_marginRight="@dimen/spacing_large"
+                            android:gravity="center_vertical"
+                            android:text="Payment"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                            android:textColor="@color/grey_40"
+                            android:textStyle="bold" />
+
+                    <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/spacing_middle"
+                            android:layout_marginRight="@dimen/spacing_middle"
+                            app:cardBackgroundColor="@android:color/white"
+                            app:cardCornerRadius="2dp"
+                            app:cardElevation="2dp">
+
+                        <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                            <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/spacing_large"
+                                    android:id="@+id/btn_paypal"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                <ImageView
+                                        android:id="@+id/iconIv"
+                                        app:srcCompat="@drawable/checkmark"
+                                        android:layout_gravity="end"
+                                        android:layout_weight="0"
+                                        android:layout_width="25dp"
+                                        android:layout_height="25dp"/>
+                                <View
+                                        android:layout_width="@dimen/spacing_middle"
+                                        android:layout_height="0dp" />
+
+                                <ImageView
+                                        android:layout_width="@dimen/spacing_mxlarge"
+                                        android:layout_height="@dimen/spacing_mxlarge"
+                                        android:src="@drawable/ic_paypal" />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Pay Pal"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                        android:textColor="@color/grey_90" />
+
+                                <View
+                                        android:layout_width="@dimen/spacing_middle"
+                                        android:layout_height="0dp" />
+
+                                <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="(Default) (Login Required)"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                        android:textColor="@color/grey_60" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/spacing_mlarge" />
+
+                </LinearLayout>
+
             </androidx.core.widget.NestedScrollView>
-            <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/spacing_mlarge" />
+        </LinearLayout>
 
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_xxlarge"
+                android:background="@android:color/white"
+                android:layout_gravity="bottom"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/spacing_middle"
+                android:paddingRight="@dimen/spacing_middle">
             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/spacing_xxlarge"
-                    android:background="@android:color/white"
-                    android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:paddingLeft="@dimen/spacing_middle"
-                    android:paddingRight="@dimen/spacing_middle">
-
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -97,206 +322,8 @@
             </LinearLayout>
             <LinearLayout
                     android:orientation="horizontal"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="?attr/actionBarSize"
-                        android:layout_marginLeft="@dimen/spacing_large"
-                        android:layout_marginRight="@dimen/spacing_large"
-                        android:gravity="center_vertical"
-                        android:text="Shipping details"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                        android:textColor="@color/grey_40"
-                        android:textStyle="bold" />
-            </LinearLayout>
-
-            <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/spacing_middle"
-                    android:layout_marginRight="@dimen/spacing_middle"
-                    app:cardBackgroundColor="@android:color/white"
-                    app:cardCornerRadius="2dp"
-                    app:cardElevation="2dp">
-
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                    <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/spacing_large"
-                            android:orientation="vertical">
-
-                        <LinearLayout android:layout_width="match_parent"
-                                      android:orientation="horizontal"
-                                      android:layout_height="wrap_content">
-                            <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight=".1"
-                                    android:text="Ship to : "
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                    android:textColor="@color/grey_90" />
-                            <Button
-                                    android:layout_weight="0"
-                                    android:text="Edit"
-                                    android:textColor="@color/colorAccentDark"
-                                    android:background="@color/transparent"
-                                    android:layout_width="60dp"
-                                    android:layout_height="wrap_content" android:textIsSelectable="false"
-                                    android:id="@+id/btn_edit_prof"/>
-                        </LinearLayout>
-                        <TextView
-                                android:id="@+id/txtalamat_cart"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="@dimen/spacing_middle"
-                                android:text="United State, County 455 Rd, \nMineola, TX, 75773\n(903) 569-3465"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                android:textColor="@color/grey_40" />
-
-                    </LinearLayout>
-
-                    <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/grey_5" />
-
-                    <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="@color/grey_5" />
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:text="Delivert Options : "
-                            android:layout_marginLeft="@dimen/spacing_large"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                            android:textColor="@color/grey_90" />
-                    <LinearLayout
-                            android:layout_margin="@dimen/spacing_large"
-                            android:gravity="center_vertical"
-                            android:id="@+id/servic_layout"
-                            android:orientation="vertical"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-                           <TextView
-                                   android:id="@+id/hasil_service"
-                                   android:textSize="14sp"
-                                   android:text="None"
-                                   android:padding="10dp"
-                                   android:layout_width="match_parent"
-                                   android:background="@color/grey_20"
-                                   android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-                    <Button
-                            android:text="Delivery Options :"
-                            android:id="@+id/btn_service"
-                            android:padding="10dp"
-                            android:background="@color/cyan_A700"
-                            android:layout_margin="@dimen/spacing_large"
-                            android:layout_gravity="end"
-                            android:layout_width="wrap_content"
-                            android:layout_height="40dp"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:layout_marginLeft="@dimen/spacing_large"
-                    android:layout_marginRight="@dimen/spacing_large"
-                    android:gravity="center_vertical"
-                    android:text="Payment"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                    android:textColor="@color/grey_40"
-                    android:textStyle="bold" />
-
-            <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/spacing_middle"
-                    android:layout_marginRight="@dimen/spacing_middle"
-                    app:cardBackgroundColor="@android:color/white"
-                    app:cardCornerRadius="2dp"
-                    app:cardElevation="2dp">
-
-                <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                    <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/spacing_large"
-                            android:id="@+id/btn_paypal"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                        <ImageView
-                                android:id="@+id/iconIv"
-                                app:srcCompat="@drawable/checkmark"
-                                android:layout_gravity="end"
-                                android:layout_weight="0"
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"/>
-                        <View
-                                android:layout_width="@dimen/spacing_middle"
-                                android:layout_height="0dp" />
-
-                        <ImageView
-                                android:layout_width="@dimen/spacing_mxlarge"
-                                android:layout_height="@dimen/spacing_mxlarge"
-                                android:src="@drawable/ic_paypal" />
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Pay Pal"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                android:textColor="@color/grey_90" />
-
-                        <View
-                                android:layout_width="@dimen/spacing_middle"
-                                android:layout_height="0dp" />
-
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="(Default) (Login Required)"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                                android:textColor="@color/grey_60" />
-
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/spacing_mlarge" />
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/spacing_xxlarge"
-                    android:background="@android:color/white"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:paddingLeft="@dimen/spacing_middle"
-                    android:paddingRight="@dimen/spacing_middle">
-
                 <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -307,7 +334,7 @@
                 <View
                         android:layout_width="0dp"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"/>
 
                 <TextView
                         android:id="@+id/total_harga_checkout"
@@ -317,11 +344,13 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/light_green_700"
                         android:textStyle="bold" />
-
             </LinearLayout>
 
+
+
+
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
 
 
 

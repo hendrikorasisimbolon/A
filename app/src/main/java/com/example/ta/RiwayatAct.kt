@@ -128,7 +128,7 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
             var i = Intent(this,MainActivity::class.java)
             startActivity(i)
         }
-        toolbar.title = "All Product"
+        toolbar.title = "Order History"
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         Tools.setSystemBarColor(this, R.color.white_transparency)

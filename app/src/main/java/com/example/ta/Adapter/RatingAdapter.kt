@@ -1,6 +1,8 @@
 package com.example.ta.Adapter
 
 import android.content.Context
+import android.graphics.Color
+import android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +11,7 @@ import com.example.ta.Fragment.QtyFragment
 import com.example.ta.Model.MCart
 import com.example.ta.Model.MRatingBarang
 import com.example.ta.Model.Url_Volley
+import com.haozhang.lib.SlantedTextView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.product_algo.view.*
 import java.text.NumberFormat
@@ -40,6 +43,8 @@ public class RatingAdapter(var context:Context, var list:ArrayList<MRatingBarang
             list[p1].rating,
             p1,
             list[p1].algo,
+            list[p1].diskon,
+            list[p1].harga_normal,
             this.monlistener
         )
 
@@ -53,7 +58,7 @@ public class RatingAdapter(var context:Context, var list:ArrayList<MRatingBarang
     class ItemHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView), View.OnClickListener {
         lateinit var monlistener: OnNoteListener
 
-        fun bind(id: Int, j: String, h: Double, rt: Double, f: String, ft: String, r:Double, ps:Int, al:String, monlistener: OnNoteListener)
+        fun bind(id: Int, j: String, h: Double, rt: Double, f: String, ft: String, r:Double, ps:Int, al:String,ds:Double, hn:Double, monlistener: OnNoteListener)
         {
 
             this.monlistener = monlistener
@@ -65,6 +70,25 @@ public class RatingAdapter(var context:Context, var list:ArrayList<MRatingBarang
             itemView.urutan.text = (ps+1).toString()
             itemView.rating.text = String.format("%.2f",rt)
             itemView.algo.text = al
+
+            val nf = NumberFormat.getNumberInstance()
+            nf.maximumFractionDigits = 0
+
+            if(ds>0){
+                itemView.product_price_diskon.text = formatRupiah.format(hn)
+                itemView.product_price_diskon.paintFlags = STRIKE_THRU_TEXT_FLAG
+                itemView.product_price.text = formatRupiah.format(h)
+                itemView.stvDiscount.setText("Disc."+nf.format(ds)+" %")
+                    .setTextColor(Color.WHITE)
+                    .setSlantedLength(70)
+                    .setMode(SlantedTextView.MODE_LEFT)
+            }
+            else
+            {
+                itemView.product_price_diskon.visibility = View.INVISIBLE
+                itemView.stvDiscount.visibility = View.INVISIBLE
+            }
+
 
 //            itemView.item_deskripsi.text = dk
             itemView.product_price.text = formatRupiah.format(h)

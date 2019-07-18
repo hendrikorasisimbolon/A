@@ -4,8 +4,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/spacing_smlarge"
-        android:layout_marginRight="@dimen/spacing_smlarge"
+        android:layout_marginLeft="@dimen/spacing_small"
+        android:layout_marginRight="@dimen/spacing_small"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="2dp"
         app:cardElevation="2dp"
@@ -14,8 +14,22 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
             android:clickable="true"
             android:orientation="horizontal">
+        <Button
+                android:id="@+id/btn_deletecart"
+                android:layout_gravity="center_vertical"
+                android:layout_width="30dp"
+                android:layout_margin="2dp"
+                android:text="x"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/mdtp_white"
+                android:background="@drawable/bg_round_bulat"
+                android:layout_height="30dp"/>
 
         <LinearLayout
                 android:layout_width="0dp"
@@ -101,18 +115,6 @@
                 android:scaleType="centerCrop"
                 android:id="@+id/product_image"
                 app:srcCompat="@drawable/img_plant_1" />
-
-        <Button
-                android:layout_marginLeft="2dp"
-                android:id="@+id/btn_deletecart"
-                android:layout_gravity="end"
-                android:layout_width="20dp"
-                android:text="X"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                android:textColor="@color/mdtp_white"
-                android:background="@drawable/shape_rounded_red"
-                android:layout_height="match_parent"/>
 
     </LinearLayout>
 

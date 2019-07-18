@@ -150,6 +150,8 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
         intent.putExtra("foto_type", list.get(position).foto_type.toString())
         intent.putExtra("berat", list.get(position).berat.toString())
         intent.putExtra("deskripsi",list.get(position).deksripsi.toString())
+        intent.putExtra("discount",list.get(position).diskon.toString())
+        intent.putExtra("harga_normal",list.get(position).harga_normal.toString())
 
         startActivity(intent)
     }
