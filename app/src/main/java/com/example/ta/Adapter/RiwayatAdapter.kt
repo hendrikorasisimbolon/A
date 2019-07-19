@@ -69,13 +69,13 @@ class RiwayatAdapter(var context: Context, var riwayat:ArrayList<MRiwayat>, var 
             }
             else if(st == 2)
             {
-                itemView.txt_status.text = "Already Paid"
+                itemView.txt_status.text = "Paid"
                 itemView.txt_status.setBackgroundResource(R.drawable.round_step2)
                 itemView.ly_stat.setBackgroundColor(Color.parseColor("#BEEFFF36"))
             }
             else if (st == 3)
             {
-                itemView.txt_status.text = "Has been sent"
+                itemView.txt_status.text = "Sent"
                 itemView.txt_status.setBackgroundResource(R.drawable.round_success)
                 itemView.ly_stat.setBackgroundColor(Color.parseColor("#F52CFF01"))
             }
@@ -87,7 +87,7 @@ class RiwayatAdapter(var context: Context, var riwayat:ArrayList<MRiwayat>, var 
                 itemView.ly_stat.setBackgroundColor(Color.parseColor("#94008600"))
             }
             else{
-                itemView.txt_status.text = "Arrived"
+                itemView.txt_status.text = "Cancel"
                 itemView.txt_status.setBackgroundResource(R.drawable.round_notsucces)
                 itemView.txt_status.setTextColor(Color.WHITE)
                 itemView.ly_stat.setBackgroundColor(Color.parseColor("#BEFF0000"))

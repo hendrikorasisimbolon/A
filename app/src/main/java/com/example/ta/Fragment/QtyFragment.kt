@@ -47,13 +47,15 @@ class QtyFragment : DialogFragment() {
                 {
 //                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah ditambahkan ke cart anda", Snackbar.LENGTH_LONG).show()
 //                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah diupdate di cart anda", Snackbar.LENGTH_LONG).show()
+                    Toast.makeText(activity,"1 item has been added in your cart" ,Toast.LENGTH_LONG).show()
 //                    pake toast
                     total_cart++
                 }
                 else
                 {
 //                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah diupdate di cart anda", Snackbar.LENGTH_LONG).show()
-                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah ditambahkan ke cart anda", Snackbar.LENGTH_LONG).show()
+//                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah ditambahkan ke cart anda", Snackbar.LENGTH_LONG).show()
+                    Toast.makeText(activity,"1 item has been update to your cart" ,Toast.LENGTH_LONG).show()
                 }
 //                var i = Intent(activity,OrderAct::class.java)
 //                startActivity(i)

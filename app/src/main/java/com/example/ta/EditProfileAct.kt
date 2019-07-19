@@ -86,7 +86,6 @@ class EditProfileAct : AppCompatActivity(){
     private val ListCity = ArrayList<com.example.ta.Model.kota.Result>()
 
     val UPLOAD_URL = url_website+"/ecommerce/upload.php"
-    val IMAGES_URL = url_website+"/ecommerce/get_images.php"
     private var bitmap: Bitmap? = null
     private val IMAGE_REQUEST_CODE = 3
     private val STORAGE_PERMISSION_CODE = 123

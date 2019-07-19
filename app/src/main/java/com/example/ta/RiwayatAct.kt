@@ -109,13 +109,15 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
 
     override fun onNoteClick(position: Int) {
         var intent = Intent(this, RiwayatDetailAact::class.java)
+        Log.e("STATUS", list.get(position).status.toString())
         intent.putExtra("id_trans", list.get(position).id_Trans)
-        intent.putExtra("status", list.get(position).status)
-        intent.putExtra("total", list.get(position).total)
+        intent.putExtra("status", list.get(position).status.toString())
+        intent.putExtra("total", list.get(position).total.toString())
         intent.putExtra("kurir", list.get(position).kurir)
         intent.putExtra("service", list.get(position).service)
         intent.putExtra("resi", list.get(position).resi)
         intent.putExtra("ongkir", list.get(position).ongkir)
+        intent.putExtra("created",list.get(position).created)
         startActivity(intent)
 
     }

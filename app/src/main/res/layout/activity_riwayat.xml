@@ -67,11 +67,15 @@
                       android:orientation="vertical"
                       android:id="@+id/hlma"
                       android:layout_height="match_parent">
-            <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
-                                                       android:id="@+id/rc_history"
-                                                       android:layout_height="match_parent">
+            <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent"
+                                                           android:id="@+id/rc_history"
+                                                           android:layout_height="match_parent">
 
-            </androidx.recyclerview.widget.RecyclerView>
+                </androidx.recyclerview.widget.RecyclerView>
+            </androidx.core.widget.NestedScrollView>
+
         </LinearLayout>
 
 

@@ -46,6 +46,7 @@ class PembayaranAct : AppCompatActivity() {
     var serv=""
     var kurir=""
     var ongkir=""
+    var total=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pembayaran)
@@ -54,6 +55,7 @@ class PembayaranAct : AppCompatActivity() {
          serv = intent.getStringExtra("service").toString()
          kurir = intent.getStringExtra("kurir").toString()
          ongkir = intent.getStringExtra("ongkir").toString()
+         total = intent.getStringExtra("total").toInt()
 
         txt_sblum.text =  formatRupiah.format( MTotalCart.total_harga)
 
@@ -98,7 +100,7 @@ class PembayaranAct : AppCompatActivity() {
                     )
                 }
                 txt_dsco.text = "(Discount"+list[0].discount+"%)"
-                var asa = MTotalCart.total_harga * (list[0].discount.toDouble() / 100)
+                var asa = total * (list[0].discount.toDouble() / 100)
                 txt_disc.text = formatRupiah.format(asa)
                 var ad = MTotalCart.total_harga - asa
                 txt_ttl.text = formatRupiah.format(ad)

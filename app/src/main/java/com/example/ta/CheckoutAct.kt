@@ -279,6 +279,7 @@ class CheckoutAct : AppCompatActivity() {
                 intent.putExtra("service", serv)
                 intent.putExtra("kurir", kurir)
                 intent.putExtra("ongkir", ongkir)
+                intent.putExtra("total",  MTotalCart.total_harga.toString() )
 
                 startActivity(intent)
             }

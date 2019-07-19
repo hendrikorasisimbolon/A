@@ -13,199 +13,242 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/actionBarSize"
             android:background="@color/transparent"
-            android:theme="@style/ThemeOverlay.AppCompat.Light" tools:ignore="MissingConstraints">
+            android:theme="@style/ThemeOverlay.AppCompat.Light">
 
         <include layout="@layout/toolbar"/>
 
     </com.google.android.material.appbar.AppBarLayout>
-
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:background="@drawable/bg_round"
-            android:padding="20dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_height="wrap_content">
+    <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
+                                           android:layout_height="match_parent">
         <LinearLayout
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:orientation="vertical"
+                android:layout_height="match_parent">
             <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_weight="0.5"
                     android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_round"
+                    android:padding="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_height="wrap_content">
-                <TextView
+                <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:textSize="14sp"
-                        android:text="Invoice Number. "
-                        android:layout_marginBottom="5dp"
-                        android:layout_height="wrap_content"/>
-                <TextView
-                        android:layout_width="match_parent"
-                        android:textSize="16sp"
-                        android:text="xxxxx"
-                        android:layout_marginBottom="5dp"
-                        android:id="@+id/txt_invoice"
-                        android:textColor="@color/green_500"
-                        android:layout_height="wrap_content"/>
-                <TextView
-                        android:layout_width="match_parent"
-                        android:textSize="14sp"
-                        android:layout_marginBottom="5dp"
-                        android:text="Status"
-                        android:layout_height="wrap_content"/>
-                <TextView
-                        android:layout_width="match_parent"
-                        android:text="Arrived"
-                        android:textSize="16sp"
-                        android:layout_marginBottom="5dp"
-                        android:textStyle="bold"
-                        android:id="@+id/txt_stat"
-                        android:layout_height="wrap_content"/>
-                <TextView
-                        android:layout_width="match_parent"
-                        android:layout_marginBottom="5dp"
-                        android:textSize="14sp"
-                        android:text="Purchase Date"
-                        android:layout_height="wrap_content"/>
-                <TextView
-                        android:text="2019-07-18 02:40:14 WIB"
-                        android:textSize="16sp"
-                        android:layout_marginBottom="5dp"
-                        android:textStyle="bold"
-                        android:id="@+id/txt_dateP"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content">
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="0.5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:textSize="14sp"
+                                android:text="Invoice Number. "
+                                android:layout_marginBottom="5dp"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:textSize="16sp"
+                                android:text="xxxxx"
+                                android:layout_marginBottom="5dp"
+                                android:id="@+id/txt_invoice"
+                                android:textColor="@color/green_500"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:textSize="14sp"
+                                android:layout_marginBottom="5dp"
+                                android:text="Status"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_marginRight="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:textAlignment="center"
+                                android:text="Arrived"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="5dp"
+                                android:textStyle="bold"
+                                android:id="@+id/txt_stat"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="14sp"
+                                android:text="Purchase Date"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:text="2019-07-18 02:40:14 WIB"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="5dp"
+                                android:textStyle="bold"
+                                android:id="@+id/txt_dateP"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center_horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                        <Button android:layout_width="100dp"
+                                android:background="@drawable/round_arrived"
+                                android:textAllCaps="false"
+                                android:id="@+id/btn_review"
+                                android:layout_marginBottom="10dp"
+                                android:layout_gravity="center_horizontal"
+                                android:textColor="@color/mdtp_white"
+                                android:text="Write Review"
+                                android:layout_height="40dp"/>
+                        <Button android:layout_width="100dp"
+                                android:background="@drawable/round_step1"
+                                android:textAllCaps="false"
+                                android:layout_gravity="center_horizontal"
+                                android:textColor="@color/mdtp_white"
+                                android:text="Pay Now"
+                                android:layout_height="40dp" android:id="@+id/btn_payy" android:visibility="invisible"/>
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
+            <TextView
+                    android:layout_marginLeft="30dp"
+                    android:textSize="16sp"
+                    android:text="List Product :"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
             <LinearLayout
-                    android:layout_weight="1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:orientation="vertical"
-                    android:gravity="center_horizontal"
                     android:layout_width="match_parent"
+                    android:background="@drawable/btn_rounded_grey_outline"
                     android:layout_height="wrap_content">
-                <Button android:layout_width="100dp"
-                        android:background="@drawable/round_arrived"
-                        android:textAllCaps="false"
-                        android:id="@+id/btn_review"
-                        android:layout_marginBottom="10dp"
-                        android:layout_gravity="center_horizontal"
-                        android:textColor="@color/mdtp_white"
-                        android:text="Write Review"
-                        android:layout_height="40dp"/>
-                <Button android:layout_width="100dp"
-                        android:background="@drawable/round_step1"
-                        android:textAllCaps="false"
-                        android:layout_gravity="center_horizontal"
-                        android:textColor="@color/mdtp_white"
-                        android:text="Buy Again"
-                        android:layout_height="40dp"/>
-            </LinearLayout>
-        </LinearLayout>
-    </LinearLayout>
-
-    <TextView
-            android:layout_marginLeft="30dp"
-            android:textSize="16sp"
-            android:text="List Product :"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    <LinearLayout
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:background="@drawable/btn_rounded_grey_outline"
-            android:layout_height="290dp">
-            <androidx.core.widget.NestedScrollView android:layout_width="match_parent"
-                                                   android:layout_height="match_parent">
-                <androidx.recyclerview.widget.RecyclerView
-                        android:padding="30dp"
-                        android:id="@+id/rc_detialP"
+                <androidx.core.widget.NestedScrollView
                         android:layout_width="match_parent"
+                        android:layout_gravity="center"
+                        android:padding="20dp"
                         android:layout_height="match_parent">
+                   <LinearLayout android:layout_width="match_parent"
+                                 android:layout_height="match_parent" android:orientation="vertical">
+                       <androidx.recyclerview.widget.RecyclerView
+                               android:paddingLeft="30dp"
+                               android:paddingRight="30dp"
+                               android:id="@+id/rc_detialP"
+                               android:layout_gravity="center"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content">
+                       </androidx.recyclerview.widget.RecyclerView>
+                       <View android:layout_width="match_parent"
+                             android:layout_marginTop="10dp"
+                             android:background="@color/mdtp_transparent_black"
+                             android:layout_height="2dp"/>
+                       <LinearLayout android:layout_width="match_parent"
+                                     android:orientation="horizontal"
+                                     android:layout_height="wrap_content">
+                           <TextView
+                                   android:layout_marginLeft="30dp"
+                                   android:text="Total"
+                                   android:textStyle="bold"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"/>
+                           <TextView
+                                   android:textStyle="bold"
+                                   android:textAlignment="textEnd"
+                                   android:id="@+id/txtt_total"
+                                   android:text="RP. 0"
+                                   android:layout_marginRight="30dp"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="match_parent"/>
+                       </LinearLayout>
 
-                </androidx.recyclerview.widget.RecyclerView>
-            </androidx.core.widget.NestedScrollView>
+                   </LinearLayout>
 
-    </LinearLayout>
-    <TextView
-            android:text="Delivery :"
-            android:layout_marginLeft="30dp"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/btn_rounded_indigo_outline"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <TextView
-                android:layout_marginTop="15dp"
-                android:id="@+id/txt_kurirP"
-                android:text="JNE - REG"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-            <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_weight="0.5"
-                    android:layout_height="wrap_content">
-                <TextView
-                        android:text="No Resi :"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                <TextView
-                        android:layout_width="match_parent"
-                        android:text="Sent to  :"
-                        android:layout_height="wrap_content"/>
-                <TextView
-                        android:text="Alamat  :"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                </androidx.core.widget.NestedScrollView>
+
             </LinearLayout>
+            <TextView
+                    android:text="Delivery :"
+                    android:layout_marginLeft="30dp"
+                    android:textSize="16sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
             <LinearLayout
                     android:orientation="vertical"
-                    android:layout_weight="0.12"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:padding="20dp"
+                    android:background="@drawable/btn_rounded_indigo_outline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                 <TextView
-                        android:text="XXXXXXXXXXXXXXXXXX"
-                        android:id="@+id/txt_resiP"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/txt_kurirP"
+                        android:text="- - -"
+                        android:textStyle="bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
-                <TextView
-                        android:text="XXXXXXXXXXXXXXXXXXX"
-                        android:id="@+id/txt_penerima"
+                <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                <TextView
-                        android:text="DIMANA AJA JGA BOLEH"
-                        android:id="@+id/txt_addressP"
-                        android:maxLines="1"
-                        android:ellipsize="end"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                <TextView
-                        android:text="Medan"
-                        android:id="@+id/txt_kote"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-                <TextView
-                        android:id="@+id/txt_prov"
-                        android:text="SUMUT"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                        <TextView
+                                android:text="No Resi :"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:text="Sent to  :"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:text="Alamat  :"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_gravity="start"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                        <TextView
+                                android:text="-"
+                                android:id="@+id/txt_resiP"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:text="-"
+                                android:id="@+id/txt_penerima"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:text="-"
+                                android:id="@+id/txt_addressP"
+                                android:maxLines="1"
+                                android:ellipsize="end"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:text="-"
+                                android:id="@+id/txt_kote"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:id="@+id/txt_prov"
+                                android:text="-"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
 
 </LinearLayout>
