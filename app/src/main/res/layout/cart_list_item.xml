@@ -13,6 +13,7 @@
 
     <LinearLayout
             android:layout_width="match_parent"
+            android:id="@+id/ly_br"
             android:layout_height="wrap_content"
             android:layout_marginLeft="2dp"
             android:clickable="true"
@@ -102,6 +103,14 @@
                             android:tint="@color/grey_40"
                             android:id="@+id/btn_qty_add"
                             app:srcCompat="@drawable/ic_add" />
+
+                    <TextView android:layout_width="wrap_content"
+                              android:text="(Stok Habis)"
+                              android:id="@+id/txt_ket"
+                              android:visibility="invisible"
+                              android:textColor="@color/red_800"
+                              android:textStyle="bold"
+                              android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 

@@ -11,8 +11,8 @@ import android.widget.ListView
 import androidx.fragment.app.Fragment
 import com.example.ta.Adapter.KategoriAdapter
 import com.example.ta.ItemsAct
-import com.example.ta.KategoriAct
 import com.example.ta.KategoriAct.Companion.cat
+import com.example.ta.KategoriAct.Companion.catName
 import com.example.ta.KategoriAct.Companion.kategoriW
 import com.example.ta.R
 import kotlinx.android.synthetic.main.toolbar.*
@@ -41,11 +41,12 @@ class WanitaFragment : Fragment() {
 
         ls.setOnItemClickListener { parent, view, position, id ->
 
-            cat = kategoriW[position].id_subkat
-            KategoriAct.catName = kategoriW[position].judul_subkat
-            val obj = Intent(activity!!, ItemsAct::class.java)
-            obj.putExtra("cat", cat)
-            startActivity(obj)
+             cat = kategoriW[position].id_subkat
+             catName = kategoriW[position].judul_subkat
+            val intent = Intent(activity!!, ItemsAct::class.java)
+//            intent.putExtra("cat", cat)
+//            intent.putExtra("catname",catName)
+            startActivity(intent)
         }
         return v
     }

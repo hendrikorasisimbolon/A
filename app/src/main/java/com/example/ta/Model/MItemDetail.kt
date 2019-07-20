@@ -17,23 +17,27 @@ class MItemDetail {
     var berat:Double
     var stok:Double
     var kat_id:Double
+    var judul_kat:String
     var subkat_id:Double
+    var judul_subkat:String
     var foto:String
     var foto_type:String
 
     constructor(
-        id: Int,
-        judul_produk: String,
-        harga_normal: Double,
-        deksripsi: String,
-        berat: Double,
-        foto: String,
-        foto_type: String,
-        harga_diskon: Double,
-        stok: Double,
-        diskon: Double,
-        subkat_id: Double,
-        kat_id: Double
+        id:Int,
+        judul_produk:String,
+        harga_normal:Double,
+        harga_diskon:Double,
+        diskon:Double,
+        deksripsi:String,
+        berat:Double,
+        stok:Double,
+        kat_id:Double,
+        judul_kat:String,
+        subkat_id:Double,
+        judul_subkat:String,
+        foto:String,
+        foto_type:String
     ){
         this.id = id
         this.judul_produk = judul_produk
@@ -47,6 +51,8 @@ class MItemDetail {
         this.diskon = diskon
         this.subkat_id = subkat_id
         this.kat_id = kat_id
+        this.judul_kat = judul_kat
+        this.judul_subkat = judul_subkat
     }
 
     companion object{
@@ -74,15 +80,17 @@ class MItemDetail {
                             response.getJSONObject(x).getInt("id_produk"),
                             response.getJSONObject(x).getString("judul_produk"),
                             response.getJSONObject(x).getDouble("harga_normal"),
+                            response.getJSONObject(x).getDouble("harga_diskon"),
+                            response.getJSONObject(x).getDouble("diskon"),
                             response.getJSONObject(x).getString("deskripsi"),
                             response.getJSONObject(x).getDouble("berat"),
-                            response.getJSONObject(x).getString("foto"),
-                            response.getJSONObject(x).getString(("foto_type")),
-                            response.getJSONObject(x).getDouble("harga_diskon"),
                             response.getJSONObject(x).getDouble("stok"),
-                            response.getJSONObject(x).getDouble("diskon"),
+                            response.getJSONObject(x).getDouble("kat_id"),
+                            response.getJSONObject(x).getString("judul_kategori"),
                             response.getJSONObject(x).getDouble("subkat_id"),
-                            response.getJSONObject(x).getDouble("kat_id")
+                            response.getJSONObject(x).getString("judul_subkategori"),
+                            response.getJSONObject(x).getString("foto"),
+                            response.getJSONObject(x).getString(("foto_type"))
                         )
                     )
                 }

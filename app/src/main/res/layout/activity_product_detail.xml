@@ -79,17 +79,42 @@
                         android:text="Roll-Up Neocity Backpack"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textColor="@android:color/white" android:id="@+id/txt_judul_produk"/>
-
                 <TextView
                         android:id="@+id/text_kat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/spacing_medium"
-                        android:text="Berat : "
+                        android:textSize="12sp"
+                        android:text="Katergori > SubKategori "
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/grey_10" />
-
-
+                        android:textColor="@color/yellow_700" />
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:id="@+id/text_brt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_medium"
+                            android:text="Berat : "
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/grey_10" />
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+                    <TextView
+                            android:id="@+id/text_tersedia"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:layout_marginTop="@dimen/spacing_medium"
+                            android:text="Stok Tidak Tersedia"
+                            android:textStyle="bold"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="#FF00" />
+                </LinearLayout>
                 <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -179,7 +204,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Description"
+                            android:text="Deskripsi"
                             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                             android:textColor="@color/grey_80" />
 
@@ -196,7 +221,6 @@
                             app:srcCompat="@drawable/ic_arrow_drop" />
 
                 </LinearLayout>
-
                 <LinearLayout
                         android:id="@+id/lyt_expand_description"
                         android:layout_width="match_parent"
@@ -208,17 +232,78 @@
                         android:layout_marginStart="?attr/actionBarSize"
                         android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:paddingBottom="@dimen/spacing_large"
+                        android:paddingBottom="@dimen/spacing_medium"
                         android:paddingTop="@dimen/spacing_medium"
                         android:visibility="gone">
 
                     <TextView
                             android:layout_width="0dp"
+                            android:id="@+id/txt_des"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:id="@+id/text_des"
-                            android:text="@string/lorem_ipsum"
+                            android:text="@string/invoice_address"
                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                </LinearLayout>
+                <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:background="@color/grey_20" />
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:minHeight="?attr/actionBarSize"
+                        android:orientation="horizontal">
+
+                    <ImageButton
+                            android:layout_width="?attr/actionBarSize"
+                            android:layout_height="?attr/actionBarSize"
+                            android:background="@android:color/transparent"
+                            android:tint="@color/grey_60"
+                            app:srcCompat="@drawable/ic_comment" />
+
+                    <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Testimoni"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/grey_80" />
+
+                    <View
+                            android:layout_width="@dimen/spacing_large"
+                            android:layout_height="wrap_content" />
+
+                    <ImageButton
+                            android:id="@+id/bt_toggle_testi"
+                            android:layout_width="?attr/actionBarSize"
+                            android:layout_height="?attr/actionBarSize"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:tint="@color/grey_60"
+                            app:srcCompat="@drawable/ic_arrow_drop" />
+
+                </LinearLayout>
+                <LinearLayout
+                        android:id="@+id/lyt_expand_testimoni"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/spacing_middle"
+                        android:layout_marginEnd="@dimen/spacing_smlarge"
+                        android:layout_marginLeft="?attr/actionBarSize"
+                        android:layout_marginRight="@dimen/spacing_smlarge"
+                        android:layout_marginStart="?attr/actionBarSize"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingBottom="@dimen/spacing_medium"
+                        android:paddingTop="@dimen/spacing_medium"
+                        android:visibility="gone">
+                    <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/list_testi"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                    </androidx.recyclerview.widget.RecyclerView>
 
                 </LinearLayout>
 
@@ -226,9 +311,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="1px"
                         android:background="@color/grey_20" />
-
-
-
 
                 <LinearLayout
                         android:id="@+id/lyt_expand_warranty"

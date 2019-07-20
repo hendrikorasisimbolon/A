@@ -1,18 +1,20 @@
 package com.example.ta
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.AlertDialog
 import android.app.ProgressDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
-import android.view.*
-import android.widget.*
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.widget.ListView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
@@ -35,26 +37,23 @@ import com.example.ta.Model.expedisi.ItemExpedisi
 import com.example.ta.utilss.Tools
 import com.example.ta.utilss.UserSessionManager
 import com.google.gson.Gson
-import com.paypal.android.sdk.payments.PayPalConfiguration
-import com.paypal.android.sdk.payments.PayPalPayment
-import com.paypal.android.sdk.payments.PayPalService
-import com.paypal.android.sdk.payments.PaymentActivity
 import kotlinx.android.synthetic.main.activity_checkout.*
-import kotlinx.android.synthetic.main.itemuntukcheckout.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.math.BigDecimal
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
+import com.paypal.android.sdk.payments.PayPalConfiguration as PayPalConfiguration1
 
 class CheckoutAct : AppCompatActivity() {
 
 
     private var alert: AlertDialog.Builder? = null
     private var ad: AlertDialog? = null
+
+
 
     lateinit var user: UserInfo
     lateinit var session: UserSessionManager
@@ -68,7 +67,7 @@ class CheckoutAct : AppCompatActivity() {
     var serv:String = ""
     var kurir:String = ""
     var ongkir:String = ""
-    var config:PayPalConfiguration?=null
+    var config: PayPalConfiguration1?=null
     var amount:Double = 0.0
 
 
@@ -106,7 +105,8 @@ class CheckoutAct : AppCompatActivity() {
                         response.getJSONObject(x).getInt("harga_diskon"),
                         response.getJSONObject(x).getInt("total_qty"),
                         response.getJSONObject(x).getString("foto"),
-                        response.getJSONObject(x).getString("foto_type"),""
+                        response.getJSONObject(x).getString("foto_type"),"",
+                        response.getJSONObject(x).getInt("stok")
                     )
                 )
             }
@@ -150,7 +150,7 @@ class CheckoutAct : AppCompatActivity() {
 //        startService(i)
 
 
-        if (service > 0)
+        if (service >-1)
         {
             hasil_service.text = listEkspedisi[service].kode+ " "+ listEkspedisi[service].service + System.getProperty("line.separator")+
                                 "Harga Rp."+ listEkspedisi[service].tarif.toString()+ System.getProperty("line.separator")+ "Estimasi : "+
@@ -217,7 +217,7 @@ class CheckoutAct : AppCompatActivity() {
         var tem = CheckoutAdapter.catat
         for (i in 0..tem.count()-1)
         {
-            var url = Url_Volley.url_website +"/udemy/after_checkout.php?user_id="+user.id.toString()+"&catatan="+tem[i].catatan+"&produk_id="+tem[i].idP
+            var url = Url_Volley.url_website +"/udemy/after_checkout.php?user_id="+user.id.toString()+"&catatan="+tem[i].catatan+"&produk_id="+tem[i].idP+"&kurir="+kurir+"&service="+serv+"&ongkir="+ongkir
             var rq: RequestQueue = Volley.newRequestQueue(this)
             var jar= StringRequest(Request.Method.GET,url,Response.Listener { response ->
 
@@ -280,7 +280,6 @@ class CheckoutAct : AppCompatActivity() {
                 intent.putExtra("kurir", kurir)
                 intent.putExtra("ongkir", ongkir)
                 intent.putExtra("total",  MTotalCart.total_harga.toString() )
-
                 startActivity(intent)
             }
             else if(serv=="" && kurir=="" && ongkir==""){
@@ -331,7 +330,7 @@ class CheckoutAct : AppCompatActivity() {
 
 
     fun getCoast(origin: String, destination: String, weight: String, courier: String) {
-
+//        listEkspedisi.clear()
         val retrofit = Retrofit.Builder()
             .baseUrl(ApiUrl.URL_ROOT_HTTPS)
             .addConverterFactory(GsonConverterFactory.create())

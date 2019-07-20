@@ -41,11 +41,12 @@ class PriaFragment : Fragment() {
 
         ls.setOnItemClickListener { parent, view, position, id ->
 
-            cat = KategoriAct.kategoriP[position].id_subkat
-            catName = KategoriAct.kategoriP[position].judul_subkat
-            val obj = Intent(activity!!, ItemsAct::class.java)
-            obj.putExtra("cat", cat)
-            startActivity(obj)
+             cat = KategoriAct.kategoriP[position].id_subkat
+             catName = KategoriAct.kategoriP[position].judul_subkat
+            val intent = Intent(activity!!, ItemsAct::class.java)
+//            intent.putExtra("cat", cat)
+//            intent.putExtra("catname",catName)
+            startActivity(intent)
         }
         return v
     }

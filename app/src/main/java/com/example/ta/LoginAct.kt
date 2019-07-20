@@ -139,7 +139,7 @@ public class LoginAct : AppCompatActivity() {
         }
 
         Log.e("ID LOGIN", MCart.user_id)
-        session.checkLogin()
+//        session.checkLogin()
 
     }
     private fun startAnimation() {

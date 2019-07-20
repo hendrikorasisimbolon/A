@@ -61,6 +61,7 @@ class DeliveryFragment : DialogFragment(), ServiceAdapter.OnNoteListener {
         rd_eksp.isChecked
 
         CheckoutAct.service = position
+        Log.e("Position", CheckoutAct.service.toString())
         CheckoutAct.hasil_service = CheckoutAct.listEkspedisi[position].kode+ " "+ CheckoutAct.listEkspedisi[position].service + System.getProperty("line.separator")+
                 "Harga Rp."+ CheckoutAct.listEkspedisi[position].tarif.toString()+ System.getProperty("line.separator")+ "Estimasi : "+
                 CheckoutAct.listEkspedisi[position].estimasi+ " hari"

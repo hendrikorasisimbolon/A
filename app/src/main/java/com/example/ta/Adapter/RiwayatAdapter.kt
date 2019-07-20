@@ -4,7 +4,9 @@ import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.content.Context
 import android.graphics.Color
+import android.graphics.Paint
 import android.os.Build
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,6 +40,7 @@ class RiwayatAdapter(var context: Context, var riwayat:ArrayList<MRiwayat>, var 
             riwayat[position].resi,
             riwayat[position].total,
             riwayat[position].ongkir,
+            riwayat[position].diskon,
             this.monlistener
         )
     }
@@ -45,7 +48,7 @@ class RiwayatAdapter(var context: Context, var riwayat:ArrayList<MRiwayat>, var 
 
         lateinit var monlistener: OnNoteListener
         @RequiresApi(Build.VERSION_CODES.O)
-        fun bindItem(id:String, cr:String, kr:String, srv:String, st:Int, rs:String, tl:Int, or:String, monlistener: OnNoteListener)
+        fun bindItem(id:String, cr:String, kr:String, srv:String, st:Int, rs:String, tl:Int, or:Int,ds:Int, monlistener: OnNoteListener)
         {
             this.monlistener = monlistener
             itemView.setOnClickListener(this)
@@ -60,7 +63,20 @@ class RiwayatAdapter(var context: Context, var riwayat:ArrayList<MRiwayat>, var 
             itemView.txt_idtrans.text = "Invoice number. " +id
             itemView.txt_kiriman.text = kr +" ("+srv+")"
             itemView.txt_resi.text = "Resi : "+ rs
-            itemView.txt_jumlah.text = formatRupiah.format(tl + (or).toInt())
+            var dsc  = tl*(ds.toDouble() / 100)
+            var diskon = (tl+or) - dsc
+
+            if(dsc>0){
+                itemView.txt_sblmd.text = formatRupiah.format(tl)
+                itemView.txt_sblmd.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+            }
+            else{
+                itemView.txt_sblmd.visibility =View.INVISIBLE
+            }
+
+
+//            Log.e("kurir", kr.toString())
+            itemView.txt_jumlah.text = formatRupiah.format(diskon)
             if(st == 1)
             {
                 itemView.txt_status.text = "Not paid yet"

@@ -66,6 +66,7 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
             else{
                 for(x in 0..response.length()-1)
                 {
+
                     var a = response.getJSONObject(x).getString("resi")
                     var c =""
                     if (a=="null")
@@ -78,14 +79,16 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
                             response.getJSONObject(x).getString("id_trans"),
                             response.getJSONObject(x).getString("user_id"),
                             response.getJSONObject(x).getString("created"),
-                            response.getJSONObject(x).getString("ongkir"),
+                            response.getJSONObject(x).getInt("ongkir"),
                             response.getJSONObject(x).getString("kurir"),
                             response.getJSONObject(x).getString("service"),
                             response.getJSONObject(x).getInt("status"),
                             c,
-                            response.getJSONObject(x).getInt("total")
+                            response.getJSONObject(x).getInt("total"),
+                            response.getJSONObject(x).getInt("diskon")
                         )
                     )
+                    Log.e("kurir", response.getJSONObject(x).getString("kurir"))
                 }
                 var adp = RiwayatAdapter(this,list, this)
                 rc_history.layoutManager=LinearLayoutManager(this)
@@ -116,10 +119,9 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
         intent.putExtra("kurir", list.get(position).kurir)
         intent.putExtra("service", list.get(position).service)
         intent.putExtra("resi", list.get(position).resi)
-        intent.putExtra("ongkir", list.get(position).ongkir)
+        intent.putExtra("ongkir", list.get(position).ongkir.toString())
         intent.putExtra("created",list.get(position).created)
         startActivity(intent)
-
     }
 
     private fun initToolbar() {
@@ -127,8 +129,7 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
         toolbar.navigationIcon?.setColorFilter(resources.getColor(R.color.indigo_500), PorterDuff.Mode.SRC_ATOP)
         toolbar.setNavigationOnClickListener{
-            var i = Intent(this,MainActivity::class.java)
-            startActivity(i)
+            onBackPressed()
         }
         toolbar.title = "Order History"
         setSupportActionBar(toolbar)

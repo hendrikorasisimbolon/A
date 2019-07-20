@@ -59,7 +59,9 @@ class CheckoutAdapter (var context: Context, var cartItems:ArrayList<MKeranjang>
             cartItems[position].harga,
             cartItems[position].foto,
             cartItems[position].foto_type,
-            cartItems[position].qty)
+            cartItems[position].qty,
+            cartItems[position].stok
+            )
     }
 
     class CheckoutHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
@@ -67,7 +69,7 @@ class CheckoutAdapter (var context: Context, var cartItems:ArrayList<MKeranjang>
         @TargetApi(Build.VERSION_CODES.P)
         @RequiresApi(Build.VERSION_CODES.P)
         @SuppressLint("SetTextI18n", "NewApi")
-        fun bindItem(idP:String, judul:String, harga:Int, foto:String, foto_type:String, qty:Int)
+        fun bindItem(idP:String, judul:String, harga:Int, foto:String, foto_type:String, qty:Int, stok:Int)
         {
             var listner:CharCountTextView.CharCountChangedListener ?= null
             var locale = Locale("in", "ID")
@@ -188,7 +190,7 @@ class CheckoutAdapter (var context: Context, var cartItems:ArrayList<MKeranjang>
                 var mana = (itemView.context as AppCompatActivity).fragmentManager
                 obj.show(mana,"Dlt")
             }
-            catat.add(MKeranjang(idP,judul,harga,qty,foto,foto_type,itemView.catatan.text.toString()))
+            catat.add(MKeranjang(idP,judul,harga,qty,foto,foto_type,itemView.catatan.text.toString(),stok))
 
 
         }

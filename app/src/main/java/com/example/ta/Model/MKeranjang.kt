@@ -8,6 +8,7 @@ class MKeranjang {
     var foto:String
     var foto_type:String
     var catatan:String
+    var stok:Int
 
     constructor(
         idP:String,
@@ -16,7 +17,8 @@ class MKeranjang {
         qty:Int,
         foto:String,
         foto_type:String,
-        catatan:String
+        catatan:String,
+        stok:Int
     ){
         this.idP = idP
         this.judul = judul
@@ -25,6 +27,7 @@ class MKeranjang {
         this.foto = foto
         this.foto_type = foto_type
         this.catatan = catatan
+        this.stok = stok
     }
 
 }

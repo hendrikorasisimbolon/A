@@ -22,6 +22,7 @@ import com.example.ta.Model.MTotalCart.Companion.total_cart
 import com.example.ta.Model.Url_Volley.Companion.url_website
 import com.example.ta.R
 import com.google.android.material.snackbar.Snackbar
+import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 
 @RequiresApi(Build.VERSION_CODES.HONEYCOMB)
 class QtyFragment : DialogFragment() {
@@ -38,6 +39,13 @@ class QtyFragment : DialogFragment() {
         var et = v.findViewById<EditText>(R.id.et_qty)
         var btn= v.findViewById<Button>(R.id.btn_qty)
 
+
+        et.validator()
+            .nonEmpty()
+            .addErrorCallback { et.error = it }
+            .check()
+
+
         btn.setOnClickListener{
             var url = url_website+"/udemy/insert_cart.php?user_id="+ MCart.user_id +"&id_produk="+ MCart.itemId +
                     "&total_qty=" + et.text.toString()
@@ -47,7 +55,7 @@ class QtyFragment : DialogFragment() {
                 {
 //                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah ditambahkan ke cart anda", Snackbar.LENGTH_LONG).show()
 //                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah diupdate di cart anda", Snackbar.LENGTH_LONG).show()
-                    Toast.makeText(activity,"1 item has been added in your cart" ,Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity,"1 item telah ditambahkan ke cart" ,Toast.LENGTH_LONG).show()
 //                    pake toast
                     total_cart++
                 }
@@ -55,7 +63,7 @@ class QtyFragment : DialogFragment() {
                 {
 //                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah diupdate di cart anda", Snackbar.LENGTH_LONG).show()
 //                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah ditambahkan ke cart anda", Snackbar.LENGTH_LONG).show()
-                    Toast.makeText(activity,"1 item has been update to your cart" ,Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity,"1 telah di sunting di cart" ,Toast.LENGTH_LONG).show()
                 }
 //                var i = Intent(activity,OrderAct::class.java)
 //                startActivity(i)

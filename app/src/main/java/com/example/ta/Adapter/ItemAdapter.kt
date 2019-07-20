@@ -10,9 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import android.widget.Toast
 import com.example.ta.Fragment.QtyFragment
 import com.example.ta.Model.MCart
 import com.example.ta.Model.MItemDetail
+import com.example.ta.Model.Url_Volley
 import com.haozhang.lib.SlantedTextView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.product_row_item.view.*
@@ -45,6 +47,7 @@ public class ItemAdapter (var context:Context, var list:ArrayList<MItemDetail>, 
             list[p1].foto_type,
             list[p1].diskon,
             list[p1].harga_normal,
+            list[p1].stok,
             this.monlistener
         )
 
@@ -58,7 +61,7 @@ public class ItemAdapter (var context:Context, var list:ArrayList<MItemDetail>, 
     public class ItemHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView), View.OnClickListener {
         lateinit var monlistener: OnNoteListener
 
-        fun bind(id: Int, j: String, h: Double, dk: String, f: String, ft: String,ds:Double, hn:Double, monlistener: OnNoteListener)
+        fun bind(id: Int, j: String, h: Double, dk: String, f: String, ft: String,ds:Double, hn:Double, st:Double, monlistener: OnNoteListener)
         {
             this.monlistener = monlistener
             var locale = Locale("in", "ID")
@@ -87,14 +90,22 @@ public class ItemAdapter (var context:Context, var list:ArrayList<MItemDetail>, 
             }
 
 
-            Picasso.with(itemView.context).load("http://192.168.43.180/ecommerce/assets/images/produk/" + f + ft)
+            Picasso.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/produk/" + f + ft)
                 .into(itemView.product_image)
 
             itemView.addToCart.setOnClickListener{
                 MCart.itemId=id
-                var obj = QtyFragment() // fragment
-                var manager = (itemView.context as AppCompatActivity).fragmentManager //convert fragment ke activity dengan manager
-                obj.show(manager, "Qty")
+                if(st>0)
+                {
+                    var obj = QtyFragment() // fragment
+                    var manager = (itemView.context as AppCompatActivity).fragmentManager //convert fragment ke activity dengan manager
+                    obj.show(manager, "Qty")
+                }
+                else
+                {
+                    Toast.makeText(itemView.context, "Stok Barang Habis!", Toast.LENGTH_LONG).show()
+                }
+
 
 
             }

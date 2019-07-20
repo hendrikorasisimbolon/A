@@ -38,7 +38,7 @@ class OrderAct : AppCompatActivity() {
     lateinit var user:UserInfo
     lateinit var session: UserSessionManager
     var list = ArrayList<MKeranjang>()
-
+    var st:Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order)
@@ -46,7 +46,6 @@ class OrderAct : AppCompatActivity() {
         session = UserSessionManager(applicationContext)
 
         initToolbar()
-
         user = session.userDetails
 
         var url = url_website+"/udemy/get_cart.php?user_id="+user.id.toString()
@@ -66,9 +65,14 @@ class OrderAct : AppCompatActivity() {
                         response.getJSONObject(x).getInt("total_qty"),
                         response.getJSONObject(x).getString("foto"),
                         response.getJSONObject(x).getString("foto_type"),
-                        ""
+                        "",
+                        response.getJSONObject(x).getInt("stok")
                     )
                 )
+                if(response.getJSONObject(x).getInt("stok")==0)
+                {
+                    st=1
+                }
 ////                MTotalCart.total_harga += (response.getJSONObject(x).getInt("harga_diskon") * response.getJSONObject(x).getInt("total_qty"))
 //               var temp = (response.getJSONObject(x).getInt("harga_diskon") * response.getJSONObject(x).getInt("total_qty"))
 ////                Log.e("Hitung", (response.getJSONObject(x).getInt("harga_diskon") * response.getJSONObject(x).getInt("total_qty")).toString())
@@ -86,11 +90,17 @@ class OrderAct : AppCompatActivity() {
         })
         rq.add(jar)
         get_total_cart()
-
-        btn_checkout.setOnClickListener{
-            var i = Intent(this,CheckoutAct::class.java)
-            startActivity(i)
+        if(st==1)
+        {
+            Toast.makeText(this, "Hapus produk yang tidak tersedia", Toast.LENGTH_LONG).show()
         }
+        else {
+            btn_checkout.setOnClickListener{
+                var i = Intent(this,CheckoutAct::class.java)
+                startActivity(i)
+            }
+        }
+
 
         Log.e("Berat", MTotalCart.total_berat.toString())
     }

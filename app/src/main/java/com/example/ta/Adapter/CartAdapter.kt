@@ -1,10 +1,12 @@
 package com.example.ta.Adapter
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -22,6 +24,7 @@ import com.example.ta.Model.Url_Volley.Companion.url_website
 import com.example.ta.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.cart_list_item.view.*
+import kotlinx.android.synthetic.main.fragment_qty.view.*
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -45,12 +48,13 @@ class CartAdapter (var context: Context, var cartItems: ArrayList<MKeranjang>) :
             cartItems[position].harga,
             cartItems[position].foto,
             cartItems[position].foto_type,
-            cartItems[position].qty)
+            cartItems[position].qty,
+            cartItems[position].stok)
     }
 
     class ViewHolder (itemView : View) : RecyclerView.ViewHolder(itemView)
     {
-        fun bindItem(idP:String, judul:String,harga:Int, foto:String, foto_type:String, qty:Int)
+        fun bindItem(idP:String, judul:String,harga:Int, foto:String, foto_type:String, qty:Int,st:Int)
         {
             var locale = Locale("in", "ID")
             var formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(locale)
@@ -62,82 +66,111 @@ class CartAdapter (var context: Context, var cartItems: ArrayList<MKeranjang>) :
             itemView.product_name.text = judul
             itemView.product_price.text = formatRupiah.format(harga)
             itemView.product_quantity.text = qty.toString()
-
-            itemView.btn_qty_add.setOnClickListener{
-                var t:Int = itemView.product_quantity.text.toString().toInt()
-                t++
-                itemView.product_quantity.text = t.toString()
+            if(st == 0)
+            {
                 var url = url_website+"/udemy/insert_cart.php?user_id="+ MCart.user_id +"&id_produk="+ idP +
-                        "&total_qty=1"
+                        "&total_qty=0"
                 var rq: RequestQueue = Volley.newRequestQueue(itemView.context)
                 var sr = StringRequest(Request.Method.GET,url, Response.Listener { response ->
 
                 }, Response.ErrorListener { error ->
                     Toast.makeText(itemView.context, error.message, Toast.LENGTH_LONG).show()
                 })
-                rq.add(sr)
-                MTotalCart.total_harga += harga.toString().toInt()
 
+                rq.add(sr)
+                MTotalCart.total_harga -= harga.toString().toInt()
                 for( i in 0..MItemDetail.data.size-1)
                 {
                     if (MItemDetail.data[i].id == idP.toInt())
                     {
-                        MTotalCart.total_berat += MItemDetail.data[i].berat.toInt()
-//                        itemView.berat_procuctcart.text = "Berat : " + MItemDetail.data[i].berat + " gram / satuan"
+                        MTotalCart.total_berat -= MItemDetail.data[i].berat.toInt()
                     }
                 }
+                Toast.makeText(itemView.context,"Barang "+judul+" telah habis terjual",Toast.LENGTH_LONG).show()
+                itemView.btn_qty_add.visibility = View.INVISIBLE
+                itemView.btn_qty_remove.visibility = View.INVISIBLE
+                itemView.txt_ket.visibility = View.VISIBLE
+                itemView.ly_br.setBackgroundColor(Color.parseColor("#a8a7a7"))
 
-                var obj = F5Fragment() // fragment
-                var mana = (itemView.context as AppCompatActivity).fragmentManager
-                obj.show(mana,"Rfs")
             }
+            else {
 
-            itemView.btn_qty_remove.setOnClickListener {
-                var t:Int = itemView.product_quantity.text.toString().toInt()
-                t--
-                itemView.product_quantity.text = t.toString()
-                if (t > 0)
-                {
+                itemView.btn_qty_add.setOnClickListener{
+                    var t:Int = itemView.product_quantity.text.toString().toInt()
+                    t++
+                    itemView.product_quantity.text = t.toString()
                     var url = url_website+"/udemy/insert_cart.php?user_id="+ MCart.user_id +"&id_produk="+ idP +
-                            "&total_qty=-1"
+                            "&total_qty=1"
                     var rq: RequestQueue = Volley.newRequestQueue(itemView.context)
                     var sr = StringRequest(Request.Method.GET,url, Response.Listener { response ->
 
                     }, Response.ErrorListener { error ->
                         Toast.makeText(itemView.context, error.message, Toast.LENGTH_LONG).show()
                     })
-
                     rq.add(sr)
-                    MTotalCart.total_harga -= harga.toString().toInt()
-                    var obj = F5Fragment() // fragment
-                    var mana = (itemView.context as AppCompatActivity).fragmentManager
-                    obj.show(mana,"Rfs")
-                }
-                else
-                {
-                    var url = url_website+"/udemy/insert_cart.php?user_id="+ MCart.user_id +"&id_produk="+ idP +
-                            "&total_qty=-1"
-                    var rq: RequestQueue = Volley.newRequestQueue(itemView.context)
-                    var sr = StringRequest(Request.Method.GET,url, Response.Listener { response ->
+                    MTotalCart.total_harga += harga.toString().toInt()
 
-                    }, Response.ErrorListener { error ->
-                        Toast.makeText(itemView.context, error.message, Toast.LENGTH_LONG).show()
-                    })
-
-                    rq.add(sr)
-                    MTotalCart.total_harga -= harga.toString().toInt()
                     for( i in 0..MItemDetail.data.size-1)
                     {
                         if (MItemDetail.data[i].id == idP.toInt())
                         {
-                            MTotalCart.total_berat -= MItemDetail.data[i].berat.toInt()
+                            MTotalCart.total_berat += MItemDetail.data[i].berat.toInt()
+//                        itemView.berat_procuctcart.text = "Berat : " + MItemDetail.data[i].berat + " gram / satuan"
                         }
                     }
-                    MCart.itemId=idP.toInt()
-                    var obj = DltFragment() // fragment
+
+                    var obj = F5Fragment() // fragment
                     var mana = (itemView.context as AppCompatActivity).fragmentManager
-                    obj.show(mana,"Dlt")
+                    obj.show(mana,"Rfs")
                 }
+                itemView.btn_qty_remove.setOnClickListener {
+                    var t:Int = itemView.product_quantity.text.toString().toInt()
+                    t--
+                    itemView.product_quantity.text = t.toString()
+                    if (t > 0)
+                    {
+                        var url = url_website+"/udemy/insert_cart.php?user_id="+ MCart.user_id +"&id_produk="+ idP +
+                                "&total_qty=-1"
+                        var rq: RequestQueue = Volley.newRequestQueue(itemView.context)
+                        var sr = StringRequest(Request.Method.GET,url, Response.Listener { response ->
+
+                        }, Response.ErrorListener { error ->
+                            Toast.makeText(itemView.context, error.message, Toast.LENGTH_LONG).show()
+                        })
+
+                        rq.add(sr)
+                        MTotalCart.total_harga -= harga.toString().toInt()
+                        var obj = F5Fragment() // fragment
+                        var mana = (itemView.context as AppCompatActivity).fragmentManager
+                        obj.show(mana,"Rfs")
+                    }
+                    else
+                    {
+                        var url = url_website+"/udemy/insert_cart.php?user_id="+ MCart.user_id +"&id_produk="+ idP +
+                                "&total_qty=-1"
+                        var rq: RequestQueue = Volley.newRequestQueue(itemView.context)
+                        var sr = StringRequest(Request.Method.GET,url, Response.Listener { response ->
+
+                        }, Response.ErrorListener { error ->
+                            Toast.makeText(itemView.context, error.message, Toast.LENGTH_LONG).show()
+                        })
+
+                        rq.add(sr)
+                        MTotalCart.total_harga -= harga.toString().toInt()
+                        for( i in 0..MItemDetail.data.size-1)
+                        {
+                            if (MItemDetail.data[i].id == idP.toInt())
+                            {
+                                MTotalCart.total_berat -= MItemDetail.data[i].berat.toInt()
+                            }
+                        }
+                        MCart.itemId=idP.toInt()
+                        var obj = DltFragment() // fragment
+                        var mana = (itemView.context as AppCompatActivity).fragmentManager
+                        obj.show(mana,"Dlt")
+                    }
+
+            }
             }
 
             itemView.btn_deletecart.setOnClickListener{

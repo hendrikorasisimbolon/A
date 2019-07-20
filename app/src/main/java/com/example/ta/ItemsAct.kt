@@ -24,6 +24,7 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.ta.Adapter.ItemAdapter
 import com.example.ta.Fragment.NotFoundFragment
+import com.example.ta.KategoriAct.Companion.cat
 import com.example.ta.KategoriAct.Companion.catName
 import com.example.ta.Model.MCart
 import com.example.ta.Model.MItemDetail
@@ -40,7 +41,6 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
 
     var list = ArrayList<MItemDetail>()
     private lateinit var ui_hot:TextView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_items)
@@ -52,7 +52,8 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
             refreshI.isRefreshing = false
         }
         getitem()
-//        var cat:String=intent.getStringExtra("cat")
+//         cat=intent.getStringExtra("cat")
+//         catName = intent.getStringExtra("catname")
 //        var url= url_website+"/udemy/get_subkat.php?subkat_id="+cat  /// intent get ekstra nya rusak
 
 
@@ -61,9 +62,9 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
 
     fun getitem()
     {
-        if (KategoriAct.cat != "0")
+        if (cat != "0")
         {
-            var url= url_website+"/udemy/get_subkat.php?subkat_id="+KategoriAct.cat
+            var url= url_website+"/udemy/get_subkat.php?subkat_id="+cat
 
             var rq: RequestQueue = Volley.newRequestQueue(this)
 
@@ -76,15 +77,17 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
                             response.getJSONObject(x).getInt("id_produk"),
                             response.getJSONObject(x).getString("judul_produk"),
                             response.getJSONObject(x).getDouble("harga_normal"),
+                            response.getJSONObject(x).getDouble("harga_diskon"),
+                            response.getJSONObject(x).getDouble("diskon"),
                             response.getJSONObject(x).getString("deskripsi"),
                             response.getJSONObject(x).getDouble("berat"),
-                            response.getJSONObject(x).getString("foto"),
-                            response.getJSONObject(x).getString(("foto_type")),
-                            response.getJSONObject(x).getDouble("harga_diskon"),
                             response.getJSONObject(x).getDouble("stok"),
-                            response.getJSONObject(x).getDouble("diskon"),
+                            response.getJSONObject(x).getDouble("kat_id"),
+                            response.getJSONObject(x).getString("judul_kategori"),
                             response.getJSONObject(x).getDouble("subkat_id"),
-                            response.getJSONObject(x).getDouble("kat_id")
+                            response.getJSONObject(x).getString("judul_subkategori"),
+                            response.getJSONObject(x).getString("foto"),
+                            response.getJSONObject(x).getString(("foto_type"))
                         )
                     )
                 }
@@ -144,14 +147,19 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
     override fun onNoteClick(position: Int) {
         var intent = Intent(this, ProductDetailAct::class.java)
         intent.putExtra("id_produk", list.get(position).id.toString())
-        intent.putExtra("judul_produk", list.get(position).judul_produk.toString())
+        intent.putExtra("judul_produk", list.get(position).judul_produk)
         intent.putExtra("harga_normal", list.get(position).harga_normal.toString())
-        intent.putExtra("foto", list.get(position).foto.toString())
-        intent.putExtra("foto_type", list.get(position).foto_type.toString())
+        intent.putExtra("foto", list.get(position).foto)
+        intent.putExtra("foto_type", list.get(position).foto_type)
+        intent.putExtra("judul_kat", list.get(position).judul_kat)
+        intent.putExtra("judul_subkat", list.get(position).judul_subkat)
+        intent.putExtra("stok", list.get(position).stok.toString())
+        intent.putExtra("kat_id", list.get(position).kat_id.toString())
+        intent.putExtra("subkat_id", list.get(position).subkat_id.toString())
         intent.putExtra("berat", list.get(position).berat.toString())
         intent.putExtra("deskripsi",list.get(position).deksripsi.toString())
         intent.putExtra("discount",list.get(position).diskon.toString())
-        intent.putExtra("harga_normal",list.get(position).harga_normal.toString())
+        intent.putExtra("harga_diskon", list.get(position).harga_diskon.toString())
 
         startActivity(intent)
     }

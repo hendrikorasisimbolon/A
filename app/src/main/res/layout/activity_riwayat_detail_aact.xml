@@ -88,9 +88,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"/>
                     </LinearLayout>
-                    <LinearLayout
+                    <RelativeLayout
                             android:layout_weight="1"
-                            android:orientation="vertical"
                             android:gravity="center_horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -109,8 +108,15 @@
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/mdtp_white"
                                 android:text="Pay Now"
-                                android:layout_height="40dp" android:id="@+id/btn_payy" android:visibility="invisible"/>
-                    </LinearLayout>
+                                android:layout_height="40dp" android:id="@+id/btn_payy"/>
+                        <Button android:layout_width="100dp"
+                                android:background="@drawable/round_arrived"
+                                android:textAllCaps="false"
+                                android:layout_gravity="center_horizontal"
+                                android:textColor="@color/mdtp_white"
+                                android:text="Arrived"
+                                android:layout_height="40dp" android:id="@+id/btn_arr" />
+                    </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
             <TextView
@@ -126,21 +132,24 @@
                     android:layout_width="match_parent"
                     android:background="@drawable/btn_rounded_grey_outline"
                     android:layout_height="wrap_content">
-                <androidx.core.widget.NestedScrollView
-                        android:layout_width="match_parent"
-                        android:layout_gravity="center"
-                        android:padding="20dp"
-                        android:layout_height="match_parent">
                    <LinearLayout android:layout_width="match_parent"
-                                 android:layout_height="match_parent" android:orientation="vertical">
-                       <androidx.recyclerview.widget.RecyclerView
-                               android:paddingLeft="30dp"
-                               android:paddingRight="30dp"
-                               android:id="@+id/rc_detialP"
-                               android:layout_gravity="center"
+                                 android:layout_height="match_parent"
+                                 android:gravity="center"
+                                 android:layout_gravity="center"
+                                 android:padding="10dp"
+                                 android:id="@+id/ly_hlmn"
+                                 android:orientation="vertical">
+                       <androidx.core.widget.NestedScrollView
                                android:layout_width="match_parent"
-                               android:layout_height="wrap_content">
-                       </androidx.recyclerview.widget.RecyclerView>
+                               android:layout_gravity="center"
+                               android:layout_height="match_parent">
+                           <androidx.recyclerview.widget.RecyclerView
+                                   android:id="@+id/rc_detialP"
+                                   android:layout_gravity="center"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="wrap_content">
+                           </androidx.recyclerview.widget.RecyclerView>
+                       </androidx.core.widget.NestedScrollView>
                        <View android:layout_width="match_parent"
                              android:layout_marginTop="10dp"
                              android:background="@color/mdtp_transparent_black"
@@ -166,7 +175,7 @@
 
                    </LinearLayout>
 
-                </androidx.core.widget.NestedScrollView>
+
 
             </LinearLayout>
             <TextView
@@ -186,7 +195,7 @@
                 <TextView
                         android:layout_marginTop="15dp"
                         android:id="@+id/txt_kurirP"
-                        android:text="- - -"
+                        android:text="-"
                         android:textStyle="bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>

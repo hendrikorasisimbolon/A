@@ -111,14 +111,20 @@ class RekomendasiAct : AppCompatActivity(),RatingAdapter.OnNoteListener {
     override fun onNoteClick(position: Int) {
         var intent = Intent(this, ProductDetailAct::class.java)
         intent.putExtra("id_produk", li.get(position).id.toString())
-        intent.putExtra("judul_produk", li.get(position).judul_produk.toString())
+        intent.putExtra("judul_produk", li.get(position).judul_produk)
         intent.putExtra("harga_normal", li.get(position).harga_normal.toString())
-        intent.putExtra("foto", li.get(position).foto.toString())
-        intent.putExtra("foto_type", li.get(position).foto_type.toString())
+        intent.putExtra("foto", li.get(position).foto)
+        intent.putExtra("foto_type", li.get(position).foto_type)
+        intent.putExtra("judul_kat", li.get(position).judul_kat)
+        intent.putExtra("judul_subkat", li.get(position).judul_subkat)
+        intent.putExtra("stok", li.get(position).stok.toString())
+        intent.putExtra("kat_id", li.get(position).kat_id.toString())
+        intent.putExtra("subkat_id", li.get(position).subkat_id.toString())
         intent.putExtra("berat", li.get(position).berat.toString())
         intent.putExtra("deskripsi",li.get(position).deksripsi.toString())
         intent.putExtra("discount",li.get(position).diskon.toString())
-        intent.putExtra("harga_normal",li.get(position).harga_normal.toString())
+        intent.putExtra("harga_diskon", li.get(position).harga_diskon.toString())
+
 
         startActivity(intent)
 
