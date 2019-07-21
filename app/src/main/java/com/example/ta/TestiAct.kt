@@ -20,6 +20,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ta.Model.MCart
 import com.example.ta.Model.Url_Volley
+import com.example.ta.RiwayatDetailAact.Companion.id_trans
 import com.example.ta.utilss.Tools
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_testi.*
@@ -34,7 +35,7 @@ class TestiAct : AppCompatActivity() {
         var foto_type:String
     )
 
-    var id_trans = ""
+    var id_tras = ""
 
     var list:ArrayList<DataShowTesti> = ArrayList()
 
@@ -43,7 +44,7 @@ class TestiAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_testi)
         initToolbar()
-        id_trans = intent.getStringExtra("id_trans").toString()
+//        id_trans = intent.getStringExtra("id_trans").toString()
         var url = Url_Volley.url_website + "/udemy/testi_show.php?id_trans="+ id_trans
         var rq = Volley.newRequestQueue(this)
         var jar = JsonArrayRequest(Request.Method.GET,url,null, Response.Listener { response ->
@@ -91,12 +92,10 @@ class TestiAct : AppCompatActivity() {
                 var v:View = rv_testi.getChildAt(i)
                 var e:EditText = v.findViewById(R.id.dt_testi)
                 var r:RatingBar = v.findViewById(R.id.rt_br)
-                var rt = 0
-                r.setOnClickListener {
-                    rt = r.rating.toInt()
-                }
-                Log.e("Rating",rt.toString())
-                var url = Url_Volley.url_website+"/udemy/insert_testi.php?item_id="+list[i].id_produk+"&user_id="+MCart.user_id+"&rating="+rt+"&testi="+e.text.toString()
+
+                Log.e("rrrrrrr", r.rating.toString())
+
+                var url = Url_Volley.url_website+"/udemy/insert_testi.php?item_id="+list[i].id_produk+"&user_id="+MCart.user_id+"&rating="+r.rating.toInt().toString()+"&testi="+e.text.toString()
                 var rq: RequestQueue = Volley.newRequestQueue(this)
                 var jar= StringRequest(Request.Method.GET,url,Response.Listener { response ->
                     Log.e("Responsedari",response)

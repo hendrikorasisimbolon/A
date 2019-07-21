@@ -41,6 +41,9 @@ class TestiAdapter (var context: Context, var daftar:ArrayList<MTesti>): Recycle
                 Picasso.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/user/" + ft + ftt)
                     .into(itemView.foto_dp)
             }
+            else {
+                Picasso.with(itemView.context).load(R.drawable.ic_person).into(itemView.foto_dp)
+            }
 
         }
 

@@ -84,7 +84,7 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
                             response.getJSONObject(x).getString("service"),
                             response.getJSONObject(x).getInt("status"),
                             c,
-                            response.getJSONObject(x).getInt("total"),
+                            response.getJSONObject(x).getString("total").toInt(),
                             response.getJSONObject(x).getInt("diskon")
                         )
                     )
@@ -120,7 +120,7 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
         intent.putExtra("service", list.get(position).service)
         intent.putExtra("resi", list.get(position).resi)
         intent.putExtra("ongkir", list.get(position).ongkir.toString())
-        intent.putExtra("dikson", list.get(position).diskon.toString())
+        intent.putExtra("diskon", list.get(position).diskon.toString())
         intent.putExtra("created",list.get(position).created)
         startActivity(intent)
     }
@@ -130,7 +130,8 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
         toolbar.navigationIcon?.setColorFilter(resources.getColor(R.color.indigo_500), PorterDuff.Mode.SRC_ATOP)
         toolbar.setNavigationOnClickListener{
-            onBackPressed()
+            var i = Intent(this, MainActivity::class.java)
+            startActivity(i)
         }
         toolbar.title = "Order History"
         setSupportActionBar(toolbar)

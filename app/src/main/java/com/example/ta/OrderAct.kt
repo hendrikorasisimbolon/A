@@ -20,11 +20,8 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.ta.Adapter.CartAdapter
 import com.example.ta.Adapter.CheckoutAdapter
-import com.example.ta.Model.MCart
-import com.example.ta.Model.MKeranjang
-import com.example.ta.Model.MTotalCart
+import com.example.ta.Model.*
 import com.example.ta.Model.Url_Volley.Companion.url_website
-import com.example.ta.Model.UserInfo
 import com.example.ta.utilss.Tools
 import com.example.ta.utilss.UserSessionManager
 import kotlinx.android.synthetic.main.activity_order.*
@@ -39,10 +36,11 @@ class OrderAct : AppCompatActivity() {
     lateinit var session: UserSessionManager
     var list = ArrayList<MKeranjang>()
     var st:Int = 0
+    var banyak = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order)
-
+        get_total_cart()
         session = UserSessionManager(applicationContext)
 
         initToolbar()
@@ -90,14 +88,23 @@ class OrderAct : AppCompatActivity() {
         })
         rq.add(jar)
         get_total_cart()
-        if(st==1)
+        if(st!=1 && list.size > 0 ||banyak>0||MTotalCart.total_cart>0||list.count()>0 )
         {
-            Toast.makeText(this, "Hapus produk yang tidak tersedia", Toast.LENGTH_LONG).show()
-        }
-        else {
             btn_checkout.setOnClickListener{
                 var i = Intent(this,CheckoutAct::class.java)
                 startActivity(i)
+            }
+
+        }
+        else {
+
+            if (list.size == 0 ||banyak == 0||MTotalCart.total_cart == 0||list.count() == 0)
+            {
+                Toast.makeText(this, "Keranjang anda kosong", Toast.LENGTH_LONG).show()
+            }
+            if(st == 1)
+            {
+                Toast.makeText(this, "Hapus produk yang tidak tersedia", Toast.LENGTH_LONG).show()
             }
         }
 
@@ -121,7 +128,7 @@ class OrderAct : AppCompatActivity() {
     }
 
     override fun onResume() {
-       get_total_cart()
+
         val handler = Handler()
         val runnable = object : Runnable {
             override fun run() {
@@ -142,7 +149,7 @@ class OrderAct : AppCompatActivity() {
         var rq1: RequestQueue = Volley.newRequestQueue(this)
         var jor = JsonObjectRequest(Request.Method.GET,url1,null, Listener { response ->
             //            cart_size.text = response.getInt("banyak").toString()
-            Log.e("Banyak Cart", response.getString("banyak"))
+           banyak =  response.getInt("banyak")
             MTotalCart.total_cart = response.getInt("banyak")
             MTotalCart.total_harga = response.getInt("jumlah")
             MTotalCart.total_berat = response.getInt("berat")

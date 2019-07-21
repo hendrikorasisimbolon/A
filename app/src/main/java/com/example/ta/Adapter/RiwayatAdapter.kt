@@ -64,10 +64,10 @@ class RiwayatAdapter(var context: Context, var riwayat:ArrayList<MRiwayat>, var 
             itemView.txt_kiriman.text = kr +" ("+srv+")"
             itemView.txt_resi.text = "Resi : "+ rs
             var dsc  = tl*(ds.toDouble() / 100)
-            var diskon = (tl+or) - dsc
+            var diskon = (tl - dsc) + or
 
             if(dsc>0){
-                itemView.txt_sblmd.text = formatRupiah.format(tl)
+                itemView.txt_sblmd.text = formatRupiah.format(tl+or)
                 itemView.txt_sblmd.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
             }
             else{

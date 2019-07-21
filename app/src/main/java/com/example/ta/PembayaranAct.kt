@@ -43,6 +43,8 @@ class PembayaranAct : AppCompatActivity() {
     var kurir=""
     var ongkir=""
     var total=0
+    var id_trans =""
+    var status=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pembayaran)
@@ -50,11 +52,12 @@ class PembayaranAct : AppCompatActivity() {
 
          serv = intent.getStringExtra("service").toString()
          kurir = intent.getStringExtra("kurir").toString()
-         ongkir = intent.getStringExtra("ongkir").toString()
+         id_trans = intent.getStringExtra("id_trans").toString()
          total = intent.getStringExtra("total").toInt()
+         status = intent.getStringExtra("status").toString()
 
-        txt_sblum.text =  formatRupiah.format( total)
-        txt_ongkir.text = formatRupiah.format(ongkir.toInt())
+        txt_sblum.text =  formatRupiah.format(total)
+        txt_ttl.text = formatRupiah.format(total)
 
         config = PayPalConfiguration()
             .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
@@ -63,6 +66,11 @@ class PembayaranAct : AppCompatActivity() {
         var i = Intent(this,PayPalService::class.java)
         i.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION,config)
         startService(i)
+
+        if(status=="1")
+        {
+            btn_check.isEnabled=false
+        }
 
         btn_check.setOnClickListener{
             get_promo()
@@ -84,11 +92,11 @@ class PembayaranAct : AppCompatActivity() {
             intent.putExtra(PaymentActivity.EXTRA_PAYMENT,payment)
             startActivityForResult(intent,123)
         }
-        txt_ttl.text = formatRupiah.format(total)
+
     }
 
     fun get_promo(){
-        var url = Url_Volley.url_website +"/udemy/promo.php?user_id="+MCart.user_id+"&kode_promo="+ txt_voucher.text.toString().toUpperCase()+"&total="+total
+        var url = Url_Volley.url_website +"/udemy/promo.php?user_id="+MCart.user_id+"&kode_promo="+ txt_voucher.text.toString().toUpperCase()+"&total="+total+"&trans_id="+id_trans
         var rq = Volley.newRequestQueue(this)
         var jar = JsonArrayRequest(Request.Method.GET,url,null,Response.Listener { response ->
             if(response.length()>0)
@@ -111,7 +119,7 @@ class PembayaranAct : AppCompatActivity() {
                 Log.e("AD", ad.toString())
                 if(ad > 0)
                 {
-                    txt_ttl.text = formatRupiah.format(ad+ongkir.toInt())
+                    txt_ttl.text = formatRupiah.format(ad.toInt()+ongkir.toInt())
                     hasil = ad.toInt()+ongkir.toInt()
                 }
                 else
@@ -122,7 +130,7 @@ class PembayaranAct : AppCompatActivity() {
 
             }
             else{
-                txt_ttl.text = formatRupiah.format(MTotalCart.total_harga)
+                txt_ttl.text = formatRupiah.format(total)
             }
         }, Response.ErrorListener {error ->
             Log.e("ERRORPEM", error.message)

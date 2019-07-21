@@ -46,7 +46,7 @@ class RiwayatDetailAact : AppCompatActivity() {
     {
         var id_trans = ""
     }
-
+    var id_tr=""
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,16 +64,17 @@ class RiwayatDetailAact : AppCompatActivity() {
         var ongkir = intent.getStringExtra("ongkir").toString()
         var diskon = intent.getStringExtra("diskon").toString()
         var created = intent.getStringExtra("created").toString()
-
+        id_tr =  intent.getStringExtra("id_trans").toString()
+        Log.e("TRA",id_tr)
         txt_invoice.text = id_trans
         var total_sel = total.toInt() + ongkir.toInt()
         t_subtotal.text = formatRupiah.format(total_sel)
         val nf = NumberFormat.getNumberInstance()
         nf.maximumFractionDigits = 0
-        t_diskon.text = nf.format(diskon.toDouble())
+        t_diskon.text = nf.format(diskon.toDouble()) +"%"
         var tot = total.toDouble() * (diskon.toDouble()/100)
         var hasil = total_sel - tot
-        t_total.text = hasil.toString()
+        t_total.text = formatRupiah.format(hasil)
 
         txt_ongkirr.text = formatRupiah.format(ongkir.toInt())
         Log.e("ErrorPaid", ongkir)
@@ -89,9 +90,17 @@ class RiwayatDetailAact : AppCompatActivity() {
                 var intent = Intent(this, PembayaranAct::class.java)
                 intent.putExtra("service", service)
                 intent.putExtra("kurir", kurir)
-                intent.putExtra("total", total_sel.toString())
+                if(diskon.toInt()>0)
+                {
+                    intent.putExtra("total", hasil.toInt().toString())
+                    intent.putExtra("status","1")
+                }
+                else {
+                    intent.putExtra("total", total_sel.toString())
+                    intent.putExtra("status","0")
+                }
                 intent.putExtra("ongkir", ongkir)
-
+                intent.putExtra("id_trans", id_trans)
                 startActivity(intent)
             }
         }
@@ -101,7 +110,7 @@ class RiwayatDetailAact : AppCompatActivity() {
             txt_stat.setBackgroundResource(R.drawable.round_step2)
             btn_payy.visibility = View.GONE
             btn_review.visibility = View.GONE
-            btn_arr.visibility= View.VISIBLE
+            btn_arr.visibility= View.GONE
             btn_belilagi.visibility = View.GONE
         }
         else if(status == "3")
@@ -117,8 +126,6 @@ class RiwayatDetailAact : AppCompatActivity() {
                 var mann = this.fragmentManager
                 obj.show(mann, "Smp")
             }
-            var intent = Intent(this, RiwayatAct::class.java)
-            startActivity(intent)
         }
         else if(status =="4")
         {

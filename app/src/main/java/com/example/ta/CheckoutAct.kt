@@ -79,7 +79,7 @@ class CheckoutAct : AppCompatActivity() {
         var harga_servicesblm : Int = 0
         var hasil_service:String =""
     }
-
+    var  id_trans=""
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -223,7 +223,10 @@ class CheckoutAct : AppCompatActivity() {
             var url = Url_Volley.url_website +"/udemy/after_checkout.php?user_id="+MCart.user_id+"&catatan="+e.text.toString()+"&produk_id="+list[i].idP+"&kurir="+kurir+"&service="+serv+"&ongkir="+ongkir
             var rq: RequestQueue = Volley.newRequestQueue(this)
             var jar= StringRequest(Request.Method.GET,url,Response.Listener { response ->
-
+                if(response.toInt()>0)
+                {
+                    id_trans = response
+                }
             }, Response.ErrorListener { error ->
                 Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
             })
@@ -283,6 +286,8 @@ class CheckoutAct : AppCompatActivity() {
                 intent.putExtra("kurir", kurir)
                 intent.putExtra("ongkir", ongkir)
                 intent.putExtra("total",  MTotalCart.total_harga.toString() )
+                intent.putExtra("id_trans",id_trans)
+                intent.putExtra("status","0")
                 startActivity(intent)
                 listEkspedisi.clear()
 

@@ -10,7 +10,7 @@
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:text="Nama Barang"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:id="@+id/txt_nmbarang"
             android:textAlignment="center"
             android:maxLines="1"
@@ -38,17 +38,21 @@
     <!--app:srb_clearRatingEnabled="true">-->
 
     <!--</com.willy.ratingbar.ScaleRatingBar>-->
-    <RatingBar android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:numStars="5" android:stepSize="1" android:layout_gravity="center" android:id="@+id/rt_br"
-               android:rating="5" android:scaleY="0.7" android:padding="0dp" android:scaleX="0.7"
-               style="@android:style/Widget.RatingBar"/>
+    <RatingBar
+            android:id="@+id/rt_br"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/yellow_700"
+            android:rating="1"
+            android:stepSize="1" android:layout_gravity="center"
+    />
 
     <EditText android:layout_width="match_parent"
               android:maxLines="3"
               android:maxLength="150"
-              android:textSize="14sp"
+              android:textSize="16sp"
               android:hint="Masukkan Ulasan Anda"
               android:textAlignment="center"
-              android:layout_height="wrap_content" android:id="@+id/dt_testi"/>
+              android:layout_height="wrap_content" android:id="@+id/dt_testi"
+              android:layout_marginLeft="10dp" android:layout_marginRight="10dp"/>
 </LinearLayout>

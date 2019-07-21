@@ -132,6 +132,7 @@
                                 android:background="@drawable/round_arrived"
                                 android:textAllCaps="false"
                                 android:layout_gravity="center_horizontal"
+                                android:textSize="13sp"
                                 android:textColor="@color/mdtp_white"
                                 android:text="Sudah sampai"
                                 android:layout_height="40dp" android:id="@+id/btn_arr"/>
@@ -323,6 +324,7 @@
                                     android:layout_height="wrap_content"/>
                             <TextView android:layout_width="match_parent"
                                       android:text="Rp. 0"
+                                      android:background="@color/grey_5"
                                       android:textStyle="bold"
                                       android:id="@+id/t_total"
                                       android:layout_height="wrap_content"/>

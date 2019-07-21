@@ -127,7 +127,7 @@ class ProfileAct : AppCompatActivity() {
         var rq1: RequestQueue = Volley.newRequestQueue(this)
         var jor = JsonObjectRequest(Request.Method.GET,url1,null, com.android.volley.Response.Listener { response ->
             //            cart_size.text = response.getInt("banyak").toString()
-            Log.e("Banyak Cart", response.getString("banyak"))
+//           banyak = response.getString("banyak").toInt()
             MTotalCart.total_cart = response.getInt("banyak")
             MTotalCart.total_harga = response.getInt("jumlah")
             MTotalCart.total_berat = response.getInt("berat")

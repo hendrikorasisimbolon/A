@@ -2,6 +2,9 @@ package com.example.ta.Fragment
 
 
 import android.app.DialogFragment
+import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,6 +19,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.ta.Model.Url_Volley
 import com.example.ta.R
+import com.example.ta.RiwayatAct
 import com.example.ta.RiwayatDetailAact
 import com.example.ta.TestiAct
 
@@ -40,6 +44,8 @@ class KonfrimPesananSampaiFragment : DialogFragment() {
                 Toast.makeText(activity,error.message, Toast.LENGTH_LONG).show()
             })
             rq.add(jar)
+            var intent = Intent(activity, RiwayatAct::class.java)
+            startActivity(intent)
         }
         btn_t.setOnClickListener {
             onStop()
@@ -48,5 +54,13 @@ class KonfrimPesananSampaiFragment : DialogFragment() {
         return v
     }
 
+    override fun onStart() {
+        super.onStart()
+        val dialog = dialog
+        if (dialog != null) {
+            dialog.window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
+            dialog.window.setBackgroundDrawable(ColorDrawable(Color.WHITE))
+        }
+    }
 
 }
