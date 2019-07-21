@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_marginTop="10dp"
+              android:layout_height="wrap_content">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+        <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="50dp"
+                android:id="@+id/foto_dp"
+                android:layout_marginRight="10dp"
+                app:civ_border_color="@color/colorPrimary"
+                app:civ_border_width="2dp"
+                app:srcCompat="@drawable/ic_person_grey"
+                android:layout_height="50dp"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:layout_marginLeft="5dp"
+                      android:layout_height="wrap_content">
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                    <TextView android:layout_width="wrap_content"
+                              android:maxLines="1"
+                              android:ellipsize="end"
+                              android:textSize="13sp"
+                              android:textStyle="bold"
+                              android:text="User"
+                              android:layout_height="wrap_content" android:id="@+id/txt_usr"/>
+                    <View
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="0dp"/>
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:textSize="10sp"
+                            android:text="2019-01-01"
+                            android:layout_height="wrap_content" android:id="@+id/txt_date_testi"/>
+                </LinearLayout>
+                <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_weight="0"
+                        android:layout_height="match_parent">
+                    <LinearLayout android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+                        <TextView
+                                android:text="isi komentar"
+                                android:textSize="12sp"
+                                android:layout_width="wrap_content"
+                                android:maxLines="4"
+                                android:layout_height="match_parent" android:id="@+id/txt_isi_test"/>
+                    </LinearLayout>
+                    <View android:layout_width="0dp"
+                          android:layout_weight="1"
+                          android:layout_height="0dp"/>
+                    <LinearLayout android:layout_width="80dp"
+                                  android:layout_weight="0"
+                                  android:layout_height="wrap_content">
+                        <RatingBar android:layout_width="80dp"
+                                   style="@style/Yellow.Small.AppCompatRatingBar.White"
+                                   android:layout_height="17dp" android:id="@+id/rt_testi"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+          android:background="@color/grey_20"
+          android:layout_height="1dp"/>
+
+
+</LinearLayout>

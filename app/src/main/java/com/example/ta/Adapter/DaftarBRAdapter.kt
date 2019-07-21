@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ta.Model.MDaftarBR
+import com.example.ta.Model.Url_Volley
 import com.example.ta.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_history_detail.view.*
@@ -44,7 +45,7 @@ class DaftarBRAdapter (var context: Context, var daftar:ArrayList<MDaftarBR>): R
             itemView.txt_qtyy.text = "Qty      : "+ ttlqty.toString()
             itemView.txt_cttn.text = ctt
             Log.e("catatan",ctt)
-            Picasso.with(itemView.context).load("http://192.168.43.180/ecommerce/assets/images/produk/" + ft + ftt)
+            Picasso.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/produk/" + ft + ftt)
                 .into(itemView.img_ft)
         }
     }

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -54,6 +54,11 @@
         <item name="android:maxHeight">8dp</item>
     </style>
 
+    <style name="Yellow.Rating.AppCompatRatingBar" parent="@style/Yellow.Small.AppCompatRatingBar">
+        <item name="android:minHeight">30dp</item>
+        <item name="android:maxHeight">30dp</item>
+    </style>
+
     <style name="Yellow.AppCompatRatingBar" parent="Base.Widget.AppCompat.RatingBar.Indicator">
         <item name="colorControlNormal">@color/grey_60</item>
         <item name="colorControlActivated">@color/yellow_600</item>
@@ -82,6 +87,19 @@
     <style name="Button.Accent" parent="@style/Widget.AppCompat.Button.Colored">
         <item name="colorButtonNormal">@color/colorAccent</item>
         <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="AppThemeRatingBar" parent="Theme.AppCompat">
+        <item name="colorAccent">#6200ea</item>
+        <item name="android:colorControlNormal" tools:targetApi="lollipop">#f9a825</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/grey_60</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="android:scaleX">0.7</item>
+        <item name="android:scaleY">0.7</item>
+
     </style>
 
 

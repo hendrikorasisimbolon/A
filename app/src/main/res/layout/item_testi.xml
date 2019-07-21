@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@drawable/btn_rounded_grey_outline"
+              android:layout_margin="5dp"
+              android:layout_height="250dp">
+    <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:text="Nama Barang"
+            android:textSize="14sp"
+            android:id="@+id/txt_nmbarang"
+            android:textAlignment="center"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_height="wrap_content"/>
+    <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="80dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/bg_no_item_city"
+            android:layout_height="80dp" android:id="@+id/ft_prod"/>
+    <!--<com.willy.ratingbar.ScaleRatingBar android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/rt_br"-->
+    <!--android:layout_gravity="center"-->
+    <!--app:srb_numStars="5"-->
+    <!--app:srb_minimumStars="1"-->
+    <!--app:srb_rating="2"-->
+    <!--app:srb_starWidth="20dp"-->
+    <!--app:srb_starHeight="20dp"-->
+    <!--app:srb_starPadding="15dp"-->
+    <!--app:srb_stepSize="1"-->
+    <!--app:srb_isIndicator="false"-->
+    <!--app:srb_clickable="true"-->
+    <!--app:srb_scrollable="true"-->
+    <!--app:srb_clearRatingEnabled="true">-->
+
+    <!--</com.willy.ratingbar.ScaleRatingBar>-->
+    <RatingBar android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:numStars="5" android:stepSize="1" android:layout_gravity="center" android:id="@+id/rt_br"
+               android:rating="5" android:scaleY="0.7" android:padding="0dp" android:scaleX="0.7"
+               style="@android:style/Widget.RatingBar"/>
+
+    <EditText android:layout_width="match_parent"
+              android:maxLines="3"
+              android:maxLength="150"
+              android:textSize="14sp"
+              android:hint="Masukkan Ulasan Anda"
+              android:textAlignment="center"
+              android:layout_height="wrap_content" android:id="@+id/dt_testi"/>
+</LinearLayout>

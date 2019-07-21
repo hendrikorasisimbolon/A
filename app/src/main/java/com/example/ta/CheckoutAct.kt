@@ -12,6 +12,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -136,7 +137,7 @@ class CheckoutAct : AppCompatActivity() {
         btn_service.setOnClickListener {
             var obj = DeliveryFragment()
             var mann = this.fragmentManager
-            obj.show(mann, "Srv")
+            obj.show(mann, "Dlv")
         }
 
 
@@ -214,10 +215,12 @@ class CheckoutAct : AppCompatActivity() {
     }
 
     fun afterCheckout(){
-        var tem = CheckoutAdapter.catat
-        for (i in 0..tem.count()-1)
+        for (i in 0..list.count()-1)
         {
-            var url = Url_Volley.url_website +"/udemy/after_checkout.php?user_id="+user.id.toString()+"&catatan="+tem[i].catatan+"&produk_id="+tem[i].idP+"&kurir="+kurir+"&service="+serv+"&ongkir="+ongkir
+            var v:View= rv_cart.getChildAt(i)
+            var e:EditText = v.findViewById(R.id.catatan)
+            Log.e("catatanb", e.text.toString())
+            var url = Url_Volley.url_website +"/udemy/after_checkout.php?user_id="+MCart.user_id+"&catatan="+e.text.toString()+"&produk_id="+list[i].idP+"&kurir="+kurir+"&service="+serv+"&ongkir="+ongkir
             var rq: RequestQueue = Volley.newRequestQueue(this)
             var jar= StringRequest(Request.Method.GET,url,Response.Listener { response ->
 
@@ -281,6 +284,8 @@ class CheckoutAct : AppCompatActivity() {
                 intent.putExtra("ongkir", ongkir)
                 intent.putExtra("total",  MTotalCart.total_harga.toString() )
                 startActivity(intent)
+                listEkspedisi.clear()
+
             }
             else if(serv=="" && kurir=="" && ongkir==""){
                 Toast.makeText(this,"Pilih Shipping!", Toast.LENGTH_LONG).show()

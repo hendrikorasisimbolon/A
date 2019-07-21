@@ -12,15 +12,22 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.ta.Adapter.TestiAdapter
+import com.example.ta.Fragment.NotFoundFragment
 import com.example.ta.Fragment.QtyFragment
 import com.example.ta.KategoriAct.Companion.cat
 import com.example.ta.KategoriAct.Companion.catName
 import com.example.ta.Model.MCart
+import com.example.ta.Model.MTesti
 import com.example.ta.Model.Url_Volley.Companion.url_website
 import com.example.ta.utilss.Tools
 import com.example.ta.utilss.ViewAnimation
@@ -32,12 +39,13 @@ import kotlinx.android.synthetic.main.activity_product_detail.*
 import kotlinx.android.synthetic.main.activity_product_detail.view.*
 import java.text.NumberFormat
 import java.util.*
+import kotlin.collections.ArrayList
 
 class ProductDetailAct : AppCompatActivity() {
 
     var id : Int = 0
     var stok = 0.0
-
+    var list:ArrayList<MTesti> = ArrayList()
     @RequiresApi(Build.VERSION_CODES.N)
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -110,8 +118,48 @@ class ProductDetailAct : AppCompatActivity() {
             val intent = Intent(this, ItemsAct::class.java)
             startActivity(intent)
         }
+        getTesti(id_produk)
         initToolbar()
         initComponent()
+
+
+    }
+
+    fun getTesti(id_produk:String) {
+        var url = url_website + "/udemy//testi.php?item_id="+id_produk
+        var rq: RequestQueue = Volley.newRequestQueue(this)
+        var jar = JsonArrayRequest(Request.Method.GET, url, null, Response.Listener { response ->
+            if(response.length() > 0)
+            {
+                for(x in 0..response.length()-1)
+                {
+                    list.add(
+                        MTesti(
+                            response.getJSONObject(x).getString("date_crate"),
+                            response.getJSONObject(x).getString("name"),
+                            response.getJSONObject(x).getString("photo"),
+                            response.getJSONObject(x).getString("photo_type"),
+                            response.getJSONObject(x).getDouble("rating").toFloat(),
+                            response.getJSONObject(x).getString("testi")
+                        )
+                    )
+                }
+                var adp = TestiAdapter(this, list)
+                list_testi.layoutManager = LinearLayoutManager(this)
+                list_testi.adapter = adp
+            }
+            else
+            {
+                var frag = NotFoundFragment()
+                var FM: FragmentManager? = supportFragmentManager
+                var FT: FragmentTransaction = FM!!.beginTransaction()
+                FT.replace(R.id.lyt_expand_testimoni, frag)
+                FT.commit()
+            }
+        }, Response.ErrorListener { error ->
+            Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
+        })
+        rq.add(jar)
     }
 
 
@@ -129,7 +177,9 @@ class ProductDetailAct : AppCompatActivity() {
         toggleArrow(bt_toggle_description)
         lyt_expand_description.visibility = View.VISIBLE
 
-        bt_toggle_testi.setOnClickListener { view -> toggleSection(view, lyt_expand_testimoni) }
+        bt_toggle_testi.setOnClickListener { view ->
+            toggleSection(view, lyt_expand_testimoni)
+        }
         toggleArrow(bt_toggle_testi)
         lyt_expand_testimoni.visibility = View.VISIBLE
 

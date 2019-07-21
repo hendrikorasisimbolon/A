@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.ome450901:SimpleRatingBar:1.4.3@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9155c8eaee079be0fca340336e461577/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9155c8eaee079be0fca340336e461577/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.ome450901/SimpleRatingBar/1.4.3/8dbd7b0596d85e8c0fe5061b7c24d97bc35c3853/SimpleRatingBar-1.4.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -120,6 +120,7 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
         intent.putExtra("service", list.get(position).service)
         intent.putExtra("resi", list.get(position).resi)
         intent.putExtra("ongkir", list.get(position).ongkir.toString())
+        intent.putExtra("dikson", list.get(position).diskon.toString())
         intent.putExtra("created",list.get(position).created)
         startActivity(intent)
     }

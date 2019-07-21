@@ -79,31 +79,37 @@ class RiwayatAdapter(var context: Context, var riwayat:ArrayList<MRiwayat>, var 
             itemView.txt_jumlah.text = formatRupiah.format(diskon)
             if(st == 1)
             {
-                itemView.txt_status.text = "Not paid yet"
+                itemView.txt_status.text = "Belum Bayar"
                 itemView.txt_status.setBackgroundResource(R.drawable.round_step1)
                 itemView.ly_stat.setBackgroundColor(Color.parseColor("#DCFF9900"))
             }
             else if(st == 2)
             {
-                itemView.txt_status.text = "Paid"
+                itemView.txt_status.text = "Terbayar"
                 itemView.txt_status.setBackgroundResource(R.drawable.round_step2)
                 itemView.ly_stat.setBackgroundColor(Color.parseColor("#BEEFFF36"))
             }
             else if (st == 3)
             {
-                itemView.txt_status.text = "Sent"
+                itemView.txt_status.text = "Dikirim"
                 itemView.txt_status.setBackgroundResource(R.drawable.round_success)
                 itemView.ly_stat.setBackgroundColor(Color.parseColor("#F52CFF01"))
             }
             else if(st == 4)
             {
-                itemView.txt_status.text = "Arrived"
+                itemView.txt_status.text = "Sampai"
                 itemView.txt_status.setBackgroundResource(R.drawable.round_arrived)
                 itemView.txt_status.setTextColor(Color.WHITE)
                 itemView.ly_stat.setBackgroundColor(Color.parseColor("#94008600"))
             }
+            else if(st == 5){
+                itemView.txt_status.text = "Selesai"
+                itemView.txt_status.setBackgroundResource(R.drawable.bg_round_bulat)
+                itemView.txt_status.setTextColor(Color.WHITE)
+                itemView.ly_stat.setBackgroundColor(Color.parseColor("#946D6B6B"))
+            }
             else{
-                itemView.txt_status.text = "Cancel"
+                itemView.txt_status.text = "Dibatalkan"
                 itemView.txt_status.setBackgroundResource(R.drawable.round_notsucces)
                 itemView.txt_status.setTextColor(Color.WHITE)
                 itemView.ly_stat.setBackgroundColor(Color.parseColor("#BEFF0000"))

@@ -16,6 +16,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".TestiAct">
+        </activity>
         <activity android:name=".PembayaranAct">
         </activity>
         <activity android:name=".RiwayatDetailAact">

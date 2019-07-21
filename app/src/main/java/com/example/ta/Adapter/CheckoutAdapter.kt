@@ -7,6 +7,7 @@ import android.graphics.Color
 import android.os.Build
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -71,7 +72,7 @@ class CheckoutAdapter (var context: Context, var cartItems:ArrayList<MKeranjang>
         @SuppressLint("SetTextI18n", "NewApi")
         fun bindItem(idP:String, judul:String, harga:Int, foto:String, foto_type:String, qty:Int, stok:Int)
         {
-            var listner:CharCountTextView.CharCountChangedListener ?= null
+//            var listner:CharCountTextView.CharCountChangedListener ?= null
             var locale = Locale("in", "ID")
             var formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(locale)
             Picasso.with(itemView.context)
@@ -80,13 +81,13 @@ class CheckoutAdapter (var context: Context, var cartItems:ArrayList<MKeranjang>
             itemView.judul_produkcart.text = judul
             itemView.txt_harga_cart.text = formatRupiah.format(harga)
             itemView.product_quantity.text = qty.toString()
-            itemView.hitung.setEditText(itemView.catatan)
-            itemView.hitung.setCharCountChangedListener { countRemaining, hasExceededLimit ->
-                if(hasExceededLimit){
-                    itemView.catatan.selectAll()
-                    itemView.drawingCacheBackgroundColor = Color.RED
-                }
-            }
+//            itemView.hitung.setEditText(itemView.catatan)
+//            itemView.hitung.setCharCountChangedListener { countRemaining, hasExceededLimit ->
+//                if(hasExceededLimit){
+//                    itemView.catatan.selectAll()
+//                    itemView.catatan.setBackgroundColor(Color.RED)
+//                }
+//            }
 
 
             itemView.btn_qty_add.setOnClickListener{
@@ -191,8 +192,7 @@ class CheckoutAdapter (var context: Context, var cartItems:ArrayList<MKeranjang>
                 obj.show(mana,"Dlt")
             }
             catat.add(MKeranjang(idP,judul,harga,qty,foto,foto_type,itemView.catatan.text.toString(),stok))
-
-
+            Log.e("CATATAN",itemView.catatan.text.toString())
         }
     }
 

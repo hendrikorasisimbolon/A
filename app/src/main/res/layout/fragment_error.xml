@@ -8,12 +8,12 @@
              tools:context=".Fragment.NotFoundFragment">
 
         <TextView
-                android:layout_marginTop="200dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:layout_gravity="center"
                 android:textSize="20sp"
                 android:textAlignment="center"
-                android:text="No Result..."/>
+                android:text="Tidak ada."/>
 
 </LinearLayout>

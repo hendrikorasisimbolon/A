@@ -160,18 +160,19 @@
             <EditText android:layout_width="match_parent"
                       android:id="@+id/catatan"
                       android:layout_marginLeft="20dp"
+                      android:maxLength="150"
                       android:layout_marginRight="20dp"
-                      android:hint="Note for sellers..."
+                      android:hint="Catatan untuk penjual..."
                       android:layout_height="50dp"/>
 
-            <com.wafflecopter.charcounttextview.CharCountTextView
-                    app:maxCharacters="150"
-                    app:exceededTextColor="#ff0000"
-                    android:layout_height="20dp"
-                    android:id="@+id/hitung"
-                    android:layout_marginRight="25dp"
-                    android:layout_gravity="end"
-                    android:layout_width="wrap_content"/>
+            <!--<com.wafflecopter.charcounttextview.CharCountTextView-->
+                    <!--app:maxCharacters="150"-->
+                    <!--app:exceededTextColor="#ff0000"-->
+                    <!--android:layout_height="20dp"-->
+                    <!--android:id="@+id/hitung"-->
+                    <!--android:layout_marginRight="25dp"-->
+                    <!--android:layout_gravity="end"-->
+                    <!--android:layout_width="wrap_content"/>-->
         </LinearLayout>
         <View
                 android:layout_width="match_parent"

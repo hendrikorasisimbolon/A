@@ -54,6 +54,7 @@ class PembayaranAct : AppCompatActivity() {
          total = intent.getStringExtra("total").toInt()
 
         txt_sblum.text =  formatRupiah.format( total)
+        txt_ongkir.text = formatRupiah.format(ongkir.toInt())
 
         config = PayPalConfiguration()
             .environment(PayPalConfiguration.ENVIRONMENT_SANDBOX)
@@ -110,13 +111,13 @@ class PembayaranAct : AppCompatActivity() {
                 Log.e("AD", ad.toString())
                 if(ad > 0)
                 {
-                    txt_ttl.text = formatRupiah.format(ad)
-                    hasil = ad.toInt()
+                    txt_ttl.text = formatRupiah.format(ad+ongkir.toInt())
+                    hasil = ad.toInt()+ongkir.toInt()
                 }
                 else
                 {
-                    txt_ttl.text = formatRupiah.format(total)
-                    hasil = total
+                    txt_ttl.text = formatRupiah.format(total+ongkir.toInt())
+                    hasil = total+ongkir.toInt()
                 }
 
             }
