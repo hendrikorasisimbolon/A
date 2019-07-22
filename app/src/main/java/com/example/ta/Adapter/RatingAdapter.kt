@@ -44,7 +44,7 @@ public class RatingAdapter(var context:Context, var list:ArrayList<MRatingBarang
             p1,
             list[p1].algo,
             list[p1].diskon,
-            list[p1].harga_normal,
+            list[p1].harga_diskon,
             this.monlistener
         )
 

@@ -151,6 +151,7 @@ class RiwayatDetailAact : AppCompatActivity() {
             btn_belilagi.setOnClickListener {
                for(i in 0..list.count()-1)
                {
+                   Log.e("Dfbrf",list[i].idP)
                    var url = Url_Volley.url_website +"/udemy/insert_cart.php?user_id="+ MCart.user_id +"&id_produk="+ list[i].idP +
                            "&total_qty=1"
                    var rq:RequestQueue = Volley.newRequestQueue(this)

@@ -14,6 +14,7 @@ import com.android.volley.toolbox.Volley
 import com.example.ta.Model.MCart
 import com.example.ta.Model.Url_Volley
 import com.example.ta.utilss.Tools
+import kotlinx.android.synthetic.main.activity_konfirmasi_pesanan.*
 
 class KonfirmasiPesananAct : AppCompatActivity() {
 
@@ -36,6 +37,9 @@ class KonfirmasiPesananAct : AppCompatActivity() {
             Log.e("errorKOnfrimasi", error.message)
         })
         rq1.add(jor)
+        btn_order.setOnClickListener {
+            startActivity(Intent(this,RiwayatAct::class.java))
+        }
     }
     private fun initToolbar() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)

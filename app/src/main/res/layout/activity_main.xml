@@ -195,7 +195,7 @@
                                 android:clickable="false"
                                 android:gravity="center"
                                 android:orientation="vertical"
-                                android:padding="@dimen/spacing_large">
+                                android:padding="@dimen/spacing_large" android:id="@+id/btn_promo_menu">
 
                             <ImageView
                                     android:layout_width="35dp"
@@ -336,7 +336,7 @@
                                 android:clickable="false"
                                 android:gravity="center"
                                 android:orientation="vertical"
-                                android:padding="@dimen/spacing_large">
+                                android:padding="@dimen/spacing_large" android:id="@+id/btn_komplain">
 
                             <ImageView
                                     android:layout_width="35dp"
@@ -349,7 +349,7 @@
                             <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="BANTUAN"
+                                    android:text="KOMPLAIN"
                                     android:textAlignment="center"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                                     android:textColor="@color/grey_90"/>

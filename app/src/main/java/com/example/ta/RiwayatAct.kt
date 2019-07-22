@@ -48,6 +48,11 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
 
     }
 
+    override fun onBackPressed() {
+        var i = Intent(this, MainActivity::class.java)
+        startActivity(i)
+        super.onBackPressed()
+    }
     fun getRiwayat(context:Context)
     {
         var t = 0
@@ -125,6 +130,7 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
         startActivity(intent)
     }
 
+
     private fun initToolbar() {
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back)
@@ -147,7 +153,7 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
         val menuItem: MenuItem = menu.findItem(R.id.aksi_cart)
         var actionView: View = MenuItemCompat.getActionView(menuItem)
         ui_hot = actionView.findViewById(R.id.hotlist_hot) as TextView
-//        var i = Intent(this, OrderAct::class.java)
+//        var i = Intent(this, MainActivity::class.java)
 //        menuItem.intent = i
         setupBadge()
 

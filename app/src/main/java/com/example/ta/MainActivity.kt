@@ -144,6 +144,14 @@ class MainActivity : AppCompatActivity() {
             var i = Intent(this,RekomendasiAct::class.java)
             startActivity(i)
         }
+        btn_promo_menu.setOnClickListener{
+            var i = Intent(this,PromoAct::class.java)
+            startActivity(i)
+        }
+        btn_komplain.setOnClickListener {
+            var i = Intent(this,DaftarKomplainAct::class.java)
+            startActivity(i)
+        }
 
     }
 

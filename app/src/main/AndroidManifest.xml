@@ -16,6 +16,12 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".DaftarKomplainAct">
+        </activity>
+        <activity android:name=".KomplainAct">
+        </activity>
+        <activity android:name=".PromoAct">
+        </activity>
         <activity android:name=".TestiAct">
         </activity>
         <activity android:name=".PembayaranAct">

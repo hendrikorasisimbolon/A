@@ -53,6 +53,7 @@ class PembayaranAct : AppCompatActivity() {
          serv = intent.getStringExtra("service").toString()
          kurir = intent.getStringExtra("kurir").toString()
          id_trans = intent.getStringExtra("id_trans").toString()
+         ongkir = intent.getStringExtra("ongkir").toString()
          total = intent.getStringExtra("total").toInt()
          status = intent.getStringExtra("status").toString()
 
