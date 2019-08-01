@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.zendesk:support:3.0.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/db2a1d99d475a7e38f5fc55692e2122b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/db2a1d99d475a7e38f5fc55692e2122b/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zendesk/support/3.0.1/a3b1405be1bc5eb846036a3043002a12451a6b4c/support-3.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
