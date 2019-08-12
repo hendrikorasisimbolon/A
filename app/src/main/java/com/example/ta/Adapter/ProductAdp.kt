@@ -2,28 +2,15 @@ package com.example.ta.Adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Intent
-import android.util.Log
-import com.google.android.material.snackbar.Snackbar
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import com.android.volley.Request
-import com.android.volley.RequestQueue
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import com.example.ta.Model.*
-
-import com.example.ta.OrderAct
+import com.bumptech.glide.Glide
+import com.example.ta.Model.MItems
 import com.example.ta.ProductAllAct
 import com.example.ta.R
-import com.squareup.picasso.Picasso
-import io.reactivex.ObservableOnSubscribe
 import kotlinx.android.synthetic.main.activity_product_all.*
 import kotlinx.android.synthetic.main.product_row_item.view.*
-import java.security.AccessController.getContext
 import java.text.NumberFormat
 import java.util.*
 
@@ -59,7 +46,7 @@ class ProductAdp(var context: Context, var products: List<MItems> = arrayListOf(
             var formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(locale)
             itemView.product_name.text = product.judul_produk
             itemView.product_price.text = formatRupiah.format(product.harga_normal)
-            Picasso.with(itemView.context)
+            Glide.with(itemView.context)
                 .load("http://192.168.43.180/ecommerce/assets/images/produk/" + product.foto + product.foto_type)
                 .into(itemView.product_image)
 

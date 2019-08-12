@@ -183,7 +183,9 @@ class PromoAct : AppCompatActivity() {
                 }
                 else {
                     itemView.txt_kode_diskon.setBackgroundResource(R.drawable.bg_round_bulat)
-                    Toast.makeText(itemView.context,"Promo "+ kode +" sudah dipakai",Toast.LENGTH_SHORT).show()
+                    itemView.txt_kode_diskon.setOnClickListener {
+                        Toast.makeText(itemView.context, "Promo " + kode + " sudah dipakai", Toast.LENGTH_SHORT).show()
+                    }
                 }
 
             }

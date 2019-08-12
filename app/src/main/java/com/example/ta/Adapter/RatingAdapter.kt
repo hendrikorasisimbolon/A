@@ -7,12 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.ta.Fragment.QtyFragment
 import com.example.ta.Model.MCart
 import com.example.ta.Model.MRatingBarang
 import com.example.ta.Model.Url_Volley
 import com.haozhang.lib.SlantedTextView
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.product_algo.view.*
 import java.text.NumberFormat
 import java.util.*
@@ -92,7 +92,7 @@ public class RatingAdapter(var context:Context, var list:ArrayList<MRatingBarang
 
 //            itemView.item_deskripsi.text = dk
             itemView.product_price.text = formatRupiah.format(h)
-            Picasso.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/produk/" + f + ft)
+            Glide.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/produk/" + f + ft)
                 .into(itemView.product_image)
 
             itemView.addToCart.setOnClickListener{

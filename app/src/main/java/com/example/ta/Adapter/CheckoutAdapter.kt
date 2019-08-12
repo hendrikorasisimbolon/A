@@ -3,15 +3,11 @@ package com.example.ta.Adapter
 import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.content.Context
-import android.graphics.Color
 import android.os.Build
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -22,13 +18,15 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.bumptech.glide.Glide
 import com.example.ta.Fragment.DltFragment
 import com.example.ta.Fragment.F5Fragment
-import com.example.ta.Model.*
+import com.example.ta.Model.MCart
+import com.example.ta.Model.MItemDetail
+import com.example.ta.Model.MKeranjang
+import com.example.ta.Model.MTotalCart
 import com.example.ta.Model.Url_Volley.Companion.url_website
 import com.example.ta.R
-import com.squareup.picasso.Picasso
-import com.wafflecopter.charcounttextview.CharCountTextView
 import kotlinx.android.synthetic.main.itemuntukcheckout.view.*
 import java.text.NumberFormat
 import java.util.*
@@ -75,7 +73,7 @@ class CheckoutAdapter (var context: Context, var cartItems:ArrayList<MKeranjang>
 //            var listner:CharCountTextView.CharCountChangedListener ?= null
             var locale = Locale("in", "ID")
             var formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(locale)
-            Picasso.with(itemView.context)
+            Glide.with(itemView.context)
                 .load(url_website+"/ecommerce/assets/images/produk/" + foto + foto_type)
                 .into(itemView.foto_cart)
             itemView.judul_produkcart.text = judul

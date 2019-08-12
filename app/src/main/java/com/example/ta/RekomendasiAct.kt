@@ -51,7 +51,7 @@ class RekomendasiAct : AppCompatActivity(),RatingAdapter.OnNoteListener {
         swipeRefreshLayout.isRefreshing = false
 
         swipeRefreshLayout.setOnRefreshListener {
-            getProducts(li)
+//            getProducts(li)
 //            MRatingBarang.daftarRating = MRatingBarang.getAlgo(applicationContext)
             getcart()
             swipeRefreshLayout.isRefreshing = false

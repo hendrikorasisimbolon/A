@@ -38,6 +38,7 @@ import com.example.ta.utilss.Tools
 import com.example.ta.utilss.UserSessionManager
 import com.google.android.material.navigation.NavigationView
 import com.synnapps.carouselview.ViewListener
+import io.customerly.Customerly
 import kotlinx.android.synthetic.main.action_bar_notifitcation_icon.*
 import kotlinx.android.synthetic.main.activity_dashboard_grid_fab.toolbar
 import kotlinx.android.synthetic.main.activity_main.*
@@ -153,6 +154,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+
     }
 
     var viewListener: ViewListener = ViewListener { position ->
@@ -227,10 +229,14 @@ class MainActivity : AppCompatActivity() {
             if (item.itemId == R.id.nav_keluar)
             {
                 session.logoutUser()
+                Customerly.logoutUser()
             }
             if(item.itemId == R.id.nav_riwayat){
                 var i = Intent(this,RiwayatAct::class.java)
                 startActivity(i)
+            }
+           if(item.itemId == R.id.nav_chat){
+               Customerly.openSupport(this)
             }
             drawer.closeDrawers()
             true

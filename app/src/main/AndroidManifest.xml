@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
     <application
             android:allowBackup="true"
@@ -16,7 +19,11 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".BuktiKomplainAct">
+        </activity>
         <activity android:name=".DaftarKomplainAct">
+        </activity>
+        <activity android:name=".FashionStore">
         </activity>
         <activity android:name=".KomplainAct">
         </activity>
@@ -70,8 +77,6 @@
         <activity android:name=".ProductAllAct">
         </activity>
         <activity android:name=".ItemsAct">
-        </activity>
-        <activity android:name=".ProductCatAct">
         </activity>
         <activity android:name=".ProfileDrawerSimple">
         </activity>

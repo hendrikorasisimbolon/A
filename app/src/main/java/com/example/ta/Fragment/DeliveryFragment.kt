@@ -21,6 +21,7 @@ import com.example.ta.Model.MTotalCart
 import com.example.ta.Model.UserInfo
 import com.example.ta.R
 import com.example.ta.utilss.UserSessionManager
+import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import kotlinx.android.synthetic.main.item_ekpedisi.*
 
 

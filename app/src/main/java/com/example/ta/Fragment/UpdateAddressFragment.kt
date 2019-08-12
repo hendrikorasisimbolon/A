@@ -32,6 +32,7 @@ import com.example.ta.R
 import com.example.ta.utilss.UserSessionManager
 import com.google.android.material.textfield.TextInputEditText
 import com.google.gson.Gson
+import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -71,6 +72,23 @@ class UpdateAddressFragment : DialogFragment() {
         var update = v.findViewById<Button>(R.id.btn_update)
 
         province.setOnClickListener({popUpProvince(province,city)})
+
+        var ett = v.findViewById<EditText>(R.id.ett_addr)
+
+
+        ett.validator()
+            .nonEmpty()
+            .addErrorCallback { ett.error = it }
+            .check()
+
+        city.validator()
+            .nonEmpty()
+            .addErrorCallback { ett.error = it }
+            .check()
+        province.validator()
+            .nonEmpty()
+            .addErrorCallback { ett.error = it }
+            .check()
 
         city.setOnClickListener {
             try {

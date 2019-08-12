@@ -102,42 +102,6 @@ object Tools {
         }
     }
 
-    fun displayImageOriginal(ctx: Context, img: ImageView, @DrawableRes drawable: Int) {
-        try {
-            Glide.with(ctx).load(drawable)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .into(img)
-        } catch (e: Exception) {
-        }
-
-    }
-
-    fun displayImageRound(ctx: Context, img: ImageView, @DrawableRes drawable: Int) {
-        try {
-            Glide.with(ctx).load(drawable).asBitmap().centerCrop().into(object : BitmapImageViewTarget(img) {
-                override fun setResource(resource: Bitmap) {
-                    val circularBitmapDrawable = RoundedBitmapDrawableFactory.create(ctx.resources, resource)
-                    circularBitmapDrawable.isCircular = true
-                    img.setImageDrawable(circularBitmapDrawable)
-                }
-            })
-        } catch (e: Exception) {
-        }
-
-    }
-
-    fun displayImageOriginal(ctx: Context, img: ImageView, url: String) {
-        try {
-            Glide.with(ctx).load(url)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .into(img)
-        } catch (e: Exception) {
-        }
-
-    }
-
     fun getFormattedDateSimple(dateTime: Long?): String {
         val newFormat = SimpleDateFormat("MMMM dd, yyyy")
         return newFormat.format(Date(dateTime!!))

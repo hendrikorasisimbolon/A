@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.ta.Model.MTesti
 import com.example.ta.Model.Url_Volley
 import com.example.ta.R
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_test.view.*
 
 class TestiAdapter (var context: Context, var daftar:ArrayList<MTesti>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -38,11 +38,11 @@ class TestiAdapter (var context: Context, var daftar:ArrayList<MTesti>): Recycle
             itemView.rt_testi.rating = rt
             if(ft!="")
             {
-                Picasso.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/user/" + ft + ftt)
+                Glide.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/user/" + ft + ftt)
                     .into(itemView.foto_dp)
             }
             else {
-                Picasso.with(itemView.context).load(R.drawable.ic_person).into(itemView.foto_dp)
+                Glide.with(itemView.context).load(R.drawable.ic_person).into(itemView.foto_dp)
             }
 
         }

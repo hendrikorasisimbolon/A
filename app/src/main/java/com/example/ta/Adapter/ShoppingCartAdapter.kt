@@ -4,9 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import com.example.ta.Model.MCartTotal
 import com.example.ta.R
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.cart_list_item.view.*
 import java.text.NumberFormat
 import java.util.*
@@ -35,7 +35,7 @@ class ShoppingCartAdapter(var context: Context, var cartItems: List<MCartTotal>)
             var locale = Locale("in", "ID")
             var formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(locale)
             // This displays the cart item information for each item
-            Picasso.with(itemView.context)
+            Glide.with(itemView.context)
                 .load("http://192.168.43.180/ecommerce/assets/images/produk/" + cartItem.mItems.foto + cartItem.mItems.foto_type)
                 .into(itemView.product_image)
            // Picasso.get().load(cartItem.product.photos[0].filename).fit().into(itemView.product_image)

@@ -1,9 +1,9 @@
 package com.example.ta
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.ta.Model.Url_Volley.Companion.url_website
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_blog_detail.*
 import kotlinx.android.synthetic.main.activity_blog_detail.view.*
 
@@ -21,7 +21,7 @@ class BlogDetailAct : AppCompatActivity() {
         txt_judul.text = judul
         txt_pengarang.text = "by :" + pengarang
 
-        Picasso.with(img_blog.context).load(url_website+"/ecommerce/assets/images/blog/"+foto_blog+foto_type_blog)
+        Glide.with(img_blog.context).load(url_website+"/ecommerce/assets/images/blog/"+foto_blog+foto_type_blog)
             .into(img_blog.img_blog)
 
         isi_Web.loadData(isi,"text/html","utf-8")

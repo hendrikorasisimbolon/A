@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import com.example.ta.Model.MItems
-import com.squareup.picasso.Picasso
+
 import kotlinx.android.synthetic.main.item_row.view.*
 import kotlinx.android.synthetic.main.product_row_item.view.*
 import java.text.NumberFormat

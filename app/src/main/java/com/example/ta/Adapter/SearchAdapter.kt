@@ -7,11 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.ta.Fragment.QtyFragment
 import com.example.ta.Model.MCart
 import com.example.ta.Model.MItemDetail
 import com.haozhang.lib.SlantedTextView
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.product_row_item.view.*
 import java.text.NumberFormat
 import java.util.*
@@ -83,7 +83,7 @@ class SearchAdapter (var context: Context, var list:ArrayList<MItemDetail>, var 
             }
 
 
-            Picasso.with(itemView.context).load("http://192.168.43.180/ecommerce/assets/images/produk/" + f + ft)
+            Glide.with(itemView.context).load("http://192.168.43.180/ecommerce/assets/images/produk/" + f + ft)
                 .into(itemView.product_image)
 
             itemView.addToCart.setOnClickListener{

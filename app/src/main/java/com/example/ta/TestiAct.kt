@@ -18,11 +18,11 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.bumptech.glide.Glide
 import com.example.ta.Model.MCart
 import com.example.ta.Model.Url_Volley
 import com.example.ta.RiwayatDetailAact.Companion.id_trans
 import com.example.ta.utilss.Tools
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_testi.*
 import kotlinx.android.synthetic.main.item_testi.view.*
 
@@ -142,7 +142,7 @@ class TestiAct : AppCompatActivity() {
             fun bind_item(jdl:String, ft:String, ftt:String)
             {
                 itemView.txt_nmbarang.text = jdl
-                Picasso.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/produk/" + ft + ftt)
+                Glide.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/produk/" + ft + ftt)
                     .into(itemView.ft_prod)
             }
         }

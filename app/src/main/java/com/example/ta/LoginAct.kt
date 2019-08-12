@@ -2,6 +2,7 @@ package com.example.ta
 
 import android.animation.Animator
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -26,6 +27,7 @@ import com.example.ta.Model.*
 import com.example.ta.Model.Url_Volley.Companion.url_website
 import com.example.ta.utilss.UserSessionManager
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
+import io.customerly.Customerly
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -70,6 +72,7 @@ public class LoginAct : AppCompatActivity() {
                 var rq: RequestQueue = Volley.newRequestQueue(this)
                 var sr= JsonArrayRequest(Request.Method.GET,url, null, Response.Listener { response ->
                     if (response.length()>0){
+                        Customerly.configure(this.application, "c1d61075", Color.BLUE)
                         for(x in 0..response.length()-1)
                         {
                             Log.e("MAS",response.getJSONObject(x).getString("name"))
@@ -94,6 +97,7 @@ public class LoginAct : AppCompatActivity() {
                                     response.getJSONObject(x).getString("photo_type"),
                                     response.getJSONObject(x).getInt("created_on"))
                             )
+                            Customerly.registerUser(response.getJSONObject(x).getString("email"),response.getJSONObject(x).getInt("id").toString(),response.getJSONObject(x).getString("name"))
                         }
                     }
 

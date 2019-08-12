@@ -4,19 +4,16 @@ import android.annotation.TargetApi
 import android.content.Context
 import android.os.Build
 import android.text.Html
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.ta.Model.MBlog
 import com.example.ta.Model.Url_Volley
 import com.example.ta.R
-import com.squareup.picasso.Picasso
-
 import kotlinx.android.synthetic.main.item_blog.view.*
-
-import kotlin.collections.ArrayList
 
 //public class BlogAdapter(var context: Context, var list:ArrayList<MBlog>, var monlistener: OnNoteListener) :
 public class BlogAdapter(var context: Context, var list: ArrayList<MBlog>) :
@@ -57,7 +54,7 @@ public class BlogAdapter(var context: Context, var list: ArrayList<MBlog>) :
 //            this.monlistener = monlistener
             itemView.name.text = j
             itemView.description.text = Html.fromHtml(i, Html.FROM_HTML_MODE_COMPACT)
-            Picasso.with(itemView.context).load(Url_Volley.url_website + "/ecommerce/assets/images/blog/" + f + ft)
+            Glide.with(itemView.context).load(Url_Volley.url_website + "/ecommerce/assets/images/blog/" + f + ft)
                 .into(itemView.image)
         }
 

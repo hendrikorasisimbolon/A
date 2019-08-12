@@ -15,14 +15,35 @@ import com.example.ta.Model.MCart
 import com.example.ta.Model.Url_Volley
 import com.example.ta.utilss.Tools
 import kotlinx.android.synthetic.main.activity_konfirmasi_pesanan.*
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class KonfirmasiPesananAct : AppCompatActivity() {
+
+    companion object{
+        var bayarsebelum:ArrayList<WaktuPembayaran> = ArrayList()
+    }
+
+    data class WaktuPembayaran(
+        var waktu:Date,
+        var id_trans:String
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_konfirmasi_pesanan)
 
         initToolbar()
+
+        val sdf = SimpleDateFormat("yyyy:MM:dd:HH:mm")
+        val currentDateandTime = sdf.format(Date())
+
+        val date = sdf.parse(currentDateandTime)
+        val calendar = Calendar.getInstance()
+        calendar.time = date
+        calendar.add(Calendar.DATE, 1)
+
 
         var ongkir = intent.getStringExtra("ongkir").toString()
         var serv = intent.getStringExtra("service").toString()
@@ -32,6 +53,9 @@ class KonfirmasiPesananAct : AppCompatActivity() {
         var rq1: RequestQueue = Volley.newRequestQueue(this)
         var jor = StringRequest(Request.Method.GET,url1, Response.Listener { response ->
             Toast.makeText(this,response.toString(), Toast.LENGTH_LONG).show()
+            bayarsebelum.add(
+                WaktuPembayaran(calendar.time,response.toString())
+            )
         }, Response.ErrorListener { error ->
             Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
             Log.e("errorKOnfrimasi", error.message)

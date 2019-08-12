@@ -96,7 +96,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_marginBottom="5dp"
                                 android:textSize="14sp"
-                                android:text="Purchase Date"
+                                android:text="Tanggal Bayar"
                                 android:layout_height="wrap_content"/>
                         <TextView
                                 android:text="2019-07-18 02:40:14 WIB"
@@ -104,6 +104,23 @@
                                 android:layout_marginBottom="5dp"
                                 android:textStyle="bold"
                                 android:id="@+id/txt_dateP"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="14sp"
+                                android:visibility="gone"
+                                android:text="Bayar Sebelum"
+                                android:id="@+id/txt_jdlbyr"
+                                android:layout_height="wrap_content"/>
+                        <TextView
+                                android:text="2019-07-18 02:40:14 WIB"
+                                android:textSize="16sp"
+                                android:layout_marginBottom="5dp"
+                                android:textStyle="bold"
+                                android:visibility="gone"
+                                android:id="@+id/txt_byrsblm"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"/>
                     </LinearLayout>
@@ -119,7 +136,7 @@
                                 android:id="@+id/btn_review"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/mdtp_white"
-                                android:text="Testimoni"
+                                android:text="Testimoni 😊"
                                 android:layout_height="40dp"/>
                         <Button android:layout_width="100dp"
                                 android:background="@drawable/round_step1"
@@ -143,6 +160,15 @@
                                 android:textColor="@color/mdtp_white"
                                 android:text="Beli lagi"
                                 android:layout_height="40dp" android:id="@+id/btn_belilagi"/>
+                        <Button android:layout_width="100dp"
+                                android:background="@drawable/round_notsucces"
+                                android:textAllCaps="false"
+                                android:layout_marginTop="10dp"
+                                android:layout_gravity="center_horizontal"
+                                android:textColor="@color/mdtp_white"
+                                android:text="Komplain"
+                                android:visibility="gone"
+                                android:layout_height="40dp" android:id="@+id/btn_kompl"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>

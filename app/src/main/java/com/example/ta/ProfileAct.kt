@@ -1,5 +1,6 @@
 package com.example.ta
 
+
 import android.content.Intent
 import android.graphics.PorterDuff
 import android.os.Bundle
@@ -19,6 +20,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.bumptech.glide.Glide
 import com.example.ta.Fragment.F5Fragment
 import com.example.ta.Model.MCart
 import com.example.ta.Model.MTotalCart
@@ -28,7 +30,6 @@ import com.example.ta.Model.Url_Volley.Companion.url_website
 import com.example.ta.Model.UserInfo
 import com.example.ta.utilss.Tools
 import com.example.ta.utilss.UserSessionManager
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.action_bar_notifitcation_icon.*
 import kotlinx.android.synthetic.main.activity_order.*
 import kotlinx.android.synthetic.main.activity_profile.*
@@ -79,7 +80,7 @@ class ProfileAct : AppCompatActivity() {
         var rq: RequestQueue = Volley.newRequestQueue(this)
         var jar = JsonArrayRequest(Request.Method.GET, url, null, Response.Listener { response ->
             Log.e("inifoto",response.getJSONObject(0).getString("photo"))
-            Picasso.with(this).load( url_website+"/ecommerce/assets/images/user/"+response.getJSONObject(0).getString("photo")+response.getJSONObject(0).getString("photo_type"))
+            Glide.with(this).load( url_website+"/ecommerce/assets/images/user/"+response.getJSONObject(0).getString("photo")+response.getJSONObject(0).getString("photo_type"))
                 .into(this.img_cir)
 
         }, Response.ErrorListener { error ->

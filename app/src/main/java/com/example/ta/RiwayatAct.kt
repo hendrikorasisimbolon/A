@@ -45,7 +45,6 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
         initToolbar()
         getRiwayat(this)
 
-
     }
 
     override fun onBackPressed() {
@@ -78,7 +77,9 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
                     {
                         c = "-"
                     }
-                    t += response.getJSONObject(x).getInt("total")
+                    if(response.getJSONObject(x).getInt("status")>1)
+                    {t += response.getJSONObject(x).getInt("total")}
+
                     list.add(
                         MRiwayat(
                             response.getJSONObject(x).getString("id_trans"),

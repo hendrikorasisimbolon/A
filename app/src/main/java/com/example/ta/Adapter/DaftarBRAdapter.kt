@@ -6,14 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.ta.Model.MDaftarBR
 import com.example.ta.Model.Url_Volley
 import com.example.ta.R
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_history_detail.view.*
 import java.text.NumberFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 class DaftarBRAdapter (var context: Context, var daftar:ArrayList<MDaftarBR>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -45,7 +44,7 @@ class DaftarBRAdapter (var context: Context, var daftar:ArrayList<MDaftarBR>): R
             itemView.txt_qtyy.text = "Qty      : "+ ttlqty.toString()
             itemView.txt_cttn.text = ctt
             Log.e("catatan",ctt)
-            Picasso.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/produk/" + ft + ftt)
+            Glide.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/produk/" + ft + ftt)
                 .into(itemView.img_ft)
         }
     }

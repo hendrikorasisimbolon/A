@@ -21,9 +21,9 @@
                           android:layout_height="wrap_content">
                 <TextView android:layout_width="wrap_content"
                           android:text="Kode Komplain : "
-                          android:layout_height="wrap_content" android:id="@+id/txt_kd_komplian"/>
+                          android:layout_height="wrap_content"/>
                 <TextView android:layout_width="wrap_content"
-                          android:id="@+id/txt_kode_komplain"
+                          android:id="@+id/txt_kd_komplian"
                           android:text=" - "
                           android:layout_height="wrap_content"/>
             </LinearLayout>

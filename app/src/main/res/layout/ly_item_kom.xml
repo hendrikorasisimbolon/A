@@ -16,6 +16,7 @@
                 android:textSize="12sp"
                 android:id="@+id/txt_judul"
                 android:text="Isi Promo"
+                android:singleLine="true"
                 android:layout_height="wrap_content" android:textStyle="bold"/>
         <LinearLayout
                 android:layout_width="wrap_content"
@@ -42,6 +43,8 @@
                   android:background="@drawable/shape_rounded_orange"
                   android:padding="5dp"
                   android:textSize="12sp"
+                  android:layout_marginLeft="20dp"
+                  android:layout_marginRight="20dp"
                   android:maxLength="8"
                   android:id="@+id/txt_komplain"
                   android:textStyle="bold"

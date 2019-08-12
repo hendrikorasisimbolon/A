@@ -21,6 +21,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.bumptech.glide.Glide
 import com.example.ta.Adapter.TestiAdapter
 import com.example.ta.Fragment.NotFoundFragment
 import com.example.ta.Fragment.QtyFragment
@@ -31,10 +32,8 @@ import com.example.ta.Model.MTesti
 import com.example.ta.Model.Url_Volley.Companion.url_website
 import com.example.ta.utilss.Tools
 import com.example.ta.utilss.ViewAnimation
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.haozhang.lib.SlantedTextView
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_product_detail.*
 import kotlinx.android.synthetic.main.activity_product_detail.view.*
 import java.text.NumberFormat
@@ -85,7 +84,7 @@ class ProductDetailAct : AppCompatActivity() {
         var locale = Locale("in", "ID")
         var formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(locale)
 
-        Picasso.with(image.context).load(url_website+"/ecommerce/assets/images/produk/"+foto+foto_type)
+        Glide.with(image.context).load(url_website+"/ecommerce/assets/images/produk/"+foto+foto_type)
             .into(image.image)
         txt_judul_produk.text = judul
         price.text = formatRupiah.format(harga)

@@ -49,9 +49,8 @@
                                 android:layout_height="?attr/actionBarSize"
                                 android:layout_marginLeft="@dimen/spacing_large"
                                 android:layout_marginRight="@dimen/spacing_large"
-
                                 android:gravity="center_vertical"
-                                android:text="Shipping details"
+                                android:text="Detail Pembelian"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                 android:textColor="@color/grey_40"
                                 android:textStyle="bold" />
@@ -72,15 +71,15 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_weight=".1"
-                                            android:text="Ship to : "
+                                            android:text="Dikirim ke : "
                                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                             android:textColor="@color/grey_90" />
                                     <Button
                                             android:layout_weight="0"
-                                            android:text="Edit"
+                                            android:text="Sunting"
                                             android:textColor="@color/colorAccentDark"
                                             android:background="@color/transparent"
-                                            android:layout_width="60dp"
+                                            android:layout_width="70dp"
                                             android:layout_height="wrap_content" android:textIsSelectable="false"
                                             android:id="@+id/btn_edit_prof"/>
                                 </LinearLayout>
@@ -105,7 +104,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginTop="15dp"
-                                        android:text="Delivert Options : "
+                                        android:text="Opsi Pengiriman : "
                                         android:layout_marginLeft="@dimen/spacing_large"
                                         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                                         android:textColor="@color/grey_90" />
@@ -127,7 +126,7 @@
 
                                 </LinearLayout>
                                 <Button
-                                        android:text="Delivery Options :"
+                                        android:text="Pilih opsi"
                                         android:id="@+id/btn_service"
                                         android:padding="10dp"
                                         android:background="@color/cyan_A700"
@@ -148,7 +147,7 @@
                             android:layout_marginLeft="@dimen/spacing_large"
                             android:layout_marginRight="@dimen/spacing_large"
                             android:gravity="center_vertical"
-                            android:text="Cart"
+                            android:text="Keranjang"
                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                             android:textColor="@color/grey_40"
                             android:textStyle="bold" />
@@ -198,7 +197,7 @@
                             android:layout_marginLeft="@dimen/spacing_large"
                             android:layout_marginRight="@dimen/spacing_large"
                             android:gravity="center_vertical"
-                            android:text="Payment"
+                            android:text="Pembayaran"
                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                             android:textColor="@color/grey_40"
                             android:textStyle="bold" />

@@ -28,6 +28,7 @@ import com.example.ta.utilss.Tools
 import com.example.ta.utilss.UserSessionManager
 import kotlinx.android.synthetic.main.activity_riwayat_detail_aact.*
 import java.text.NumberFormat
+import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -112,6 +113,14 @@ class RiwayatDetailAact : AppCompatActivity() {
             btn_review.visibility = View.GONE
             btn_arr.visibility= View.GONE
             btn_belilagi.visibility = View.GONE
+            txt_jdlbyr.visibility = View.VISIBLE
+            txt_byrsblm.visibility = View.VISIBLE
+            for (i in 0..KonfirmasiPesananAct.bayarsebelum.size-1){
+                if(id_trans == KonfirmasiPesananAct.bayarsebelum[i].id_trans)
+                {
+                    txt_byrsblm.text = KonfirmasiPesananAct.bayarsebelum[i].waktu.toString()
+                }
+            }
         }
         else if(status == "3")
         {
@@ -135,8 +144,14 @@ class RiwayatDetailAact : AppCompatActivity() {
             btn_review.visibility = View.VISIBLE
             btn_arr.visibility= View.GONE
             btn_belilagi.visibility = View.GONE
+            btn_kompl.visibility = View.VISIBLE
             btn_review.setOnClickListener {
                 var intent = Intent(this, TestiAct::class.java)
+                startActivity(intent)
+            }
+            btn_kompl.setOnClickListener{
+                var intent = Intent(this, KomplainAct::class.java)
+                intent.putExtra("id_trans", id_trans)
                 startActivity(intent)
             }
         }

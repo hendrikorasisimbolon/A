@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
@@ -14,6 +13,7 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.bumptech.glide.Glide
 import com.example.ta.Fragment.DltFragment
 import com.example.ta.Fragment.F5Fragment
 import com.example.ta.Model.MCart
@@ -22,12 +22,9 @@ import com.example.ta.Model.MKeranjang
 import com.example.ta.Model.MTotalCart
 import com.example.ta.Model.Url_Volley.Companion.url_website
 import com.example.ta.R
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.cart_list_item.view.*
-import kotlinx.android.synthetic.main.fragment_qty.view.*
 import java.text.NumberFormat
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 @Suppress("DEPRECATION")
@@ -59,7 +56,7 @@ class CartAdapter (var context: Context, var cartItems: ArrayList<MKeranjang>) :
             var locale = Locale("in", "ID")
             var formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(locale)
             // This displays the cart item information for each item
-            Picasso.with(itemView.context)
+            Glide.with(itemView.context)
                 .load(url_website+"/ecommerce/assets/images/produk/" + foto + foto_type)
                 .into(itemView.product_image)
             // Picasso.get().load(cartItem.product.photos[0].filename).fit().into(itemView.product_image)
