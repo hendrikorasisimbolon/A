@@ -132,7 +132,7 @@ class KomplainAct : AppCompatActivity() {
         btn_kirim.setOnClickListener{
             if(rdo_barang.nonEmpty() || rdo_dana.nonEmpty()) {
                 var url =
-                    Url_Volley.url_website + "/udemy/komplain.php?user_id=" + MCart.user_id + "&trans_id=" + trans + "&norek=" + et_rek.text.toString() + "&alasan=" + txt_alasan.text.toString()
+                    Url_Volley.url_website + "/udemy/komplain.php?user_id=" + MCart.user_id + "&trans_id=" + trans + "&norek=" + et_rek.text.toString() + "&alasan=" + txt_alasan.text.toString() + "&status="+ status
                 var rq: RequestQueue = Volley.newRequestQueue(this)
                 var jar = StringRequest(Request.Method.GET, url, Response.Listener { response ->
 
@@ -140,9 +140,10 @@ class KomplainAct : AppCompatActivity() {
                     Toast.makeText(this, error.message, Toast.LENGTH_LONG).show()
                 })
                 rq.add(jar)
-                if ((et_rek.nonEmpty() && status=="1") || txt_alasan.nonEmpty()) {
+                if ((et_rek.nonEmpty() && status!="" ) || txt_alasan.nonEmpty()) {
                     uploadMultipart()
-
+                    var intent = Intent(this, DaftarKomplainAct::class.java)
+                    startActivity(intent)
                 }
             }
             else

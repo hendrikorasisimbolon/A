@@ -1,5 +1,6 @@
 package com.example.ta
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -77,10 +78,14 @@ class DaftarKomplainAct : AppCompatActivity() {
     private fun initToolbar() {
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
-        supportActionBar?.setTitle("Keranjang Belanja")
+        supportActionBar?.setTitle("Daftar Komplain")
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         Tools.setSystemBarColor(this, R.color.grey_10)
         Tools.setSystemBarLight(this)
+        toolbar.setNavigationOnClickListener{
+            var intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_setting, menu)

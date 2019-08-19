@@ -48,7 +48,7 @@ class KategoriAct : AppCompatActivity() {
                 kategoriP.clear()
                 for (x in 0 .. response.length()-1)
                 {
-                    Log.e("Kategori", response.getJSONObject(x).getString("id_kat"))
+//                    Log.e("Kategori", response.getJSONObject(x).getString("id_kat"))
                     if(response.getJSONObject(x).getString("id_kat") == "1")
                     {
                         kategoriP.add(MKategori(
@@ -89,7 +89,7 @@ class KategoriAct : AppCompatActivity() {
             kategoriP.clear()
             for (x in 0 .. response.length()-1)
             {
-                Log.e("Kategori", response.getJSONObject(x).getString("id_kat"))
+//                Log.e("Kategori", response.getJSONObject(x).getString("id_kat"))
                 if(response.getJSONObject(x).getString("id_kat") == "1")
                 {
                     kategoriP.add(MKategori(

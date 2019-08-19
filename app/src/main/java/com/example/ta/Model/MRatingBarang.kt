@@ -109,16 +109,16 @@ class MRatingBarang {
 
         fun getAlgo(context: Context): ArrayList<MAlgo> {
             var li:ArrayList<MAlgo> = ArrayList()
+            Log.e("Link rek", Url_Volley.url_website +":3000/?name="+ MCart.user_id)
             var url1= Url_Volley.url_website +":3000/?name="+ MCart.user_id
             var rq1: RequestQueue = Volley.newRequestQueue(context)
             var jar1 = JsonArrayRequest(Request.Method.GET,url1,null, Response.Listener { response ->
                 for (x in 0..response.length()-1)
                 {
-//                    Log.e("Algoritma", response.getJSONObject(x).getDouble("ratingp").toString())
+//                    Log.e("Algoritma", response.getJSONObject(x).getDouble("rating").toString())
                     li.add(
-                       MAlgo(response.getJSONObject(x).getString("user"),
-                           response.getJSONObject(x).getDouble("ratingp"),
-                           response.getJSONObject(x).getInt("item"))
+                       MAlgo(response.getJSONObject(x).getDouble("rating"),
+                           response.getJSONObject(x).getInt("id_produk"))
                     )
                 }
 

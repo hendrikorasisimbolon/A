@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ta.Fragment.QtyFragment
 import com.example.ta.Model.MCart
@@ -21,7 +22,8 @@ import java.util.*
 
 @Suppress("DEPRECATION")
 public class ItemAdapter (var context:Context, var list:ArrayList<MItemDetail>, var monlistener:OnNoteListener) :
-    androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>(){
+    androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
+    private val PAGE_SIZE = 10
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
 

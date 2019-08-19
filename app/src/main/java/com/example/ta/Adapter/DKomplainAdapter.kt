@@ -63,6 +63,16 @@ class DKomplainAdapter (var context: Context, var mDaftar:ArrayList<MDaftarKompl
                     itemView.context.startActivity(intent)
                 }
             }
+            else {
+                itemView.txt_carapengembalian.text = "Gagal"
+                itemView.txt_status_komplain.text = "Gagal"
+                itemView.txt_status_komplain.setTextColor(Color.RED)
+                itemView.btn_bukti.setOnClickListener {
+                    var intent = Intent(itemView.context, BuktiKomplainAct::class.java)
+                    intent.putExtra("idK",idK)
+                    itemView.context.startActivity(intent)
+                }
+            }
             Glide.with(itemView.context).load(url_website+"/ecommerce/assets/images/komplain/"+ft+ftt)
                 .into(itemView.foto_komplain)
             itemView.txt_kd_komplian.text = idK

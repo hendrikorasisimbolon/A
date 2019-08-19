@@ -20,23 +20,24 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.example.ta.Adapter.RatingAdapter
-import com.example.ta.Model.MCart
-import com.example.ta.Model.MRatingBarang
-import com.example.ta.Model.MTotalCart
-import com.example.ta.Model.Url_Volley
+import com.example.ta.Model.*
+import com.example.ta.Model.Url_Volley.Companion.url_server
+import com.example.ta.Model.Url_Volley.Companion.url_website
 import com.example.ta.utilss.Tools
 import kotlinx.android.synthetic.main.action_bar_notifitcation_icon.*
 import kotlinx.android.synthetic.main.activity_rekomendasi.*
 import kotlinx.android.synthetic.main.toolbar.*
+import java.util.concurrent.ExecutionException
+import java.util.concurrent.TimeoutException
 
 @Suppress("DEPRECATION")
 class RekomendasiAct : AppCompatActivity(),RatingAdapter.OnNoteListener {
 
     var li = ArrayList<MRatingBarang>()
-
 
     private lateinit var ui_hot: TextView
 
@@ -45,67 +46,88 @@ class RekomendasiAct : AppCompatActivity(),RatingAdapter.OnNoteListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rekomendasi)
         initToolbar()
+        get_prediksi()
 
         swipeRefreshLayout.setColorSchemeColors(ContextCompat.getColor(this, R.color.colorPrimary))
 
         swipeRefreshLayout.isRefreshing = false
 
         swipeRefreshLayout.setOnRefreshListener {
-//            getProducts(li)
-//            MRatingBarang.daftarRating = MRatingBarang.getAlgo(applicationContext)
+//            getProducts()
+            get_prediksi()
             getcart()
             swipeRefreshLayout.isRefreshing = false
         }
-        getProducts(li)
-
-
+//        try {
+//            getProducts()
+////            MRatingBarang.daftarRating = MRatingBarang.getAlgo(this)
+//        }catch (error:InterruptedException){
+//            Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+//        }catch (error: ExecutionException){
+//            Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+//        }catch (error: TimeoutException){
+//            Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+//        }
     }
 
 
-    fun getProducts(li: ArrayList<MRatingBarang> ) {
-        li.clear()
-        var wqe = MRatingBarang.daftarRating
-        var wqa = MRatingBarang.list
-        var asw  = MRatingBarang.list
-        Log.e("bnyk", wqe.count().toString())
-        for (i in 0..wqa.count()-1)
-        {
-            for(j in 0..wqe.count()-1)
+//    fun getProducts() {
+////        var wqe = MRatingBarang.getAlgo(this)
+////        var li = ArrayList<MRatingBarang>()
+////        li.clear()
+////        li = get_prediksi()
+//        Log.e("DataRek", li.size.toString())
+//        if(li.size > 0 )
+//        {
+//            var adp= RatingAdapter(this, li,this)
+//            rt_rating.layoutManager= LinearLayoutManager(this)
+//            rt_rating.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+//            rt_rating.adapter=adp
+//
+//        }
+//    }
+
+    fun get_prediksi() {
+    //        var or = ArrayList<MRatingBarang>()
+        var url= Url_Volley.url_website +"/udemy/get_prediksi.php?id="+MCart.user_id
+
+        var rq: RequestQueue = Volley.newRequestQueue(this)
+        var jar = JsonArrayRequest(Request.Method.GET,url,null, Response.Listener { response ->
+
+            for(x in 0..response.length()-1)
             {
-                Log.e("masuk", "masukk coy")
-                if(wqe[j].item==wqa[i].id)
-                {
-                    wqa[i].rating = wqe[j].rating
-                    wqa[i].algo = "(A)"
-                    li.add(wqa[i])
-
-                }
+                Log.e("Prediksi",response.getJSONObject(x).getString("prediksi"))
+                li.add(
+                    MRatingBarang(
+                        response.getJSONObject(x).getInt("id_produk"),
+                        response.getJSONObject(x).getString("judul_produk"),
+                        response.getJSONObject(x).getDouble("harga_normal"),
+                        response.getJSONObject(x).getDouble("harga_diskon"),
+                        response.getJSONObject(x).getDouble("diskon"),
+                        response.getJSONObject(x).getString("deskripsi"),
+                        response.getJSONObject(x).getDouble("berat"),
+                        response.getJSONObject(x).getDouble("stok"),
+                        response.getJSONObject(x).getDouble("kat_id"),
+                        response.getJSONObject(x).getString("judul_kategori"),
+                        response.getJSONObject(x).getDouble("subkat_id"),
+                        response.getJSONObject(x).getString("judul_subkategori"),
+                        response.getJSONObject(x).getString("foto"),
+                        response.getJSONObject(x).getString("foto_type"),
+                        response.getJSONObject(x).getDouble("prediksi"),
+                        "(A)"
+                    )
+                )
             }
-        }
-        for (i in 0..li.count()-1)
-        {
-            asw.remove(li[i])
-        }
-        li.addAll(asw.distinct())
-        val so: List<MRatingBarang> = li.sortedWith(compareByDescending{it.rating})
-        li.clear()
-        if (so.count()>10)
-        {
-            for(i in 0..10)
-            {
-                li.add(so[i])
-            }
-        }
-        else
-        {
-            li.addAll(so)
-        }
+            var adp= RatingAdapter(this, li,this)
+            rt_rating.layoutManager= LinearLayoutManager(this)
+            rt_rating.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
+            rt_rating.adapter=adp
+        }, Response.ErrorListener { error ->
+            Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
 
-        var adp= RatingAdapter(this, li,this)
-        rt_rating.layoutManager= LinearLayoutManager(this)
-        rt_rating.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL)
-        rt_rating.adapter=adp
-
+        })
+        rq.add(jar)
+//        return or
     }
 
     override fun onNoteClick(position: Int) {

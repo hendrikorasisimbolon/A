@@ -112,7 +112,7 @@ public class LoginAct : AppCompatActivity() {
                     finish()
 
                 }, Response.ErrorListener { error ->
-                    Log.e("ErrorBawaan",error.message)
+//                    Log.e("ErrorBawaan",error.message)
 //                    Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
                     Toast.makeText(this,"Username and password is wrong", Toast.LENGTH_LONG).show()
                 })
