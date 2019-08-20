@@ -198,38 +198,31 @@
     <bookmark url="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml" line="58" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658a43af-00e5-435c-8296-43e0df327363" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/A/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/5.1.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/5.1.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/5.1.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/5.1.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.gradle/5.1.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/5.1.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.gradle/5.1.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/5.1.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.gradle/5.1.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/5.1.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/5.1.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/5.1.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/A/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/A/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Adapter/ItemAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Adapter/ItemAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/DaftarKomplainAct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/DaftarKomplainAct.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Fragment/SearchFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Fragment/SearchFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/KategoriAct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/KategoriAct.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/LoginAct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/LoginAct.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Model/MAlgo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Model/MAlgo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Model/MRatingBarang.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Model/MRatingBarang.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Model/Url_Volley.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/Model/Url_Volley.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/RekomendasiAct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/RekomendasiAct.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/utilss/convert.kt" beforeDir="false" afterPath="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/utilss/convert.kt" afterDir="false" />
-    </list>
+    <list default="true" id="658a43af-00e5-435c-8296-43e0df327363" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockManager">
+    <window id="4">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/Detail.kt">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="221">
+                    <caret line="13" column="25" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="25" />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -257,57 +250,88 @@
     <favorites_list name="a" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/RiwayatDetailAact.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ItemAllAdapter.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="154" column="37" selection-start-line="152" selection-start-column="16" selection-end-line="154" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/KomplainAct.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1462">
-              <caret line="146" column="17" lean-forward="true" selection-start-line="146" selection-start-column="17" selection-end-line="146" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/EditProfileAct.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="597" column="5" lean-forward="true" selection-start-line="597" selection-start-column="5" selection-end-line="597" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/DaftarKomplainAct.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="85" column="50" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/DKomplainAdapter.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="70" column="63" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="63" />
+            <state relative-caret-position="289">
+              <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+              <folding>
+                <element signature="e#32#693#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/BuktiKomplainAct.kt">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/ItemAllAct.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="306">
+              <caret line="152" column="77" lean-forward="true" selection-start-line="152" selection-start-column="77" selection-end-line="152" selection-end-column="77" />
+              <folding>
+                <element signature="e#24#1340#0" expanded="true" />
+                <element signature="e#7016#7458#0" />
+                <element signature="e#7489#8057#0" />
+                <element signature="e#8087#8137#0" />
+                <element signature="e#8231#8316#0" />
+                <element signature="e#8340#9177#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ItemAdapter.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="21" lean-forward="true" selection-end-line="135" />
+              <folding>
+                <element signature="e#32#698#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MItemDetail.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1564">
+              <caret line="97" column="40" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/ProductAllAct.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="110" lean-forward="true" selection-start-line="86" selection-start-column="7" selection-end-line="110" />
+              <folding>
+                <element signature="e#6873#7523#0" />
+                <element signature="e#7589#8031#0" />
+                <element signature="e#8062#8630#0" />
+                <element signature="e#8660#8710#0" />
+                <element signature="e#8804#8889#0" />
+                <element signature="e#8913#9750#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/RetrofitService.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/RetrofitAllitems.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -320,27 +344,17 @@
         <option value="valueResourceFile" />
         <option value="layoutResourceFile" />
         <option value="Singleton" />
-        <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
         <option value="resourceFile" />
-        <option value="Kotlin File" />
-        <option value="layoutResourceFile_vertical" />
         <option value="Class" />
+        <option value="layoutResourceFile_vertical" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>btn_ed</find>
-      <find>txt</find>
-      <find>ze</find>
-      <find>gson</find>
-      <find>glide</find>
-      <find>requestCode</find>
-      <find>localhost:</find>
-      <find>stringre</find>
-      <find>get_</find>
-      <find>url_server</find>
       <find>products</find>
       <find>&amp;amp;&amp;amp;</find>
       <find>getAlg</find>
@@ -360,12 +374,24 @@
       <find>tit</find>
       <find>btn_komplain</find>
       <find>komplain</find>
+      <find>anko</find>
+      <find>diskon</find>
+      <find>Null</find>
+      <find>card</find>
       <find>init</find>
+      <find>okhttp</find>
+      <find>productA;;</find>
+      <find>dk</find>
+      <find>StaggeredGridLayoutManager</find>
+      <find>MItemDetail</find>
+      <find>ItemAdapter</find>
     </findStrings>
     <replaceStrings>
       <replace>itemsSearchList</replace>
       <replace>position</replace>
       <replace />
+      <replace>Detail</replace>
+      <replace>ItemAllAdapter</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\Kotlin\a\app</dir>
@@ -379,19 +405,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/BlogAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/CheckoutAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/DaftarBRAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/RatingAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/SearchAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ShoppingCartAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/TestiAdapter.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/BlogDetailAct.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/ProductDetailAct.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/ProfileAct.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/TestiAct.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/ChatAct.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/xml/provider_paths.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Fragment/UpdateAddressFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/EditProfileAct.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/product_row_item.xml" />
@@ -409,27 +422,40 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/FashionStore.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ProductAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ProductAdp.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/utilss/Tools.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/KonfirmasiPesananAct.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/FashionStore.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MAlgo.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/LoginAct.kt" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/utilss/convert.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ItemAdapter.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/KategoriAct.kt" />
         <option value="$PROJECT_DIR$/A/app/src/main/java/com/example/ta/KategoriAct.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Fragment/SearchFragment.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/PembayaranAct.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/MainActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/Url_Volley.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MRatingBarang.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/RekomendasiAct.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/KomplainAct.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/DaftarKomplainAct.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/DKomplainAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/PaginationScroll.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_loading.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ProductAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/Url_Volley.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/MainActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/RetrofitAllitems.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ItemAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_item_all.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/ProductAllAct.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/ItemsAct.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Fragment/SearchFragment.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/SearchAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MItemDetail.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/utilss/convert.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/Detail.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/RetrofitService.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ItemAllAdapter.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/ta/ItemAllAct.kt" />
       </list>
     </option>
   </component>
@@ -448,7 +474,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -514,13 +540,29 @@
             <path>
               <item name="a" type="b2602c69:ProjectViewProjectNode" />
               <item name="a" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="a" type="b2602c69:ProjectViewProjectNode" />
+              <item name="a" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="a" type="b2602c69:ProjectViewProjectNode" />
+              <item name="a" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="gradle" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -532,13 +574,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="Pixel_API_24" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ImageUploadOnServer-Android-Examples.com" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Codepolitan-Pagination-RecyclerView-master" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
@@ -671,8 +714,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49590835" visible="true" weight="0.1633888" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49590835" visible="true" weight="0.16868381" />
       <window_info id="Structure" order="1" sideWeight="0.5040917" side_tool="true" weight="0.21028744" />
       <window_info id="Captures" order="2" sideWeight="0.50501674" side_tool="true" weight="0.21028744" />
       <window_info id="Image Layers" order="3" />
@@ -684,7 +728,7 @@
       <window_info anchor="bottom" id="Find" order="0" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4969743" weight="0.27659574" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="3" sideWeight="0.4969743" visible="true" weight="0.28968903" />
+      <window_info anchor="bottom" id="Logcat" order="3" sideWeight="0.4969743" weight="0.48608837" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3289689" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5030257" side_tool="true" weight="0.49590835" />
@@ -696,8 +740,35 @@
       <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Preview" order="5" weight="0.14750378" />
+      <window_info anchor="right" id="Preview" order="5" weight="0.3045388" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49590835" visible="true" weight="0.16868381" />
+      <window_info id="Structure" order="1" sideWeight="0.5040917" side_tool="true" weight="0.21028744" />
+      <window_info id="Captures" order="2" sideWeight="0.50501674" side_tool="true" weight="0.21028744" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Resources Explorer" order="5" weight="0.32980332" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Build Variants" order="7" side_tool="true" weight="0.32980332" />
+      <window_info id="Favorites" order="8" sideWeight="0.50242716" side_tool="true" weight="0.20726173" />
+      <window_info anchor="bottom" id="Find" order="0" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.4969743" weight="0.27659574" />
+      <window_info anchor="bottom" id="Debug" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Logcat" order="3" sideWeight="0.4969743" weight="0.48608837" />
+      <window_info anchor="bottom" id="Terminal" order="4" weight="0.3289689" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5030257" side_tool="true" weight="0.49590835" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.4977307" visible="true" weight="0.26022914" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32569557" />
+      <window_info anchor="bottom" id="Android Profiler" order="9" weight="0.3289689" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Gradle" order="2" weight="0.32980332" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Preview" order="5" weight="0.3045388" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -740,188 +811,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_konfirmasi_pesanan.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="54" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="19" selection-end-column="54" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/PromoAct.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="62" column="74" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="74" />
-          <folding>
-            <element signature="e#3368#3965#0" />
-            <element signature="e#4025#4667#0" />
-            <element signature="e#4733#5017#0" />
-            <element signature="e#5048#5616#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MDaftarKomplain.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_komplain.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_daftar_komplain2.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="38" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_bukti_komplain.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="22" column="42" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/FashionStore.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/utilss/VolleySingleton.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ProductAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/RiwayatAct.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="151" column="8" selection-start-line="151" selection-start-column="8" selection-end-line="151" selection-end-column="8" />
-          <folding>
-            <element signature="e#24#1208#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/A/app/src/main/java/com/example/ta/CheckoutAct.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3803">
-          <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_checkout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="208" column="67" selection-start-line="208" selection-start-column="67" selection-end-line="208" selection-end-column="67" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/KonfirmasiPesananAct.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="56" column="66" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/FashionStore.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ProductAdp.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/utilss/Tools.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="4" />
-          <folding>
-            <element signature="e#31#1069#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/SliderInfo.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="58" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MRiwayat.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/LoginAct.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="150" column="72" selection-start-line="150" selection-start-column="72" selection-end-line="150" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/utilss/convert.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/A/app/src/main/java/com/example/ta/KategoriAct.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
@@ -936,17 +825,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/ItemsAct.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="76" column="74" selection-start-line="76" selection-start-column="27" selection-end-line="76" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/product_row_item.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/TestiAct.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -955,15 +833,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_rekomendasi.xml">
-      <provider selected="true" editor-type-id="text-editor" />
       <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ItemAdapter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="113" column="13" selection-start-line="113" selection-start-column="13" selection-end-line="113" selection-end-column="13" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Fragment/QtyFragment.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -979,31 +850,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/Url_Volley.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="42" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/ProductDetailAct.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
           <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Fragment/SearchFragment.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="70" column="58" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MItemDetail.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1014,21 +864,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor" />
-      <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MAlgo.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="77" column="54" selection-start-line="77" selection-start-column="54" selection-end-line="77" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -1053,45 +892,306 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/RiwayatDetailAact.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="154" column="37" selection-start-line="152" selection-start-column="16" selection-end-line="154" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/KomplainAct.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1462">
-          <caret line="146" column="17" lean-forward="true" selection-start-line="146" selection-start-column="17" selection-end-line="146" selection-end-column="17" />
+        <state relative-caret-position="1683">
+          <caret line="146" column="17" selection-start-line="146" selection-start-column="17" selection-end-line="146" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/EditProfileAct.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="597" column="5" lean-forward="true" selection-start-line="597" selection-start-column="5" selection-end-line="597" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/RiwayatDetailAact.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="154" column="37" selection-start-line="152" selection-start-column="16" selection-end-line="154" selection-end-column="37" />
+        <state relative-caret-position="9027">
+          <caret line="597" column="5" selection-start-line="597" selection-start-column="5" selection-end-line="597" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/DaftarKomplainAct.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="1088">
           <caret line="85" column="50" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/DKomplainAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="969">
           <caret line="70" column="63" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/BuktiKomplainAct.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="80">
+          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/PaginationScroll.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.recyclerview/recyclerview/1.0.0/2151d26c3b241f0a887f2dadb9ab091649fcf020/recyclerview-1.0.0-sources.jar!/androidx/recyclerview/widget/RecyclerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5764" column="26" selection-start-line="5764" selection-start-column="26" selection-end-line="5764" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/view/ViewGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="533" column="79" selection-start-line="533" selection-start-column="75" selection-end-line="533" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/item_loading.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="4" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="104" column="51" selection-start-line="104" selection-start-column="51" selection-end-line="104" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_arrow_back.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/UserRepository.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/UploaderClient.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/UserService.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/ApiUrl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/ApiServiceRO.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/ApiServiceProduct.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="157" column="67" selection-start-line="157" selection-start-column="67" selection-end-line="157" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/product_row_item.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/Url_Volley.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_items.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="10" selection-start-column="6" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_product_all.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="27" column="72" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_item_all.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+          <folding>
+            <element signature="e#1116#1156#0" expanded="true" />
+            <element signature="e#1526#1566#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/ApiProduct.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="141" column="42" selection-start-line="141" selection-start-column="42" selection-end-line="141" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/ItemsAct.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="171" column="64" selection-start-line="171" selection-start-column="64" selection-end-line="171" selection-end-column="64" />
+          <folding>
+            <element signature="e#24#1537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Fragment/SearchFragment.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="73" column="68" selection-start-line="73" selection-start-column="68" selection-end-line="73" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/SearchAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/MItemDetail.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="97" column="40" selection-start-line="97" selection-start-column="40" selection-end-line="97" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/utilss/convert.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="17" selection-start-line="7" selection-end-line="22" selection-end-column="1" />
+          <folding>
+            <element signature="e#31#183#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/ProductAllAct.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="110" lean-forward="true" selection-start-line="86" selection-start-column="7" selection-end-line="110" />
+          <folding>
+            <element signature="e#6873#7523#0" />
+            <element signature="e#7589#8031#0" />
+            <element signature="e#8062#8630#0" />
+            <element signature="e#8660#8710#0" />
+            <element signature="e#8804#8889#0" />
+            <element signature="e#8913#9750#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/RetrofitService.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Api/RetrofitAllitems.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="53" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ItemAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="21" lean-forward="true" selection-end-line="135" />
+          <folding>
+            <element signature="e#32#698#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Adapter/ItemAllAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+          <folding>
+            <element signature="e#32#693#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/Model/Detail.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/ta/ItemAllAct.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="152" column="77" lean-forward="true" selection-start-line="152" selection-start-column="77" selection-end-line="152" selection-end-column="77" />
+          <folding>
+            <element signature="e#24#1340#0" expanded="true" />
+            <element signature="e#7016#7458#0" />
+            <element signature="e#7489#8057#0" />
+            <element signature="e#8087#8137#0" />
+            <element signature="e#8231#8316#0" />
+            <element signature="e#8340#9177#0" />
+          </folding>
         </state>
       </provider>
     </entry>
