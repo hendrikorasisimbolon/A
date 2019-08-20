@@ -85,11 +85,8 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
 
     fun getProducts(list:ArrayList<MItemDetail>) {
         var url= url_website+"/udemy/get_all_product.php"
-
         var rq: RequestQueue = Volley.newRequestQueue(this)
-
         var jar = JsonArrayRequest(Request.Method.GET,url,null, com.android.volley.Response.Listener { response ->
-
             for(x in 0..response.length()-1)
             {
                 list.add(
@@ -138,7 +135,7 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
         intent.putExtra("kat_id", list.get(position).kat_id.toString())
         intent.putExtra("subkat_id", list.get(position).subkat_id.toString())
         intent.putExtra("berat", list.get(position).berat.toString())
-        intent.putExtra("deskripsi",list.get(position).deksripsi.toString())
+        intent.putExtra("deskripsi",list.get(position).deskripsi.toString())
         intent.putExtra("discount",list.get(position).diskon.toString())
         intent.putExtra("harga_diskon", list.get(position).harga_diskon.toString())
 

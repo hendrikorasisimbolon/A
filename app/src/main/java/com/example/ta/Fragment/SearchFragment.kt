@@ -71,7 +71,7 @@ class SearchFragment : Fragment(), SearchAdapter.OnNoteListener {
         intent.putExtra("stok", tampung.get(position).stok)
         intent.putExtra("foto_type", tampung.get(position).foto_type)
         intent.putExtra("berat", tampung.get(position).berat.toString())
-        intent.putExtra("deskripsi", tampung.get(position).deksripsi)
+        intent.putExtra("deskripsi", tampung.get(position).deskripsi)
         intent.putExtra("discount",tampung.get(position).diskon.toString())
         intent.putExtra("harga_normal",tampung.get(position).harga_normal.toString())
 

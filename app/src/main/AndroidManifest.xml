@@ -19,6 +19,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ItemAllAct">
+        </activity>
         <activity android:name=".BuktiKomplainAct">
         </activity>
         <activity android:name=".DaftarKomplainAct">

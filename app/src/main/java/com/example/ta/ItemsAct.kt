@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
+import com.android.volley.Response.Listener
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -39,7 +40,11 @@ import kotlinx.android.synthetic.main.toolbar.*
 
 public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
 
+
     var list = ArrayList<MItemDetail>()
+//    var list:MutableList<MItemDetail?> = ArrayList()  // pagination
+
+
     private lateinit var ui_hot:TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +57,8 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
             refreshI.isRefreshing = false
         }
         getitem()
+
+
 //         cat=intent.getStringExtra("cat")
 //         catName = intent.getStringExtra("catname")
 //        var url= url_website+"/udemy/get_subkat.php?subkat_id="+cat  /// intent get ekstra nya rusak
@@ -59,6 +66,7 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
 
 
     }
+
 
     fun getitem()
     {
@@ -68,7 +76,7 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
 
             var rq: RequestQueue = Volley.newRequestQueue(this)
 
-            var jar = JsonArrayRequest(Request.Method.GET,url,null, Response.Listener { response ->
+            var jar = JsonArrayRequest(Request.Method.GET,url,null, Listener { response ->
 
                 for(x in 0..response.length()-1)
                 {
@@ -91,6 +99,10 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
                         )
                     )
                 }
+
+
+
+
 
                 var adp=ItemAdapter(this,list,this)
                 item_rv.layoutManager= LinearLayoutManager(this)
@@ -129,7 +141,7 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
     {
         var url = url_website +"/udemy/get_total_cart.php?user_id="+MCart.user_id
         var rq: RequestQueue = Volley.newRequestQueue(this)
-        var jor = JsonObjectRequest(Request.Method.GET,url,null, Response.Listener { response ->
+        var jor = JsonObjectRequest(Request.Method.GET,url,null, Listener { response ->
             //            cart_size.text = response.getInt("banyak").toString()
             Log.e("Banyak Cart", response.getString("banyak"))
             total_cart = response.getInt("banyak")
@@ -157,7 +169,7 @@ public class ItemsAct : AppCompatActivity(), ItemAdapter.OnNoteListener {
         intent.putExtra("kat_id", list.get(position).kat_id.toString())
         intent.putExtra("subkat_id", list.get(position).subkat_id.toString())
         intent.putExtra("berat", list.get(position).berat.toString())
-        intent.putExtra("deskripsi",list.get(position).deksripsi.toString())
+        intent.putExtra("deskripsi",list.get(position).deskripsi.toString())
         intent.putExtra("discount",list.get(position).diskon.toString())
         intent.putExtra("harga_diskon", list.get(position).harga_diskon.toString())
 

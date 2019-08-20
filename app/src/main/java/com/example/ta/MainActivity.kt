@@ -138,7 +138,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(i)
         }
         btn_all.setOnClickListener{
-            var i = Intent(this,ProductAllAct::class.java)
+//            var i = Intent(this,ProductAllAct::class.java)
+            var i = Intent(this,ItemAllAct::class.java)
             startActivity(i)
         }
         btn_rekomendasi.setOnClickListener {

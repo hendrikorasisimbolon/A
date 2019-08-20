@@ -35,7 +35,7 @@ class SearchAdapter (var context: Context, var list:ArrayList<MItemDetail>, var 
             list[p1].id,
             list[p1].judul_produk,
             list[p1].harga_diskon,
-            list[p1].deksripsi,
+            list[p1].deskripsi,
             list[p1].foto,
             list[p1].foto_type,
             list[p1].diskon,

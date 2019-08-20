@@ -22,10 +22,10 @@ import java.util.*
 
 @Suppress("DEPRECATION")
 public class ItemAdapter (var context:Context, var list:ArrayList<MItemDetail>, var monlistener:OnNoteListener) :
-    androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val PAGE_SIZE = 10
 
-    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(p0: ViewGroup, p1: Int): RecyclerView.ViewHolder {
 
         var v: View = LayoutInflater.from(context).inflate(com.example.ta.R.layout.product_row_item, p0, false)
         return ItemHolder(v)
@@ -35,17 +35,17 @@ public class ItemAdapter (var context:Context, var list:ArrayList<MItemDetail>, 
         return list.size
     }
 
-    override fun onBindViewHolder(p0: androidx.recyclerview.widget.RecyclerView.ViewHolder, p1: Int) {
+    override fun onBindViewHolder(p0: RecyclerView.ViewHolder, p1: Int) {
         (p0 as ItemHolder).bind(
-            list[p1].id,
-            list[p1].judul_produk,
-            list[p1].harga_diskon,
-            list[p1].deksripsi,
-            list[p1].foto,
-            list[p1].foto_type,
-            list[p1].diskon,
-            list[p1].harga_normal,
-            list[p1].stok,
+            list[p1]!!.id,
+            list[p1]!!.judul_produk,
+            list[p1]!!.harga_diskon,
+//            list[p1]!!.deksripsi,
+            list[p1]!!.foto,
+            list[p1]!!.foto_type,
+            list[p1]!!.diskon,
+            list[p1]!!.harga_normal,
+            list[p1]!!.stok,
             this.monlistener
         )
 
@@ -56,10 +56,11 @@ public class ItemAdapter (var context:Context, var list:ArrayList<MItemDetail>, 
 
     }
 
-    public class ItemHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView), View.OnClickListener {
+    class ItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         lateinit var monlistener: OnNoteListener
 
-        fun bind(id: Int, j: String, h: Double, dk: String, f: String, ft: String,ds:Double, hn:Double, st:Double, monlistener: OnNoteListener)
+//        fun bind(id: Int, j: String, h: Double, dk: String, f: String, ft: String,ds:Double, hn:Double, st:Double, monlistener: OnNoteListener)
+        fun bind(id: Int, j: String, h: Double, f: String, ft: String,ds:Double, hn:Double, st:Double, monlistener: OnNoteListener)
         {
             this.monlistener = monlistener
             var locale = Locale("in", "ID")

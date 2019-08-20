@@ -13,7 +13,7 @@ class MItemDetail {
     var harga_normal:Double
     var harga_diskon:Double
     var diskon:Double
-    var deksripsi:String
+    var deskripsi:String
     var berat:Double
     var stok:Double
     var kat_id:Double
@@ -42,7 +42,7 @@ class MItemDetail {
         this.id = id
         this.judul_produk = judul_produk
         this.harga_normal = harga_normal
-        this.deksripsi = deksripsi
+        this.deskripsi = deksripsi
         this.berat = berat
         this.foto = foto
         this.foto_type = foto_type
