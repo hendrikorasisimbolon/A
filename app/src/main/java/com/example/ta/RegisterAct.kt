@@ -86,7 +86,6 @@ class RegisterAct : AppCompatActivity() {
                     etProvince.error = "Please chooice your to province"
                 }
             }
-
         }
         umurEditText.setOnFocusChangeListener { v, hasFocus ->
             if(hasFocus)

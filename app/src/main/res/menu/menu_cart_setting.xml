@@ -9,9 +9,9 @@
             android:title="Cart"
             app:showAsAction="always" />
     <!--android:actionLayout="@layout/action_bar_notifitcation_icon"-->
-    <item
-            android:id="@+id/action_settings"
-            android:orderInCategory="100"
-            android:title="Settings"
-            app:showAsAction="never" />
+    <!--<item-->
+            <!--android:id="@+id/action_settings"-->
+            <!--android:orderInCategory="100"-->
+            <!--android:title="Settings"-->
+            <!--app:showAsAction="never" />-->
 </menu>

@@ -71,7 +71,7 @@ class BlogAct : AppCompatActivity() {
                 i.putExtra("pengarang_blog",list.get(position).modified_by)
                 i.putExtra("foto_blog",list.get(position).foto)
                 i.putExtra("foto_type_blog",list.get(position).foto_type)
-
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(i)
 //                Toast.makeText(this@BlogAct,"Klik ke "+position.toString(),Toast.LENGTH_LONG).show()
             }

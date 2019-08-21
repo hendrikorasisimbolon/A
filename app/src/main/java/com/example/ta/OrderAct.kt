@@ -92,6 +92,7 @@ class OrderAct : AppCompatActivity() {
         {
             btn_checkout.setOnClickListener{
                 var i = Intent(this,CheckoutAct::class.java)
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
             }
 

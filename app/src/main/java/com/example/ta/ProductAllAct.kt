@@ -54,8 +54,8 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
         swipeRefreshLayout.isRefreshing = false
 
         swipeRefreshLayout.setOnRefreshListener {
-            list.clear()
-            getProducts(list)
+//            list.clear()
+//            getProducts(list)
             getcart()
             swipeRefreshLayout.isRefreshing = false
         }
@@ -151,6 +151,7 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
         toolbar.navigationIcon?.setColorFilter(resources.getColor(R.color.indigo_500), PorterDuff.Mode.SRC_ATOP)
         toolbar.setNavigationOnClickListener{
             var i = Intent(this,MainActivity::class.java)
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i)
         }
         toolbar.title = "All Product"

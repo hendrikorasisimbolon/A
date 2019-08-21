@@ -18,8 +18,8 @@
                     android:id="@+id/foto_cart"
                     android:layout_width="85dp"
                     android:layout_height="85dp"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/image_shop_2" />
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/not_found_img"/>
 
             <View
                     android:layout_width="@dimen/spacing_middle"
@@ -59,7 +59,7 @@
                                 android:layout_height="wrap_content"
                                 android:id="@+id/berat_procuctcart"
                                 android:layout_marginTop="@dimen/spacing_medium"
-                                android:text="Berat M"
+                                android:text="Berat : 1kg / satuan"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                                 android:textColor="@color/grey_60" />
 

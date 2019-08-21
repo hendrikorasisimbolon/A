@@ -179,6 +179,7 @@ class ProfileAct : AppCompatActivity() {
         if (item.itemId == R.id.aksi_cart)
         {
             var i = Intent(this, OrderAct::class.java)
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(i)
         }
 

@@ -49,6 +49,7 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
 
     override fun onBackPressed() {
         var i = Intent(this, MainActivity::class.java)
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(i)
         super.onBackPressed()
     }
@@ -78,7 +79,8 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
                         c = "-"
                     }
                     if(response.getJSONObject(x).getInt("status")>1)
-                    {t += response.getJSONObject(x).getInt("total")}
+                    {
+                        t += response.getJSONObject(x).getInt("total")}
 
                     list.add(
                         MRiwayat(
@@ -109,7 +111,8 @@ class RiwayatAct : AppCompatActivity(), RiwayatAdapter.OnNoteListener {
 
         }, Response.ErrorListener { error ->
             Log.e("Riwayat", error.message)
-            Toast.makeText(context,error.message, Toast.LENGTH_LONG).show()
+//            Toast.makeText(context,error.message, Toast.LENGTH_LONG).show()
+            Toast.makeText(context,"Anda belum membeli apapun", Toast.LENGTH_LONG).show()
         })
         rq.add(jar)
 

@@ -126,7 +126,7 @@
                 android:layout_height="120dp"
                 android:scaleType="centerCrop"
                 android:id="@+id/product_image"
-                app:srcCompat="@drawable/img_plant_1" />
+                app:srcCompat="@drawable/not_found_img"/>
 
     </LinearLayout>
 

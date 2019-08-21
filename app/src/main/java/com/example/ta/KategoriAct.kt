@@ -131,6 +131,13 @@ class KategoriAct : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        var i = Intent(this, MainActivity::class.java)
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i)
+        super.onBackPressed()
+    }
+
 
     private fun setupViewPager(viewPager: ViewPager) {
         val adapter = SectionsPagerAdapter(supportFragmentManager)

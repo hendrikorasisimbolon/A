@@ -122,23 +122,6 @@ class MRatingBarang {
                     )
                 }
 
-//                for(x in 0..response.length()-1)
-//                {
-//                    for(i in 0..list.size-1)
-//                    {
-//                        if(response.getJSONObject(x).getInt(("item")) == list[i].id){
-//                            list[i].rating = response.getJSONObject(x).getDouble(("ratingp"))
-//                            li.add(
-//                                MRatingBarang(
-//                                    list[i].id, list[i].judul_produk,list[i].harga_normal,list[i].deksripsi, list[i].berat, list[i].foto, list[i].foto_type, list[i].harga_diskon,
-//                                    list[i].stok, list[i].diskon, list[i].subkat_id, list[i].kat_id, response.getJSONObject(x).getDouble(("ratingp"))
-//                                )
-//                            )
-//                            Log.e("cocok", list[i].rating.toString())
-//                        }
-//
-//                    }
-//                }
             }, Response.ErrorListener { error ->
                 Toast.makeText(context,error.message, Toast.LENGTH_LONG).show()
 

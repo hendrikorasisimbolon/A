@@ -93,9 +93,10 @@ public class ItemAdapter (var context:Context, var list:ArrayList<MItemDetail>, 
                 itemView.stvDiscount.visibility = View.INVISIBLE
             }
 
-
-            Glide.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/produk/" + f + ft)
-                .into(itemView.product_image)
+            if(f!=""&&ft!="" && f!=null && ft!=null){
+                Glide.with(itemView.context).load(Url_Volley.url_website+"/ecommerce/assets/images/produk/" + f + ft)
+                    .into(itemView.product_image)
+            }
 
             itemView.addToCart.setOnClickListener{
                 MCart.itemId=id

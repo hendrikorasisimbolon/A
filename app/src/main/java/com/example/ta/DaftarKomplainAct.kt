@@ -44,15 +44,15 @@ class DaftarKomplainAct : AppCompatActivity() {
                         MDaftarKomplain(
                             response.getJSONObject(x).getString("alasan"),
                             response.getJSONObject(x).getString("created_at"),
-                            response.getJSONObject(x).getString("foto"),
+                            response.getJSONObject(x).getString("foto_komplain"),
                             response.getJSONObject(x).getString("foto_rek"),
                             response.getJSONObject(x).getString("foto_rek_type"),
-                            response.getJSONObject(x).getString("foto_type"),
+                            response.getJSONObject(x).getString("foto_komplain_type"),
                             response.getJSONObject(x).getString("id_komplain"),
                             response.getJSONObject(x).getString("no_rek"),
                             response.getJSONObject(x).getString("selesai"),
                             response.getJSONObject(x).getString("status"),
-                            response.getJSONObject(x).getString("trans_id"),
+                            response.getJSONObject(x).getString("transid"),
                             response.getJSONObject(x).getString("user")
                         )
                     )

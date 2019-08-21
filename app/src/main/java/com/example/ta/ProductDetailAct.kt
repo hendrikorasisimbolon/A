@@ -69,6 +69,14 @@ class ProductDetailAct : AppCompatActivity() {
         var kat_id = intent.getStringExtra("kat_id")
         stok = intent.getStringExtra("stok").toDouble()
 
+        if(foto==""){
+            foto = "not_found_img"
+        }
+        if(foto_type==""){
+            foto_type=".jpg"
+        }
+//        Glide.with(image.context).load(url_website+"/ecommerce/assets/images/produk/not_found_img.jpg")
+//            .into(image.image)
         var url = url_website+"/udemy/get_rating.php?produk_id="+id_produk
         var rq:RequestQueue = Volley.newRequestQueue(this)
         var jor = JsonObjectRequest(Request.Method.GET,url,null,Response.Listener { response ->
@@ -83,15 +91,19 @@ class ProductDetailAct : AppCompatActivity() {
 
         var locale = Locale("in", "ID")
         var formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(locale)
-
-        Glide.with(image.context).load(url_website+"/ecommerce/assets/images/produk/"+foto+foto_type)
-            .into(image.image)
+        if(foto!=""&&foto_type!=""||foto!=null&&foto_type!=null){
+            Glide.with(image.context).load(url_website+"/ecommerce/assets/images/produk/"+foto+foto_type)
+                .into(image.image)
+        }
+//        else if(foto==""&&foto_type==""){
+////            image.setImageResource(R.drawable.not_found_img)
+//            Glide.with(image.context).load(url_website+"/ecommerce/assets/images/produk/not_found_img.jpg")
+//                .into(image.image)
+//        }
         txt_judul_produk.text = judul
         price.text = formatRupiah.format(harga)
-        text_brt.text = "Berat : "+ "%.0f".format(berat) + " gram"
+        text_brt.text = "Berat : "+ "%.0f".format(berat) + " kilogram"
         txt_des.text = Html.fromHtml(deskripsi, Html.FROM_HTML_MODE_COMPACT)
-
-
 
         if(discount>0){
             pricesb.text = formatRupiah.format(harga_normal)

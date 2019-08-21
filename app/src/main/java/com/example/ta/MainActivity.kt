@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         initToolbar()
         initNavigationMenu()
         MRatingBarang.list = MRatingBarang.getAllRating(this)
-        MRatingBarang.daftarRating = MRatingBarang.getAlgo(this)
+//        MRatingBarang.daftarRating = MRatingBarang.getAlgo(this)
 
 
         session = UserSessionManager(applicationContext)
@@ -138,8 +138,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(i)
         }
         btn_all.setOnClickListener{
-//            var i = Intent(this,ProductAllAct::class.java)
-            var i = Intent(this,ItemAllAct::class.java)
+            var i = Intent(this,ProductAllAct::class.java)
+//            var i = Intent(this,ItemAllAct::class.java)
             startActivity(i)
         }
         btn_rekomendasi.setOnClickListener {

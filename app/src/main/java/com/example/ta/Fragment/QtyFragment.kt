@@ -1,6 +1,7 @@
 package com.example.ta.Fragment
 
 
+import android.app.Activity
 import android.app.DialogFragment
 import android.content.Intent
 import android.os.Build
@@ -24,6 +25,7 @@ import com.example.ta.R
 import com.google.android.material.snackbar.Snackbar
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 
+@Suppress("DEPRECATION")
 @RequiresApi(Build.VERSION_CODES.HONEYCOMB)
 class QtyFragment : DialogFragment() {
 
@@ -55,7 +57,7 @@ class QtyFragment : DialogFragment() {
                 {
 //                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah ditambahkan ke cart anda", Snackbar.LENGTH_LONG).show()
 //                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah diupdate di cart anda", Snackbar.LENGTH_LONG).show()
-                    Toast.makeText(activity,"1 item telah ditambahkan ke cart" ,Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity!!,"1 item telah ditambahkan ke cart" ,Toast.LENGTH_LONG).show()
 //                    pake toast
                     total_cart++
                 }
@@ -63,7 +65,7 @@ class QtyFragment : DialogFragment() {
                 {
 //                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah diupdate di cart anda", Snackbar.LENGTH_LONG).show()
 //                    Snackbar.make(activity.findViewById(R.id.coordinator),"1 barang telah ditambahkan ke cart anda", Snackbar.LENGTH_LONG).show()
-                    Toast.makeText(activity,"1 telah di sunting di cart" ,Toast.LENGTH_LONG).show()
+                    Toast.makeText(activity!!,"1 telah di sunting di cart" ,Toast.LENGTH_LONG).show()
                 }
 //                var i = Intent(activity,OrderAct::class.java)
 //                startActivity(i)

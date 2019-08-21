@@ -71,7 +71,11 @@ class UpdateAddressFragment : DialogFragment() {
         var address  = v.findViewById<TextInputEditText>(R.id.ett_addr)
         var update = v.findViewById<Button>(R.id.btn_update)
 
-        province.setOnClickListener({popUpProvince(province,city)})
+        province.setOnFocusChangeListener { v, hasFocus ->
+            if(hasFocus){
+                popUpProvince(province, city)
+            }
+        }
 
         var ett = v.findViewById<EditText>(R.id.ett_addr)
 
@@ -90,15 +94,18 @@ class UpdateAddressFragment : DialogFragment() {
             .addErrorCallback { ett.error = it }
             .check()
 
-        city.setOnClickListener {
-            try {
-                if (province.tag==""){
-                    province.error = "Please Chooice your province"
-                } else {
-                    popUpCity(city,province)
+        city.setOnFocusChangeListener { v, hasFocus ->
+            if(hasFocus){
+                try {
+                    if (province.tag == "") {
+                        province.error = "Please chooice your to province"
+                    } else {
+                        popUpCity(city, province)
+                    }
+
+                } catch (e: NullPointerException) {
+                    province.error = "Please chooice your to province"
                 }
-            }catch (e:NullPointerException){
-                province.error = "Please Chooice your province"
             }
         }
 

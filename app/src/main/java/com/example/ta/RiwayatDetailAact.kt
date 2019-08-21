@@ -82,6 +82,11 @@ class RiwayatDetailAact : AppCompatActivity() {
         if(status == "1")
         {
             txt_stat.text = "Belum Dibayar"
+            text_sblm.text = "Bayar sebelum"
+            val date = Date(System.currentTimeMillis() - 12 * 60 * 60 * 1000)
+            txt_dateP.visibility = View.GONE
+            txt_dateS.visibility = View.VISIBLE
+            txt_dateS.text = date.toString()
             txt_stat.setBackgroundResource(R.drawable.round_step1)
             btn_payy.visibility = View.VISIBLE
             btn_review.visibility = View.GONE
@@ -162,7 +167,8 @@ class RiwayatDetailAact : AppCompatActivity() {
             btn_payy.visibility = View.GONE
             btn_review.visibility = View.GONE
             btn_arr.visibility= View.GONE
-            btn_belilagi.visibility = View.VISIBLE
+//            btn_belilagi.visibility = View.VISIBLE
+            btn_belilagi.visibility = View.GONE
             btn_belilagi.setOnClickListener {
                for(i in 0..list.count()-1)
                {
@@ -233,6 +239,13 @@ class RiwayatDetailAact : AppCompatActivity() {
         toolbar.setNavigationOnClickListener{
             onBackPressed()
         }
+    }
+
+    override fun onBackPressed() {
+        var i = Intent(this, RiwayatAct::class.java)
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i)
+        super.onBackPressed()
     }
 
     fun daftarBr(){

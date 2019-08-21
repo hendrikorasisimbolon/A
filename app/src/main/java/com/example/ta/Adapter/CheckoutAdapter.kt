@@ -73,9 +73,11 @@ class CheckoutAdapter (var context: Context, var cartItems:ArrayList<MKeranjang>
 //            var listner:CharCountTextView.CharCountChangedListener ?= null
             var locale = Locale("in", "ID")
             var formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(locale)
-            Glide.with(itemView.context)
-                .load(url_website+"/ecommerce/assets/images/produk/" + foto + foto_type)
-                .into(itemView.foto_cart)
+            if(foto!=""&&foto_type!="" && foto!=null && foto_type!=null) {
+                Glide.with(itemView.context)
+                    .load(url_website + "/ecommerce/assets/images/produk/" + foto + foto_type)
+                    .into(itemView.foto_cart)
+            }
             itemView.judul_produkcart.text = judul
             itemView.txt_harga_cart.text = formatRupiah.format(harga)
             itemView.product_quantity.text = qty.toString()

@@ -47,9 +47,9 @@
             <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:scaleType="centerCrop"
+                    android:scaleType="centerInside"
                     android:id="@+id/product_image"
-                    app:srcCompat="@drawable/img_plant_1"/>
+                    app:srcCompat="@drawable/not_found_img"/>
             <com.haozhang.lib.SlantedTextView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -57,11 +57,11 @@
                     android:id="@+id/stvDiscount"
                     android:gravity="end"
                     app:slantedBackgroundColor="@color/red_A200"
-                    app:slantedLength="50dp"
+                    app:slantedLength="70dp"
                     app:slantedMode="left"
                     app:slantedText="IOS"
                     app:slantedTextColor="@color/white_transparency"
-                    app:slantedTextSize="14sp"
+                    app:slantedTextSize="10sp"
                     android:layout_marginEnd="-3dp" android:layout_marginTop="-6dp"/>
         </RelativeLayout>
 

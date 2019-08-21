@@ -51,6 +51,12 @@
         <View android:layout_width="match_parent"
               android:background="@color/mdtp_transparent_black"
               android:layout_height="1dp"/>
+        <TextView android:layout_width="match_parent"
+                  android:layout_marginTop="10dp"
+                  android:textAlignment="center"
+                  android:textSize="10dp"
+                  android:text="*Biaya belum termasuk ongkos kirim"
+                  android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <LinearLayout android:layout_width="match_parent"

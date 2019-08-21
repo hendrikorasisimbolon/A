@@ -56,9 +56,11 @@ class CartAdapter (var context: Context, var cartItems: ArrayList<MKeranjang>) :
             var locale = Locale("in", "ID")
             var formatRupiah: NumberFormat = NumberFormat.getCurrencyInstance(locale)
             // This displays the cart item information for each item
-            Glide.with(itemView.context)
-                .load(url_website+"/ecommerce/assets/images/produk/" + foto + foto_type)
-                .into(itemView.product_image)
+            if(foto!="") {
+                Glide.with(itemView.context)
+                    .load(url_website + "/ecommerce/assets/images/produk/" + foto + foto_type)
+                    .into(itemView.product_image)
+            }
             // Picasso.get().load(cartItem.product.photos[0].filename).fit().into(itemView.product_image)
             itemView.product_name.text = judul
             itemView.product_price.text = formatRupiah.format(harga)

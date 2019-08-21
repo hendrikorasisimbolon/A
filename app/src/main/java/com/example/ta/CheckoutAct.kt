@@ -254,11 +254,17 @@ class CheckoutAct : AppCompatActivity() {
         total_berat.text = MTotalCart.total_berat.toString() + " gram"
     }
 
+
     private fun initToolbar() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Checkout"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toolbar.setNavigationOnClickListener{
+            var i = Intent(this,OrderAct::class.java)
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(i)
+        }
         Tools.setSystemBarColor(this, R.color.grey_10)
         Tools.setSystemBarLight(this)
     }

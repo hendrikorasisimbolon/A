@@ -106,6 +106,7 @@ class TestiAct : AppCompatActivity() {
             }
             selesai(id_trans)
             var intent = Intent(this, RiwayatAct::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent)
         }
 

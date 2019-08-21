@@ -16,11 +16,11 @@
 
         <include layout="@layout/toolbar"/>
 
-        <ImageView android:layout_width="match_parent"
-                   android:id="@+id/foto_sukses"
-                   android:src="@drawable/img_no_internet_satellite"
-                   android:layout_height="match_parent"/>
-
     </com.google.android.material.appbar.AppBarLayout>
+
+    <ImageView android:layout_width="match_parent"
+               android:id="@+id/foto_sukses"
+               android:src="@drawable/img_no_feed"
+               android:layout_height="500dp"/>
 
 </LinearLayout>
