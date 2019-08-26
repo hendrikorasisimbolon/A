@@ -187,7 +187,7 @@ class EditProfileAct : AppCompatActivity(){
                         if (response == "sukses") {
                             if (user.password == et_oldpass.text.toString()) {
                                 var i = Intent(this, ProfileAct::class.java)
-                                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_NO_ANIMATION)
+//                                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_NO_ANIMATION)
                                 startActivity(i)
                                 session.createUserLoginSession(
                                     UserInfo(
@@ -277,10 +277,10 @@ class EditProfileAct : AppCompatActivity(){
         cursor.close()
 
         cursor = getContentResolver().query(
-            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
+            MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
             null,
             MediaStore.Images.Media._ID + " = ? ",
-            arrayOf<String>(document_id),
+            arrayOf(document_id),
             null
         )
         cursor.moveToFirst()

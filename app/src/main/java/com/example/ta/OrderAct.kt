@@ -99,9 +99,9 @@ class OrderAct : AppCompatActivity() {
         }
         else {
 
-            if (list.size == 0 ||banyak == 0||MTotalCart.total_cart == 0||list.count() == 0)
+            if (list.size == 0 ||banyak == 0||MTotalCart.total_cart == 0)
             {
-                Toast.makeText(this, "Keranjang anda kosong", Toast.LENGTH_LONG).show()
+//                Toast.makeText(this, "Keranjang anda kosong", Toast.LENGTH_LONG).show()
             }
             if(st == 1)
             {

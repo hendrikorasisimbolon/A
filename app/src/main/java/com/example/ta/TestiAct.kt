@@ -75,7 +75,18 @@ class TestiAct : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         Tools.setSystemBarColor(this, R.color.grey_10)
         Tools.setSystemBarLight(this)
+        toolbar.setNavigationOnClickListener{
+            onBackPressed()
+        }
     }
+
+    override fun onBackPressed() {
+        var i = Intent(this, RiwayatAct::class.java)
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(i)
+        super.onBackPressed()
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_done, menu)
         Tools.changeMenuIconColor(menu, resources.getColor(R.color.grey_60))

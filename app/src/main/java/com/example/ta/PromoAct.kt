@@ -81,7 +81,8 @@ class PromoAct : AppCompatActivity() {
                 FT.commit()
             }
         }, Response.ErrorListener { error ->
-            Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+//            Toast.makeText(this,error.message, Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Tidak Ada Promo!", Toast.LENGTH_LONG).show()
         })
         rq.add(jar)
     }

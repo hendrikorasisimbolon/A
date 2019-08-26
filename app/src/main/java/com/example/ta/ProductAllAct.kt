@@ -39,6 +39,9 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
     var list = ArrayList<MItemDetail>()
     private lateinit var ui_hot: TextView
 
+    companion object{
+        var totalstok :Int=0
+    }
 
 
 
@@ -138,8 +141,6 @@ class ProductAllAct : AppCompatActivity(),ItemAdapter.OnNoteListener {
         intent.putExtra("deskripsi",list.get(position).deskripsi.toString())
         intent.putExtra("discount",list.get(position).diskon.toString())
         intent.putExtra("harga_diskon", list.get(position).harga_diskon.toString())
-
-
 
         startActivity(intent)
 

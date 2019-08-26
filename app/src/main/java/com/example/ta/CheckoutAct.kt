@@ -161,6 +161,7 @@ class CheckoutAct : AppCompatActivity() {
             kurir  = listEkspedisi[service].kode
         }
         listEkspedisi.clear()
+        service = -1
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -251,7 +252,7 @@ class CheckoutAct : AppCompatActivity() {
         })
         rq1.add(jor)
         total_harga_checkout.text = formatRupiah.format(MTotalCart.total_harga)
-        total_berat.text = MTotalCart.total_berat.toString() + " gram"
+        total_berat.text = MTotalCart.total_berat.toString() + " kg"
     }
 
 
@@ -262,7 +263,7 @@ class CheckoutAct : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         toolbar.setNavigationOnClickListener{
             var i = Intent(this,OrderAct::class.java)
-            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            i.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(i)
         }
         Tools.setSystemBarColor(this, R.color.grey_10)

@@ -124,7 +124,7 @@
         <ImageView
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 android:id="@+id/product_image"
                 app:srcCompat="@drawable/not_found_img"/>
 

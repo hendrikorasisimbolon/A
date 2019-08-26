@@ -59,8 +59,8 @@ class MainActivity : AppCompatActivity() {
 
 
     var sampleImages =
-        intArrayOf(R.drawable.sl1, R.drawable.sl2, R.drawable.sl3)
-    var desk: Array<String> = arrayOf("Banner 1", "Banner2", "Banner3")
+        intArrayOf(R.drawable.sl3, R.drawable.sl2, R.drawable.sl1)
+    var desk: Array<String> = arrayOf("Women White & Printed Satin Boat-Necked Blouse", "Patterned Satin Dress", "Shirt Reguler Fit")
 //    var desk: Array<String> = emptyArray()
 
     var img:ArrayList<SliderInfo> = ArrayList()
